@@ -177,7 +177,7 @@ Declared so nobody mistakes them for the original:
 
 ## Pending work
 
-- **The SC catalogue is a seed of 39 controls**, not a complete catalogue. Whole domains (files and uploads, WebRTC, OAuth/OIDC in detail, mobile beyond IPC, cloud control planes) still mean going straight to the standard file.
+- **The SC catalogue is a seed of 40 controls**, not a complete catalogue. Whole domains (files and uploads, WebRTC, OAuth/OIDC in detail, mobile beyond IPC, cloud control planes) still mean going straight to the standard file.
 - **Three ASI companion guides are still out:** *Securing Agentic Applications Guide 1.0*, *Agentic AI MAS Threat Modelling Guide 1.0* and *Agent Name Service (ANS) 1.0* (available in `GenAI-Security-Project/GenAI-Security-Advisor`, `corpus/agentic-top10/companions/`).
 - **OWASP AISVS**, cited by LLM10 and the crosswalk, could become the verifiable counterpart of ASVS for AI.
 - **SAMM:** compare the 2020 PDF with core model data v2.2.0 and regenerate from the newer source if it differs.

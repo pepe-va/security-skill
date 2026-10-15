@@ -1,6 +1,6 @@
 ---
 name: cybersec-skill
-description: "Security consultant and scanner built on 29 official standards: OWASP Top 10:2025, ASVS 5.0.0, API Top 10, MASVS, SAMM, LLM Top 10 2026 and Agentic Top 10; NIST SSDF, 800-218A, 800-53r5, 800-63B-4, CSF 2.0, AI RMF, AI 600-1, 800-190, 800-207, 800-61r3, 800-86, 800-115, 800-40r4; CISA ZTMM; SLSA; CWE; CVSS 4.0; MITRE ATT&CK, ATLAS, D3FEND and F3. Gives PASS / FAIL / NOT APPLICABLE / NOT VERIFIED results; every finding cites standard, version and ID. Three modes: consultation, source-code security audit, and dependency audit for vulnerable or malicious packages. Audits produce a validated findings.json and an HTML report with a copyable mitigation prompt. Use it whenever someone designs, codes, reviews, deploys or operates an API, web or mobile app, cloud, CI/CD, containers, LLM, RAG, MCP or agents; asks 'is this secure' or which controls apply; wants a repo or its libraries audited or scanned; threat-models; classifies a finding (CWE, CVSS); or maps compliance, even if no standard is named."
+description: "Security consultant and scanner built on 29 official standards: OWASP Top 10:2025, ASVS 5.0.0, API Top 10, MASVS, SAMM, LLM Top 10 2026 and Agentic Top 10; NIST SSDF, 800-218A, 800-53r5, 800-63B-4, CSF 2.0, AI RMF, AI 600-1, 800-190, 800-207, 800-61r3, 800-86, 800-115, 800-40r4; CISA ZTMM; SLSA; CWE; CVSS 4.0; MITRE ATT&CK, ATLAS, D3FEND, F3. Gives PASS / FAIL / NOT APPLICABLE / NOT VERIFIED; every finding cites standard, version and ID. Three modes: consultation, code audit, and dependency audit for vulnerable or malicious packages. Audits end in a validated findings.json and an HTML report with a mitigation prompt. Use it whenever someone designs, codes, reviews, deploys or operates an API, web or mobile app, cloud, CI/CD, containers, LLM, RAG, MCP or agents; asks 'is this secure' or which controls apply; wants a repo or its libraries audited, or exposed .env files, secrets or open ports found; threat-models; classifies a finding (CWE, CVSS); or maps compliance, even if no standard is named."
 compatibility: "Python 3.9+ (tools are stdlib only). Mode 3 uses the network when available (api.osv.dev, www.cisa.gov, api.first.org) and degrades to NOT VERIFIED without it."
 ---
 
@@ -40,6 +40,7 @@ Read `references/audit/README.md` first (it overrides the upstream text where th
 - Verdicts: `confirmed` (source trace + bounded local evidence), `needs_validation` (blocked by a fact outside the source; no severity), `rejected` (kept so later runs do not repeat it).
 - Output goes **outside the target**: `<parent of the target>/<repo>-security-audit/run-<N>`.
 - Without sub-agents, run the phases yourself but finish hunting before validating, and record `"independent_verification": false` in `run-metadata.json`.
+- In reconnaissance, run the exposure sweep: `python scripts/find_exposures.py <target> --out <output-dir>`. It finds environment-variable files under any name, keys and credential stores, secrets in any programming language, secrets left in git history, `.gitignore` gaps, and ports or services exposed by compose, Kubernetes, Terraform or service configs. Its records are leads to triage, never verdicts: `references/audit/exposures.md`.
 
 ### Mode 3 — dependency audit
 
@@ -129,6 +130,11 @@ Enter through the sentence that describes what you are doing. `SC-*` controls ar
 - Standards: ASVS V11, V13.3, V14 · Top 10:2025 A02, A04 · 800-53 SC-12, SC-13, SC-28 · with an LLM: LLM02
 - Controls: SC-SEC-01, SC-SEC-02, SC-CRY-01, SC-TLS-01, SC-ISO-01
 
+### "Is there an exposed .env / secret / open port in this repo?"
+- Quick check, no files written: `python scripts/find_exposures.py <path>` (add `--out <dir>` inside an audit)
+- Procedure, triage and sources: `references/audit/exposures.md` · Controls: SC-SEC-01, SC-NET-01
+- It reads the repository only: deployed hosts are never scanned
+
 ### "Web frontend" / browser code / widgets
 - View: `references/by-component.md` → *Web applications* and *Frontend*
 - Standards: ASVS V3, V1 · Top 10:2025 A05 · CWE-79
@@ -168,7 +174,7 @@ Enter through the sentence that describes what you are doing. `SC-*` controls ar
 ### "Containers, Kubernetes, cloud"
 - View: `references/by-component.md` → *Infrastructure and cloud*
 - Standards: `nist-800-190.md` (risks §3, countermeasures §4) · ASVS V13 · 800-53 CM-6, CM-7, SC-7 · ATT&CK Containers and IaaS techniques · CIS Benchmarks are tier B
-- Audit companion `audit/upstream/CLOUD-AND-DEPLOYMENT.md`
+- Controls: SC-NET-01 · exposure sweep `scripts/find_exposures.py` · audit companion `audit/upstream/CLOUD-AND-DEPLOYMENT.md`
 
 ### "Zero trust" / network architecture / segmentation
 - View: `references/domains.md` → *Zero trust and network*
@@ -247,10 +253,11 @@ references/
   domains.md                     cross-cutting view by security domain
   ai-llm-agents.md               view of AI, LLM, RAG, tools, MCP and agents
   verification.md                evidence hierarchy and verification methods
-  sc-controls-catalog.md         39 SC controls binding the standards, with traceability
+  sc-controls-catalog.md         40 SC controls binding the standards, with traceability
   governance.md                  sources and versions, regeneration, transformations, divergences, pending work
   audit/README.md                modes 2 and 3: overrides, states, severity, sources, report
   audit/dependencies.md          mode 3 procedure
+  audit/exposures.md             exposure sweep: env files, secrets, git history, published ports
   audit/upstream/                security-audit methodology and domain companions (MIT)
   crosswalk/                     official ASI crosswalk: 993 mappings to 25 frameworks (unreviewed)
   playbooks/                     818 indexed practitioner playbooks, 781 copied (Apache-2.0)
@@ -265,7 +272,7 @@ references/
     nist-ai-rmf-1.0.md  nist-ai-600-1.md  nist-800-190.md  nist-800-207.md  cisa-ztmm-2.0.md
     nist-800-61r3.md  nist-800-86.md  nist-800-115.md  nist-800-40r4.md  slsa.md
 scripts/
-  audit_deps.py  cvss4.py  validate_findings.py  validate_ledger.py  render_report.py   runtime (stdlib)
+  audit_deps.py  find_exposures.py  cvss4.py  validate_findings.py  validate_ledger.py  render_report.py   runtime (stdlib)
   verify_ids.py                  checks every identifier cited by the skill's own text
 assets/cvss-calculator/          FIRST's CVSS v4.0 lookup tables, read by cvss4.py
 agents/openai.yaml               display metadata for Codex

@@ -1,7 +1,8 @@
 {
   "name": "cybersec",
   "owner": {
-    "name": "cybersec-skill maintainers"
+    "name": "pepe-va",
+    "url": "https://github.com/pepe-va"
   },
   "description": "The cybersec-skill security standards skill, as an installable Claude Code plugin.",
   "plugins": [
@@ -10,7 +11,12 @@
       "source": "./",
       "description": "Security consultant and scanner built on 29 official standards, with code and dependency audits.",
       "category": "security",
-      "keywords": ["security", "appsec", "audit", "standards"]
+      "keywords": [
+        "security",
+        "appsec",
+        "audit",
+        "standards"
+      ]
     }
   ]
 }

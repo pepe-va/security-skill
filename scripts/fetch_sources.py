@@ -193,7 +193,8 @@ def main():
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(data)
             manifest[rel] = {
-                "group": g, "url": url, "final_url": final, "bytes": len(data),
+                # Redirect targets can carry short-lived signed tokens (GitHub release assets): keep only the path.
+                "group": g, "url": url, "final_url": final.split("?", 1)[0], "bytes": len(data),
                 "sha256": hashlib.sha256(data).hexdigest(),
                 "fetched": datetime.date.today().isoformat(),
                 "shipped": len(data) <= SHIP_LIMIT,

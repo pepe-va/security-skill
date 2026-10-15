@@ -24,7 +24,8 @@ STD = REFS / "standards"
 SCANNED = ["SKILL.md", "references/context-model.md", "references/lifecycle.md", "references/by-component.md",
            "references/domains.md", "references/ai-llm-agents.md", "references/verification.md",
            "references/sc-controls-catalog.md", "references/governance.md", "references/audit/README.md",
-           "references/audit/dependencies.md", "scripts/audit_deps.py"]
+           "references/audit/dependencies.md", "references/audit/exposures.md", "scripts/audit_deps.py",
+           "scripts/find_exposures.py"]
 
 # Identifiers cited on purpose although they are not defined: (files allowed to cite them, reason).
 EXCEPTIONS = {
@@ -34,10 +35,11 @@ EXCEPTIONS = {
     "T0853": ({"references/governance.md"}, "deprecated ICS technique cited by playbooks"),
 }
 
-# Files written by an audit run, named in the docs but not part of the skill.
+# Files written by an audit run, or looked for in an audited target, named in the docs but not part of the skill.
 OUTPUT_FILES = {"findings.json", "run-metadata.json", "coverage-ledger.json", "security-report.html", "sbom.cdx.json",
-                "deps-raw.json", "deps-findings.json", "REPORT.md", "FINDINGS-DETAIL.md", "NEEDS-VALIDATION.md",
-                "status.json", "manifest.json"}
+                "deps-raw.json", "deps-findings.json", "exposures-raw.json", "exposures-findings.json", "REPORT.md",
+                "FINDINGS-DETAIL.md", "NEEDS-VALIDATION.md", "status.json", "manifest.json", "local.settings.json",
+                "config.json"}
 
 HEAD = re.compile(r"^#{1,6}\s+(.*)$")
 # Where a bare file name in backticks may live (a table of upstream files, a list of index files...).

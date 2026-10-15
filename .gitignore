@@ -4,3 +4,21 @@ __pycache__/
 # scratch copies made by eval runs
 evals/iteration-*/*/with_skill/work/
 evals/iteration-*/*/without_skill/work/
+# secrets never belong in the repository (scripts/find_exposures.py checks these patterns)
+.env
+.env.*
+!.env.example
+*.env
+.envrc
+.dev.vars
+local.settings.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.tfstate
+*.tfstate.*
+*.tfvars
+id_rsa*
+id_ed25519*
+credentials.json

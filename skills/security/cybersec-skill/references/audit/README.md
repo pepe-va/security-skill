@@ -8,7 +8,7 @@ Only on an explicit request to audit, scan or pen-test a codebase or its depende
 
 | Mode | Scope | Procedure |
 |---|---|---|
-| 2 — code audit | The repository's own source | `upstream/SECURITY-AUDIT.md` → phases 1-6 in `upstream/RECONNAISSANCE.md`, `upstream/HUNTING.md`, `upstream/VALIDATION-AND-REPORTING.md`, attack classes in `upstream/ATTACK-CLASSES.md` and the domain companions |
+| 2 — code audit | The repository's own source | `upstream/SECURITY-AUDIT.md` → phases 1-6 in `upstream/RECONNAISSANCE.md`, `upstream/HUNTING.md`, `upstream/VALIDATION-AND-REPORTING.md`, attack classes in `upstream/ATTACK-CLASSES.md` and the domain companions; exposure sweep in phase 1 (`exposures.md`) |
 | 3 — dependency audit | Third-party packages, lockfiles, vendored code | `dependencies.md` (uses `scripts/audit_deps.py`) |
 | 2 + 3 — full audit | Both | Run both; one `findings.json`, one ledger, one report |
 
@@ -27,6 +27,10 @@ Profiles (`quick`, `standard`, `deep`), scoped runs and budgets are options insi
 | Parallel sub-agents for hunters and verifiers | Use them when the platform has them. Without them, see *No sub-agents* below |
 
 Everything else in `upstream/` applies as written: the boundary-and-result rule, bounded local evidence, source visibility, the candidate gate, write isolation, the execution sandbox, coverage ledger and critic waves, and the anti-patterns.
+
+## Exposure sweep (phase 1)
+
+Run `python scripts/find_exposures.py <target> --out <output-dir>` during reconnaissance. It covers deterministically what the *Obvious things* hunter checks by hand (`upstream/ATTACK-CLASSES.md`): environment-variable files under any name, keys and credential stores, secrets in any programming language, secrets left in git history, `.gitignore` gaps, and services published by compose, Kubernetes, Terraform or service configs. Its `exposures-findings.json` holds leads with sources; triage them into `findings.json` as `exposures.md` describes. The hunter still reads the code: the sweep finds known patterns, not every exposure.
 
 ## Unified states
 

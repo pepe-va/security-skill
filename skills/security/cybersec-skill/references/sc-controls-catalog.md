@@ -156,8 +156,8 @@ A finding supported only by the first two links is NOT VERIFIED, not FAIL.
 ### SC-SEC-01 — Secrets outside code and build artifacts
 **Applies to:** everything · **Phase:** implementation, build, deployment
 **Requirement:** secrets are created, stored, controlled and destroyed in a secret-management solution. **They may not be in source code or build artifacts.** Access follows least privilege.
-**Agent action:** secret scanning on code **and on repository history**; review pipeline definitions, configuration files and, with an LLM, the system prompt.
-**Verification:** automated scanning + inspection of the deployed configuration.
+**Agent action:** secret scanning on code **and on repository history**, including environment-variable files under any name; review pipeline definitions, configuration files and, with an LLM, the system prompt.
+**Verification:** `scripts/find_exposures.py` (env files by name and content, keys, secrets in any language, git history, `.gitignore` gaps; `audit/exposures.md`) + inspection of the deployed configuration.
 **Evidence:** scan output and the secret manager's configuration.
 **PASS:** no live secret outside the manager. **FAIL:** one appears, even in history — then it must be **rotated**, not just deleted.
 **Traceability:** `v5.0.0-13.3.1`, `v5.0.0-13.3.2` · `A02:2025` · SSDF `PO.5.1` · `CWE-798` · LLM08 (mitigation 1), LLM02 (tier 1 item 4)
@@ -241,6 +241,20 @@ A finding supported only by the first two links is NOT VERIFIED, not FAIL.
 **Evidence:** the effective configuration and the privileged-access records.
 **PASS:** effective separation verified. **FAIL:** an unjustified trust path exists.
 **Traceability:** SSDF `PO.5.1`, `PO.5.2` · `800-218A PO.5.1` (R2, R3, R6), `800-218A PO.5.3` · SAMM Secure Deployment → Secret Management
+
+---
+
+## Domain NET — network exposure
+
+### SC-NET-01 — Services reachable only from the networks that need them
+**Applies to:** containers, orchestration, cloud networking, service configuration · **Phase:** design, deployment, operation
+**Requirement:** data stores, admin, debug and monitoring interfaces listen only on the interfaces and networks that need them; anything published to a lower-trust network is intended, documented and authenticated.
+**Agent action:** list every published port, public load balancer, open ingress rule and all-interface listener in the repository's configuration, and for each one ask which network can reach it and what authenticates the caller. A database or admin port published on every interface, or an ingress rule open to `0.0.0.0/0` on anything but the public web ports, is a lead.
+**Verification:** `scripts/find_exposures.py` for the static picture (`audit/exposures.md`); the deployment's firewall, security group and ingress configuration for the effective one. Live scanning only with the owner's authorisation.
+**Evidence:** the configuration line that publishes the service and the network rule that does (or does not) restrict it.
+**PASS:** every published service is intended, restricted to the networks that need it, and authenticated. **FAIL:** a data, admin, debug or monitoring interface is reachable from a lower-trust network without need. **NOT APPLICABLE:** the component listens on no network.
+**Traceability:** 800-53 `SC-7`, `CM-7` · `800-190 §4.4.2` · `v5.0.0-13.4.2`, `v5.0.0-13.4.5` · `A02:2025` · `CWE-1327`, `CWE-306` · ATT&CK `T1133`, `T1190`
+**Related:** SC-CFG-01, SC-IPC-01 · **Audit companion:** `audit/upstream/CLOUD-AND-DEPLOYMENT.md`
 
 ---
 
@@ -474,6 +488,7 @@ A finding supported only by the first two links is NOT VERIFIED, not FAIL.
 | SC-ERR-01 | Fail closed and generic error | LOG |
 | SC-CFG-01 | Secure defaults | CFG |
 | SC-ENV-01 | Separation and hardening of environments | CFG |
+| SC-NET-01 | Services reachable only from the networks that need them | NET |
 | SC-RES-01 | Per-principal quotas on costly functionality | RES |
 | SC-ISO-01 | Tenant isolation beyond the main data path | ISO |
 | SC-IPC-01 | Local IPC authenticates its caller | ISO |

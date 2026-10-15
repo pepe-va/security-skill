@@ -12,7 +12,8 @@ Type `/cybersec-skill`, or the agent reaches for it automatically when a task fi
 |---|---|
 | A design, a diff or a snippet, and the question "what applies / is this right?" | Consultation (default, no files) |
 | A pentest or scanner finding to classify | Consultation: CWE, CVSS 4.0 computed, severity, requirements broken |
-| "Audit this repository", "full security review" | Code audit |
+| "Audit this repository", "full security review" | Code audit (starts with the exposure sweep) |
+| "Is there an exposed .env, a secret or an open port in this repo?" | Exposure sweep on its own: a summary, no files |
 | "Audit our dependencies", "anything malicious in our packages?", "SBOM" | Dependency audit |
 | Both of the last two | Full audit: one run, one report |
 
@@ -45,6 +46,10 @@ It reads the standards it cites, computes CVSS with FIRST's algorithm and, in au
 **Why does a design review come back mostly NOT VERIFIED?**
 
 Because a description is not evidence. It marks FAIL only what your description already proves (for example an agent that reads untrusted tickets, holds private code and acts on its own) and lists, for everything else, the evidence that would settle it.
+
+**Does it find exposed `.env` files and open ports?**
+
+In the repository, yes, and in any language. The exposure sweep finds environment-variable files whatever their name (by name, or because the content is `KEY=VALUE` lines), keys and credential files, secrets written in code or config (including key names such as `contraseña` or `Passwort`), secrets left in git history, `.gitignore` gaps, and services published by docker-compose, Kubernetes, Terraform or a service's own config. Secret values are always masked. It does not scan a running server: a published port in the config is a lead until the deployment's network rules show who can reach it.
 
 **Does a clean dependency audit mean my packages are safe?**
 

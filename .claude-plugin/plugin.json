@@ -1,9 +1,22 @@
 {
   "name": "cybersec-skill",
-  "version": "1.0.0",
-  "description": "Security consultant and scanner built on 29 official standards (OWASP, NIST, MITRE, CWE, CVSS 4.0, SLSA, CISA): PASS/FAIL results with cited sources, code audit and dependency audit with a validated findings.json and an HTML report with a mitigation prompt.",
+  "version": "1.1.0",
+  "description": "Security consultant and scanner built on 29 official standards (OWASP, NIST, MITRE, CWE, CVSS 4.0, SLSA, CISA): PASS/FAIL results with cited sources; code audit with an exposure sweep (env files, secrets, published ports) and dependency audit, ending in a validated findings.json and an HTML report with a mitigation prompt.",
+  "repository": "https://github.com/pepe-va/security-skill",
+  "homepage": "https://github.com/pepe-va/security-skill",
   "license": "MIT",
-  "keywords": ["security", "appsec", "owasp", "nist", "mitre-attack", "cwe", "cvss", "supply-chain", "llm-security", "audit"],
+  "keywords": [
+    "security",
+    "appsec",
+    "owasp",
+    "nist",
+    "mitre-attack",
+    "cwe",
+    "cvss",
+    "supply-chain",
+    "llm-security",
+    "audit"
+  ],
   "skills": [
     "./skills/security/cybersec-skill"
   ]

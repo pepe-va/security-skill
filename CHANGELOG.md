@@ -1,5 +1,12 @@
 # cybersec-skill
 
+## 1.1.0 (2026-10-15)
+
+- Exposure sweep, `scripts/find_exposures.py`: environment-variable files under any name (by name or by `KEY=VALUE` content), credential stores and keys, provider-format secrets and secret-like assignments in any programming language and in many human languages, secrets left in git history, `.gitignore` gaps, and services published by docker-compose, Kubernetes, Terraform or service configs (open ingress, all-interface debug servers, disabled authentication). Reads only, runs git with the target's risky configuration overridden, masks every secret value, honours `gitleaks:allow`, `pragma: allowlist secret`, `nosec` and `exposures: ignore`. Procedure and sources in `references/audit/exposures.md`; it runs in phase 1 of the code audit and as a quick check without files.
+- SC-NET-01: services reachable only from the networks that need them.
+- `sources/manifest.json` no longer stores the query string of redirect targets (GitHub release downloads carry a short-lived signed token there).
+- `CONTRIBUTING.md`; plugin manifest points at https://github.com/pepe-va/security-skill.
+
 ## 1.0.0 (2026-10-15)
 
 First release, built from three sources: the systema-cure skill (nine standards, Spanish), the methodology of Cloudflare's security-audit skill, and the standards and playbooks of Anthropic-Cybersecurity-Skills.

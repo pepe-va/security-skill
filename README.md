@@ -11,11 +11,11 @@ It works in three modes: a **consultation** while you design, code or review; a 
 Inside a Claude Code session:
 
 ```text
-/plugin marketplace add /path/to/cybersec-skill
+/plugin marketplace add pepe-va/security-skill
 /plugin install cybersec-skill@cybersec
 ```
 
-The repository is its own marketplace (`.claude-plugin/marketplace.json`). A plugin install copies the whole repository, sources included; for a lean install use the symlink route below.
+The repository is its own marketplace (`.claude-plugin/marketplace.json`). A plugin install copies the whole repository, sources included; for a lean install clone it and use the symlink route below.
 
 ### Any agent that reads `~/.claude/skills` or `~/.agents/skills`
 
@@ -38,8 +38,10 @@ Model- or user-reachable: the agent reaches for it when a task fits.
 | Mode | You ask | You get |
 |---|---|---|
 | Consultation | "Which controls apply to this API?", "is this secure?", "classify this finding" | Controls with a state, the evidence behind it and the sources. No files. |
-| Code audit | "Audit this repository", "full security review" | Confirmed findings, leads needing validation and coverage, as `findings.json`, Markdown reports and `security-report.html` |
+| Code audit | "Audit this repository", "full security review" | Confirmed findings, leads needing validation and coverage, as `findings.json`, Markdown reports and `security-report.html`. Starts with an exposure sweep: environment-variable files under any name, keys, secrets in any language, secrets left in git history, `.gitignore` gaps, ports and services published by compose, Kubernetes, Terraform or service configs |
 | Dependency audit | "Audit our dependencies", "anything malicious in our packages?" | CycloneDX SBOM, known vulnerabilities (OSV, CISA KEV, EPSS), known-malicious packages, malware signals and typosquats, in the same report |
+
+For a quick look without an audit, `python skills/security/cybersec-skill/scripts/find_exposures.py <path>` prints the exposure sweep and writes nothing. Secret values are always masked.
 
 The standards held in full, with their versions and how each was generated, are listed in the skill's [`references/governance.md`](./skills/security/cybersec-skill/references/governance.md). Every other standard cited by the source material, with its date and status, is in [`references/standards/INVENTORY.md`](./skills/security/cybersec-skill/references/standards/INVENTORY.md).
 
@@ -69,6 +71,10 @@ python3 -m venv .venv && .venv/bin/pip install pypdf pyyaml beautifulsoup4 lxml 
 Download caches over 5 MB (the ATT&CK bundles, the SP 800-53 catalogue) and the OWASP Top 10 page cache are not committed, so a fresh clone needs one build with network before `--offline` works; `sources/manifest.json` keeps their URL and SHA-256.
 
 The runtime scripts inside the skill need only the Python 3.9+ standard library.
+
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md). Report vulnerabilities in the skill privately, not in a public issue.
 
 ## Disclaimer
 

@@ -513,7 +513,7 @@
   "csf/csf-2.0.0.json": {
     "group": "csf",
     "url": "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/csf_2_0_0/export/json?element=all",
-    "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/csf_2_0_0/export/json?element=all",
+    "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/csf_2_0_0/export/json",
     "bytes": 753380,
     "sha256": "de36759d2f3f70a0f28ab9a95505259e568467923295a13d510a068939773e5a",
     "fetched": "2026-10-14",
@@ -774,7 +774,7 @@
   "masvs/OWASP_MASVS-2.1.0.yaml": {
     "group": "masvs",
     "url": "https://github.com/OWASP/masvs/releases/download/v2.1.0/OWASP_MASVS.yaml",
-    "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/67674352/1aab93b0-11b3-45e5-8be9-c28aaf9d14b4?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-14T14%3A21%3A30Z&rscd=attachment%3B+filename%3DOWASP_MASVS.yaml&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-14T13%3A20%3A54Z&ske=2026-10-14T14%3A21%3A30Z&sks=b&skv=2018-11-09&sig=fbCwssnrrlNs8j5UyNkuAVK15BSCztpw663nyCU%2Ffd8%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTk4NTA5NywibmJmIjoxNzkxOTg0Nzk3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.KK9lcV11QANZXU-63NIGPiX4odzLA9dGNwul9n4fBCw&response-content-disposition=attachment%3B%20filename%3DOWASP_MASVS.yaml&response-content-type=application%2Foctet-stream",
+    "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/67674352/1aab93b0-11b3-45e5-8be9-c28aaf9d14b4",
     "bytes": 23244,
     "sha256": "1175fe92ddb846c327b48f8efbd3fcb0148397cfb1ae0bb5a06f8c169e5e34a8",
     "fetched": "2026-10-14",
@@ -1008,7 +1008,7 @@
   "ssdf/sp800-218-1.1.0.json": {
     "group": "ssdf",
     "url": "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_218_1_1_0/export/json?element=all",
-    "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_218_1_1_0/export/json?element=all",
+    "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_218_1_1_0/export/json",
     "bytes": 766901,
     "sha256": "ac74d59adbef7696d57d64dbb7c27bc9ebfb17e78ca2302797d00d781c237658",
     "fetched": "2026-10-14",
