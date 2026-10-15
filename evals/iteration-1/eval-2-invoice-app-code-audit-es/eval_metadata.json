@@ -1,0 +1,15 @@
+{
+  "eval_id": 2,
+  "eval_name": "invoice-app-code-audit-es",
+  "prompt": "Haz una auditoría de seguridad del código de evals/fixtures/invoice-app y quiero el informe en HTML. No modifiques el repo.",
+  "assertions": [
+    "findings.json exists and passes the skill's findings validator",
+    "Reports the missing ownership check on GET /invoices/<id> (IDOR / BOLA)",
+    "Reports the SQL injection in GET /search",
+    "Each confirmed finding is justified by a tier-A requirement and a CWE (sources)",
+    "An HTML report in Spanish is produced",
+    "The HTML report has a mitigation prompt panel with per-finding checkboxes and a copy action",
+    "No false positive on the PBKDF2 password hashing or the parameterised queries",
+    "The target repository was not modified"
+  ]
+}

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>shop-frontend Dependency Audit</title>
+<meta name="description" content="Dependency security audit of the shop-frontend project: known vulnerabilities and suspicious packages, with evidence and fixes.">
+<style>
+:root {
+  --bg: #f7f6f3;
+  --surface: #ffffff;
+  --surface-2: #f1f0ec;
+  --text: #1c1c1f;
+  --muted: #5a5a63;
+  --border: #dedcd6;
+  --accent: #2f5bd3;
+  --high: #b42318;  --high-bg: #fdeceb;
+  --med: #a14a06;   --med-bg: #fdf0e1;
+  --low: #1d5bbf;   --low-bg: #e8f0fd;
+  --info: #4a5363;  --info-bg: #eceef2;
+  --ok: #08703f;    --ok-bg: #e2f5ea;
+  --code-bg: #f2f1ed;
+  --shadow: 0 1px 2px rgba(0,0,0,.05);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131315; --surface: #1b1b1e; --surface-2: #222226; --text: #ebebef; --muted: #a2a2ad;
+    --border: #2f2f35; --accent: #8fb0ff;
+    --high: #ff9a8f; --high-bg: #3b1916; --med: #ffbc73; --med-bg: #3a2712;
+    --low: #93b8ff; --low-bg: #172540; --info: #c0c6d1; --info-bg: #262930;
+    --ok: #74e0a6; --ok-bg: #133121; --code-bg: #232327; --shadow: none;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131315; --surface: #1b1b1e; --surface-2: #222226; --text: #ebebef; --muted: #a2a2ad;
+  --border: #2f2f35; --accent: #8fb0ff;
+  --high: #ff9a8f; --high-bg: #3b1916; --med: #ffbc73; --med-bg: #3a2712;
+  --low: #93b8ff; --low-bg: #172540; --info: #c0c6d1; --info-bg: #262930;
+  --ok: #74e0a6; --ok-bg: #133121; --code-bg: #232327; --shadow: none;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; margin: 48px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1.1rem; margin: 0; line-height: 1.35; }
+h4 { font-size: .95rem; margin: 18px 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+p { margin: 0 0 12px; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: .86em; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; overflow-x: auto; line-height: 1.5; margin: 8px 0 14px; }
+pre code { background: none; padding: 0; overflow-wrap: normal; }
+.meta { color: var(--muted); font-size: .92rem; margin-bottom: 24px; }
+.meta span { display: inline-block; margin-right: 18px; }
+.verdict { background: var(--high-bg); border: 1px solid color-mix(in srgb, var(--high) 35%, transparent); border-left: 5px solid var(--high); border-radius: 10px; padding: 16px 18px; margin: 20px 0; }
+.verdict strong { color: var(--high); }
+.verdict p:last-child { margin-bottom: 0; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 0 8px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; box-shadow: var(--shadow); }
+.stat .n { font-size: 1.6rem; font-weight: 700; line-height: 1.1; }
+.stat .l { color: var(--muted); font-size: .85rem; }
+.stat.high .n { color: var(--high); } .stat.low .n { color: var(--low); } .stat.info .n { color: var(--info); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); margin: 10px 0 16px; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: var(--surface-2); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.badge { display: inline-block; font-size: .74rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.b-high { color: var(--high); background: var(--high-bg); }
+.b-med { color: var(--med); background: var(--med-bg); }
+.b-low { color: var(--low); background: var(--low-bg); }
+.b-info { color: var(--info); background: var(--info-bg); }
+.b-ok { color: var(--ok); background: var(--ok-bg); }
+.finding { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 18px 8px; margin: 18px 0; box-shadow: var(--shadow); }
+.finding header { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 10px; }
+.finding .fid { font-family: ui-monospace, Menlo, Consolas, monospace; color: var(--muted); font-size: .85rem; padding-top: 2px; }
+.finding header h3 { flex: 1 1 320px; }
+dl.refs { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; font-size: .9rem; margin: 6px 0 14px; }
+dl.refs dt { color: var(--muted); }
+dl.refs dd { margin: 0; overflow-wrap: anywhere; }
+ul, ol { padding-left: 22px; margin: 0 0 12px; }
+li { margin: 3px 0; }
+.note { color: var(--muted); font-size: .9rem; }
+.callout { background: var(--surface-2); border-radius: 8px; padding: 10px 14px; margin: 8px 0 14px; font-size: .94rem; }
+footer { margin-top: 48px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--border); padding-top: 14px; }
+@media (max-width: 560px) {
+  h1 { font-size: 1.5rem; }
+  dl.refs { grid-template-columns: 1fr; }
+  dl.refs dt { margin-top: 6px; }
+}
+@media print {
+  body { background: #fff; }
+  .finding, .stat, .table-wrap { box-shadow: none; break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>shop-frontend dependency audit</h1>
+<div class="meta">
+  <span><strong>Target:</strong> <code>cybersec-skill-workspace/fixtures/shop-frontend</code></span>
+  <span><strong>Date:</strong> 2026-10-14</span>
+  <span><strong>Method:</strong> static review plus public advisory database lookups. Nothing was installed, built or run.</span>
+</div>
+
+<div class="verdict">
+  <p><strong>Verdict: do not install this dependency set as it is.</strong> All three declared dependencies have a problem:</p>
+  <ul>
+    <li><code>colour-utilz</code> is built like a malicious package. It has an install hook, a base64 string fed to <code>eval</code>, and no real code. The copy on disk is currently inert. The package name is also unclaimed on public npm, so it is open to dependency confusion.</li>
+    <li><code>expresss</code> (three "s") is a typosquat of <code>express</code>. It is locked to a version that does not exist on npm and has no integrity hash.</li>
+    <li><code>lodash</code> 4.17.15 is the real package, but it is outdated and has 6 published vulnerabilities (3 High, 3 Medium). All are fixed in 4.18.0.</li>
+  </ul>
+</div>
+
+<div class="stats">
+  <div class="stat high"><div class="n">4</div><div class="l">High findings</div></div>
+  <div class="stat low"><div class="n">1</div><div class="l">Low finding</div></div>
+  <div class="stat info"><div class="n">1</div><div class="l">Informational</div></div>
+  <div class="stat"><div class="n">6</div><div class="l">advisories against lodash 4.17.15</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">in CISA KEV (catalog 2026.10.13)</div></div>
+</div>
+
+<h2>Dependency inventory</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Package</th><th>Locked version</th><th>Resolved from</th><th>Integrity hash</th><th>On public npm?</th><th>Assessment</th></tr></thead>
+  <tbody>
+    <tr><td><code>colour-utilz</code></td><td>1.0.0</td><td><code>packages.example.internal</code></td><td>Missing</td><td>No (HTTP 404)</td><td><span class="badge b-high">Suspicious</span> malware pattern, dependency confusion</td></tr>
+    <tr><td><code>expresss</code></td><td>4.18.2</td><td><code>registry.npmjs.org</code></td><td>Missing</td><td>Name exists, but only <code>0.0.0</code>. The locked version returns 404</td><td><span class="badge b-high">Typosquat</span> of <code>express</code></td></tr>
+    <tr><td><code>lodash</code></td><td>4.17.15</td><td><code>registry.npmjs.org</code></td><td>Present, matches the registry</td><td>Yes (latest 4.18.1)</td><td><span class="badge b-high">Vulnerable</span> 6 advisories</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note">Only <code>colour-utilz</code> is present in <code>node_modules/</code>. <code>lodash</code> and <code>expresss</code> are declared and locked but not installed, so lodash was assessed by version and lockfile hash only.</p>
+
+<h2>Findings</h2>
+<p class="note">Severity for CVE-based findings is the GitHub Advisory Database rating and CVSS v3.1 base score. The supply-chain findings have no CVE, so their severity is my own rating of likelihood and impact.</p>
+
+<!-- F-01 -->
+<section class="finding" id="f01">
+  <header><span class="fid">F-01</span><h3><code>colour-utilz@1.0.0</code> has the structure of a malicious install-time dropper (currently inert)</h3><span class="badge b-high">High</span></header>
+  <dl class="refs">
+    <dt>Files</dt><dd><code>node_modules/colour-utilz/package.json</code> line 1 (<code>scripts.postinstall</code>); <code>node_modules/colour-utilz/setup.js</code> lines 1–3; <code>node_modules/colour-utilz/index.js</code> line 1</dd>
+    <dt>Standards</dt><dd>CWE-506 (Embedded Malicious Code, as a pattern), CWE-829 (Inclusion of Functionality from Untrusted Control Sphere); MITRE ATT&amp;CK Enterprise T1195.001 (Compromise Software Dependencies and Development Tools), T1027 (Obfuscated Files or Information), T1059.007 (JavaScript); OWASP Top 10:2025 A03 Software Supply Chain Failures</dd>
+    <dt>Advisory DBs</dt><dd>No record in OSV.dev or the GitHub Advisory Database (checked any version, including malware advisories). This is expected for a package that is not on public npm. It does not show the package is safe.</dd>
+  </dl>
+  <h4>Evidence</h4>
+<pre><code>// node_modules/colour-utilz/package.json
+{"name": "colour-utilz", "version": "1.0.0", "main": "index.js", "scripts": {"postinstall": "node setup.js"}}
+
+// node_modules/colour-utilz/setup.js
+1  // Inert test fixture: the encoded string decodes to a harmless comment and nothing runs it.
+2  const p = "Ly8gaGFybWxlc3MgdGVzdCBmaXh0dXJl";
+3  if (false) { eval(Buffer.from(p, "base64").toString()); }
+
+// node_modules/colour-utilz/index.js
+1  module.exports = {};</code></pre>
+  <h4>Why it looks malicious</h4>
+  <ol>
+    <li><strong>It runs at install time.</strong> <code>postinstall: node setup.js</code> runs automatically on <code>npm install</code> or <code>npm ci</code>, before anyone imports the package.</li>
+    <li><strong>It has an obfuscated loader.</strong> A base64 string is decoded and passed to <code>eval()</code>. This is the usual shape of npm malware, because it hides the real payload from code review and simple scanners.</li>
+    <li><strong>It has no functionality.</strong> The "colour utilities" package exports an empty object. A package with no code has no legitimate reason to run an install script.</li>
+    <li><strong>Its name is a lookalike.</strong> <code>colour-utilz</code> differs from the existing npm package <code>colour-utils</code> (latest 1.2.4) by one letter. Swapping "z" for "s" is a common typosquatting pattern.</li>
+    <li><strong>Its provenance cannot be verified.</strong> It comes from a non-public host with no integrity hash and no author, repository or license metadata (see F-02).</li>
+  </ol>
+  <h4>What it does today</h4>
+  <p>I checked this by decoding the string, not by running anything. I also did not rely on the file's own "inert" comment, because comments are written by the package author. The <code>eval</code> sits behind <code>if (false)</code>, so it never runs. The encoded string decodes to <code>// harmless test fixture</code>, which is just a JavaScript comment. Running this postinstall as shipped does nothing.</p>
+  <div class="callout">It is still rated High. All the scaffolding for a dropper is in place, and two small edits (flip <code>false</code>, swap the string) would make it live. Because the lockfile has no integrity hash for this package (F-02), npm would not notice if the tarball changed. This rating covers the risk of the package, not a confirmed compromise.</div>
+  <h4>Fix</h4>
+  <ul>
+    <li>Remove <code>colour-utilz</code> from <code>package.json</code>. Find out who added it and why.</li>
+    <li>If it is a genuine internal library, get its source from the owning team, remove the <code>postinstall</code> hook, and republish it under a scoped name (see F-02).</li>
+    <li>If any machine or CI runner ever installed this project, compare the tarball served by <code>packages.example.internal</code> with the on-disk copy. There is no lockfile hash to check against, so a manual comparison is the only way to confirm it matches.</li>
+  </ul>
+</section>
+
+<!-- F-02 -->
+<section class="finding" id="f02">
+  <header><span class="fid">F-02</span><h3><code>colour-utilz</code> is open to dependency confusion and has no integrity pin</h3><span class="badge b-high">High</span></header>
+  <dl class="refs">
+    <dt>Files</dt><dd><code>package-lock.json</code> line 6; <code>package.json</code> line 1. There is no project-level <code>.npmrc</code>.</dd>
+    <dt>Standards</dt><dd>CWE-494 (Download of Code Without Integrity Check), CWE-829; OWASP Top 10:2025 A08 Software or Data Integrity Failures and A03 Software Supply Chain Failures; MITRE ATT&amp;CK Enterprise T1195.001</dd>
+  </dl>
+  <h4>Evidence</h4>
+<pre><code>// package-lock.json, line 6 (no "integrity" field)
+"node_modules/colour-utilz": {"version": "1.0.0", "resolved": "https://packages.example.internal/colour-utilz-1.0.0.tgz"}
+
+GET  https://registry.npmjs.org/colour-utilz                     -> 404 {"error":"Not found"}   (2026-10-14)
+HEAD https://registry.npmjs.org/colour-utilz/-/colour-utilz-1.0.0.tgz -> 404</code></pre>
+  <h4>Risk</h4>
+  <p>The package name is unscoped and unclaimed on the public npm registry, so anyone can publish <code>colour-utilz@1.0.0</code> there. A developer laptop or CI runner where the internal registry is not configured would resolve the name from public npm and run that package's <code>postinstall</code>. The project ships no <code>.npmrc</code>, and regenerating the lockfile has the same effect. This is the "dependency confusion" technique (Alex Birsan, 2021). Separately, the lockfile has no <code>integrity</code> value, so npm cannot detect a swapped tarball, even when it is served by the internal host.</p>
+  <h4>Fix</h4>
+  <ul>
+    <li>Move internal packages to a scope you control, for example <code>@yourorg/colour-utils</code>. Pin that scope to the internal registry in a committed <code>.npmrc</code> (<code>@yourorg:registry=https://packages.example.internal/</code>).</li>
+    <li>Regenerate the lockfile so every entry records an <code>integrity</code> hash.</li>
+    <li>Optionally, reserve the unscoped name on public npm as a placeholder.</li>
+  </ul>
+</section>
+
+<!-- F-03 -->
+<section class="finding" id="f03">
+  <header><span class="fid">F-03</span><h3><code>expresss</code> is a typosquat of <code>express</code>, locked to a version that does not exist</h3><span class="badge b-high">High</span></header>
+  <dl class="refs">
+    <dt>Files</dt><dd><code>package.json</code> line 1 (<code>"expresss": "4.18.2"</code>); <code>package-lock.json</code> line 5</dd>
+    <dt>Standards</dt><dd>CWE-829, CWE-494; OWASP Top 10:2025 A03 Software Supply Chain Failures; MITRE ATT&amp;CK Enterprise T1195.001</dd>
+    <dt>Advisory DBs</dt><dd>No OSV or GitHub Advisory Database record for <code>expresss</code> (any version, including malware advisories)</dd>
+  </dl>
+  <h4>Evidence</h4>
+<pre><code>// package-lock.json, line 5 (no "integrity" field)
+"node_modules/expresss": {"version": "4.18.2", "resolved": "https://registry.npmjs.org/expresss/-/expresss-4.18.2.tgz"}
+
+npm registry, "expresss" (2026-10-14):
+  versions:     ["0.0.0"] only, published 2016-08-15 by a single unrelated maintainer
+  description:  "temp test"; no repository, no README
+HEAD https://registry.npmjs.org/expresss/-/expresss-4.18.2.tgz -> 404</code></pre>
+  <h4>Risk</h4>
+  <ul>
+    <li><strong>Wrong package.</strong> <code>expresss</code> is not Express, so the app is not getting the framework it presumably expects.</li>
+    <li><strong>Copied version number.</strong> The locked version, 4.18.2, matches a real Express release exactly but has never existed under <code>expresss</code>. Copying the real package's version number is a common typosquat trait. The lockfile was hand-edited or produced by something other than the public registry.</li>
+    <li><strong>Open slot.</strong> 4.18.2 has never been published under this name, so npm would accept a new upload of it. Whoever controls the <code>expresss</code> name, or takes it over, could publish that version. This project would then install it without any integrity check, including any install scripts. Today, <code>npm ci</code> would simply fail with a 404.</li>
+  </ul>
+  <h4>Fix</h4>
+  <p>Replace it with the real package, either <code>"express": "^4.22.3"</code> (latest 4.x) or <code>"^5.3.0"</code>. Search the source for <code>require('expresss')</code> or <code>from 'expresss'</code>. Do not just correct the spelling and keep 4.18.2 (see F-06).</p>
+</section>
+
+<!-- F-04 -->
+<section class="finding" id="f04">
+  <header><span class="fid">F-04</span><h3><code>lodash@4.17.15</code> has 6 known vulnerabilities</h3><span class="badge b-high">High</span></header>
+  <dl class="refs">
+    <dt>Files</dt><dd><code>package.json</code> line 1; <code>package-lock.json</code> line 4. The lockfile integrity <code>sha512-8xOcRHvC…NbA1A==</code> matches the npm registry exactly, so the package is authentic, just outdated.</dd>
+    <dt>Standards</dt><dd>OWASP Top 10:2025 A03 Software Supply Chain Failures (successor of A06:2021 Vulnerable and Outdated Components); CVSS v3.1; CWE IDs per row below</dd>
+    <dt>Sources</dt><dd>OSV.dev API v1; GitHub Advisory Database; CISA KEV catalog 2026.10.13 (none listed)</dd>
+  </dl>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Advisory</th><th>CVE</th><th>Issue</th><th>CWE</th><th>CVSS v3.1</th><th>Fixed in</th></tr></thead>
+    <tbody>
+      <tr><td>GHSA-r5fr-rjxr-66jc</td><td>CVE-2026-4800</td><td>Code injection through <code>_.template</code> <code>options.imports</code> key names. Bypasses the CVE-2021-23337 fix.</td><td>CWE-94</td><td><span class="badge b-high">8.1 High</span><br><span class="note">AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H</span></td><td>4.18.0</td></tr>
+      <tr><td>GHSA-p6mc-m468-83gw</td><td>CVE-2020-8203</td><td>Prototype pollution in <code>pick</code>, <code>set</code>, <code>setWith</code>, <code>update</code>, <code>updateWith</code> and <code>zipObjectDeep</code></td><td>CWE-1321, CWE-770</td><td><span class="badge b-high">7.4 High</span><br><span class="note">AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H</span></td><td>4.17.19</td></tr>
+      <tr><td>GHSA-35jh-r3h4-6jhm</td><td>CVE-2021-23337</td><td>Command injection through <code>_.template</code> (<code>variable</code> option)</td><td>CWE-77, CWE-94</td><td><span class="badge b-high">7.2 High</span><br><span class="note">AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H</span></td><td>4.17.21</td></tr>
+      <tr><td>GHSA-xxjr-mmjv-4gpg</td><td>CVE-2025-13465</td><td>Prototype pollution (deleting properties) in <code>_.unset</code> and <code>_.omit</code></td><td>CWE-1321</td><td><span class="badge b-med">6.5 Medium</span><br><span class="note">AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L</span></td><td>4.17.23</td></tr>
+      <tr><td>GHSA-f23m-r3pf-42rh</td><td>CVE-2026-2950</td><td>Bypass of the CVE-2025-13465 fix using array-wrapped path segments</td><td>CWE-1321</td><td><span class="badge b-med">6.5 Medium</span><br><span class="note">AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L</span></td><td>4.18.0</td></tr>
+      <tr><td>GHSA-29mw-wpgm-hmr9</td><td>CVE-2020-28500</td><td>ReDoS in <code>toNumber</code>, <code>trim</code> and <code>trimEnd</code></td><td>CWE-1333, CWE-400</td><td><span class="badge b-med">5.3 Medium</span><br><span class="note">AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</span></td><td>4.17.21</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>Exploitability:</strong> none of the six CVEs is in CISA KEV. CVE-2021-23337 has the highest EPSS score (0.213, as reported by GitHub on 2026-10-14). These bugs matter only if the application passes untrusted input to the affected functions. The folder has no application source, so I could not confirm whether they are reachable. Treat them as reachable until the code is checked.</p>
+  <h4>Fix</h4>
+  <p>Upgrade to <code>"lodash": "^4.18.1"</code> (current latest). Any version from 4.18.0 up clears all six advisories, and OSV reports no advisories for 4.18.0 or 4.18.1.</p>
+</section>
+
+<!-- F-05 -->
+<section class="finding" id="f05">
+  <header><span class="fid">F-05</span><h3>The lockfile and the installed tree disagree, and two of three entries have no integrity hash</h3><span class="badge b-low">Low</span></header>
+  <dl class="refs">
+    <dt>Files</dt><dd><code>package-lock.json</code> lines 4–6; <code>node_modules/</code></dd>
+    <dt>Standards</dt><dd>CWE-353 (Missing Support for Integrity Check); OWASP Top 10:2025 A08 Software or Data Integrity Failures</dd>
+  </dl>
+  <ul>
+    <li><code>node_modules/</code> contains only <code>colour-utilz</code>. <code>lodash</code> and <code>expresss</code> are locked but not installed.</li>
+    <li>The installed <code>colour-utilz</code> declares a <code>postinstall</code> script, but its lockfile entry has no <code>"hasInstallScript": true</code>. npm records that flag in lockfileVersion 2 and 3, so the installed package and the lockfile disagree. Either the package changed after the lockfile was written, or the lockfile was edited by hand.</li>
+    <li><code>expresss</code> and <code>colour-utilz</code> have no <code>integrity</code> field, so nothing ties those entries to specific tarball contents.</li>
+  </ul>
+  <h4>Fix</h4>
+  <p>After applying F-01 to F-04, delete <code>node_modules/</code> and the lockfile. Regenerate them with <code>npm install --ignore-scripts</code>. Review the diff, checking that every entry has <code>integrity</code> and resolves from an expected host, then commit.</p>
+</section>
+
+<!-- F-06 -->
+<section class="finding" id="f06">
+  <header><span class="fid">F-06</span><h3>If the intent was <code>express@4.18.2</code>, that version is outdated too</h3><span class="badge b-info">Info</span></header>
+  <dl class="refs">
+    <dt>Files</dt><dd><code>package.json</code> line 1 (the version that would be kept if only the name were corrected)</dd>
+    <dt>Standards</dt><dd>OWASP Top 10:2025 A03; CVSS v3.1</dd>
+  </dl>
+  <p>Express is not installed today, so this is not a live finding. It matters when fixing F-03.</p>
+  <ul>
+    <li><code>express@4.18.2</code> itself: GHSA-rv95-896h-c2vc / CVE-2024-29041 (open redirect, CWE-601, CVSS 6.1 Medium, fixed in 4.19.2) and GHSA-qw6h-vgh9-j6wx / CVE-2024-43796 (XSS through <code>res.redirect()</code>, CWE-79, CVSS 5.0 Low, fixed in 4.20.0).</li>
+    <li>Its exact-pinned dependencies add 11 more OSV advisories: <code>body-parser@1.20.1</code> (2), <code>path-to-regexp@0.1.7</code> (3), <code>qs@6.11.0</code> (3), <code>send@0.18.0</code>, <code>serve-static@1.15.0</code> and <code>cookie@0.5.0</code> (1 each).</li>
+    <li>OSV lists no advisories for <code>express@4.22.3</code> or <code>express@5.3.0</code>. After reinstalling, run <code>npm audit</code> to check the resolved transitive tree.</li>
+  </ul>
+</section>
+
+<h2>Recommended actions</h2>
+<ol>
+  <li><strong>Now:</strong> do not run <code>npm install</code> or <code>npm ci</code> on this project until it is fixed. If you have to, add <code>--ignore-scripts</code>.</li>
+  <li>Remove <code>colour-utilz</code> and find out where it came from (F-01, F-02).</li>
+  <li>Replace <code>expresss</code> with <code>express</code> <code>^4.22.3</code> or <code>^5.3.0</code> (F-03, F-06).</li>
+  <li>Upgrade <code>lodash</code> to <code>^4.18.1</code> (F-04).</li>
+  <li>Regenerate the lockfile cleanly, then run <code>npm audit</code> and <code>npm audit signatures</code> (F-05).</li>
+  <li>Hardening: commit an <code>.npmrc</code> with <code>ignore-scripts=true</code> and allow install scripts only where needed. Keep internal packages under a scope. In CI, fail the build when lockfile entries lack <code>integrity</code> or resolve from unexpected hosts. Turn on automated dependency alerts (Dependabot or OSV-Scanner).</li>
+</ol>
+<p>A corrected <code>package.json</code> would look like this, assuming <code>colour-utilz</code> is not actually needed:</p>
+<pre><code>{"name": "fixture-app", "version": "1.0.0",
+ "dependencies": {"express": "^4.22.3", "lodash": "^4.18.1"}}</code></pre>
+
+<h2>Scope, method and limits</h2>
+<ul>
+  <li><strong>Files reviewed (5):</strong> <code>package.json</code>, <code>package-lock.json</code>, and <code>node_modules/colour-utilz/{package.json, index.js, setup.js}</code>. The SHA-256 of each file matched the workspace manifest <code>fixtures.sha256</code>.</li>
+  <li><strong>No execution:</strong> nothing from the target was installed, built or run. The base64 string was decoded as text with <code>base64 -d</code>.</li>
+  <li><strong>Sources queried on 2026-10-14:</strong> OSV.dev API v1 (<code>/v1/query</code>), GitHub Advisory Database REST API (<code>/advisories</code>), the public npm registry (<code>registry.npmjs.org</code>), and the CISA Known Exploited Vulnerabilities catalog (version 2026.10.13). The raw responses are in <code>evidence/</code> next to this report.</li>
+  <li><strong>Limits:</strong>
+    <ul>
+      <li>The folder has no application source, so reachability of the lodash CVEs is unknown.</li>
+      <li>User- and CI-level npm configuration is unknown.</li>
+      <li><code>packages.example.internal</code> is an internal host and was not contacted.</li>
+      <li>"No advisory found" in OSV or GHSA does not mean a package is safe.</li>
+      <li>Supply-chain severities are my own judgement, not CVSS scores.</li>
+    </ul>
+  </li>
+</ul>
+
+<footer>Dependency audit of shop-frontend · 2026-10-14 · Static analysis only. No code from the target was executed.</footer>
+</main>
+</body>
+</html>

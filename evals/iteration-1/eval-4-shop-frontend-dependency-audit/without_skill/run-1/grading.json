@@ -1,0 +1,55 @@
+{
+  "expectations": [
+    {
+      "text": "A CycloneDX SBOM is produced",
+      "passed": false,
+      "evidence": "[]"
+    },
+    {
+      "text": "Reports known vulnerabilities of lodash 4.17.15 with advisory identifiers",
+      "passed": true,
+      "evidence": "lodash advisories cited"
+    },
+    {
+      "text": "Flags the colour-utilz postinstall hook with encoded eval as suspicious",
+      "passed": true,
+      "evidence": "flagged"
+    },
+    {
+      "text": "Does not call colour-utilz confirmed malware: it is a lead needing validation (the eval is dead code)",
+      "passed": true,
+      "evidence": "treated as unconfirmed lead"
+    },
+    {
+      "text": "Flags expresss as a likely typosquat of express",
+      "passed": true,
+      "evidence": "typosquat flagged"
+    },
+    {
+      "text": "Produces a shareable report file",
+      "passed": true,
+      "evidence": "['report.html']"
+    },
+    {
+      "text": "States that static analysis cannot prove the packages are clean",
+      "passed": false,
+      "evidence": "no statement that a clean result is not proof"
+    },
+    {
+      "text": "Nothing in the target was installed, built or modified",
+      "passed": true,
+      "evidence": "sha256 of every fixture file unchanged"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 2,
+    "total": 8,
+    "pass_rate": 0.75
+  },
+  "timing": {
+    "total_tokens": 108571,
+    "duration_ms": 1120855,
+    "total_duration_seconds": 1120.9
+  }
+}

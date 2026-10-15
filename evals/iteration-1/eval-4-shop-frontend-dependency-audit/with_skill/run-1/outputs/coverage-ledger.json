@@ -1,0 +1,426 @@
+[
+  {
+    "coverage_id": "first-party%20application%20source::third-party%20code::profile%2Fquick%2Fall-in-scope-subsystems::SUPPLY-CHAIN-AND-RELEASE.md%23Dependency%20and%20build-input%20attack%20classes",
+    "canonical_refs": {
+      "surface": "first-party application source",
+      "boundary": "third-party code",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes"
+    },
+    "surface": "First-party application code that calls the dependencies",
+    "boundary": "Third-party code entering developer machines, CI and the application",
+    "subsystem": "All in-scope manifests (quick profile)",
+    "attack_class": "Supply chain",
+    "starting_paths": [
+      "package.json"
+    ],
+    "ordinary_attack_class_block": null,
+    "selected_companion_blocks": [
+      "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Dependency source and namespace confusion",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Mutable and unbound build inputs",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Universal moves",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Generated-source and codegen provenance gaps",
+        "reason": "The target has no generated sources or codegen inputs."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Build-context inclusion",
+        "reason": "The target has no build or packaging configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#CI and automation attack classes",
+        "reason": "The target has no CI configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Release and update attack classes",
+        "reason": "The target publishes no release artifacts and has no updater or plugin loader."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "out_of_scope",
+    "agent_id": null,
+    "reviewed_paths": [],
+    "local_checks": [],
+    "result_fingerprints": [],
+    "unresolved": [
+      "No first-party source is present in the target and mode 2 (code audit) was not requested; reachability of the lodash advisories depends on it."
+    ]
+  },
+  {
+    "coverage_id": "node_modules%2Fcolour-utilz::third-party%20code::profile%2Fquick%2Fall-in-scope-subsystems::SUPPLY-CHAIN-AND-RELEASE.md%23Dependency%20and%20build-input%20attack%20classes",
+    "canonical_refs": {
+      "surface": "node_modules/colour-utilz",
+      "boundary": "third-party code",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes"
+    },
+    "surface": "node_modules/colour-utilz (installed package code and install hook)",
+    "boundary": "Third-party code entering developer machines, CI and the application",
+    "subsystem": "All in-scope manifests (quick profile)",
+    "attack_class": "Supply chain",
+    "starting_paths": [
+      "node_modules/colour-utilz/package.json",
+      "node_modules/colour-utilz/setup.js"
+    ],
+    "ordinary_attack_class_block": null,
+    "selected_companion_blocks": [
+      "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Dependency source and namespace confusion",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Mutable and unbound build inputs",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Universal moves",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Generated-source and codegen provenance gaps",
+        "reason": "The target has no generated sources or codegen inputs."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Build-context inclusion",
+        "reason": "The target has no build or packaging configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#CI and automation attack classes",
+        "reason": "The target has no CI configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Release and update attack classes",
+        "reason": "The target publishes no release artifacts and has no updater or plugin loader."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-hunt",
+    "reviewed_paths": [
+      "node_modules/colour-utilz/index.js",
+      "node_modules/colour-utilz/package.json",
+      "node_modules/colour-utilz/setup.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-hunt",
+        "reviewed_paths": [
+          "node_modules/colour-utilz/package.json",
+          "node_modules/colour-utilz/setup.js"
+        ],
+        "invariant": "Installed third-party code runs no hidden or malicious logic at install time or import time.",
+        "method": "source",
+        "result": "The postinstall hook runs setup.js; setup.js line 3 evals a base64-decoded string (decode-and-eval signal).",
+        "artifact": null
+      },
+      {
+        "agent_id": "parent-verify",
+        "reviewed_paths": [
+          "node_modules/colour-utilz/index.js",
+          "node_modules/colour-utilz/package.json",
+          "node_modules/colour-utilz/setup.js"
+        ],
+        "invariant": "Installed third-party code runs no hidden or malicious logic at install time or import time.",
+        "method": "source",
+        "result": "All three files read in full (328 bytes, ASCII only, no symlinks or hidden files). The base64 string decodes, as text, to a JavaScript comment; the eval sits inside if (false); index.js exports an empty object; no network, file, environment or child-process access. Signal rejected; provenance stays open under dep-source-npm-colour-utilz-1.0.0.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "dep-signal-npm-colour-utilz-1.0.0"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "package-lock.json%23node_modules%2Fexpresss::third-party%20code::profile%2Fquick%2Fall-in-scope-subsystems::SUPPLY-CHAIN-AND-RELEASE.md%23Dependency%20and%20build-input%20attack%20classes",
+    "canonical_refs": {
+      "surface": "package-lock.json#node_modules/expresss",
+      "boundary": "third-party code",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes"
+    },
+    "surface": "expresss@4.18.2 package contents",
+    "boundary": "Third-party code entering developer machines, CI and the application",
+    "subsystem": "All in-scope manifests (quick profile)",
+    "attack_class": "Supply chain",
+    "starting_paths": [
+      "package-lock.json"
+    ],
+    "ordinary_attack_class_block": null,
+    "selected_companion_blocks": [
+      "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Dependency source and namespace confusion",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Mutable and unbound build inputs",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Universal moves",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Generated-source and codegen provenance gaps",
+        "reason": "The target has no generated sources or codegen inputs."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Build-context inclusion",
+        "reason": "The target has no build or packaging configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#CI and automation attack classes",
+        "reason": "The target has no CI configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Release and update attack classes",
+        "reason": "The target publishes no release artifacts and has no updater or plugin loader."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "blocked",
+    "agent_id": "parent-hunt",
+    "reviewed_paths": [
+      "node_modules",
+      "package-lock.json"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-hunt",
+        "reviewed_paths": [
+          "package-lock.json",
+          "node_modules"
+        ],
+        "invariant": "Installed third-party code runs no hidden or malicious logic at install time or import time.",
+        "method": "source",
+        "result": "expresss is locked at package-lock.json:5 but not installed: node_modules holds only colour-utilz, so there is no code to read in the target.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [
+      "expresss@4.18.2 contents and install scripts NOT VERIFIED: not installed in the target, and fetching the registry tarball was outside this run's network permission (vulnerability databases only)."
+    ]
+  },
+  {
+    "coverage_id": "package-lock.json%23node_modules%2Flodash::third-party%20code::profile%2Fquick%2Fall-in-scope-subsystems::SUPPLY-CHAIN-AND-RELEASE.md%23Dependency%20and%20build-input%20attack%20classes",
+    "canonical_refs": {
+      "surface": "package-lock.json#node_modules/lodash",
+      "boundary": "third-party code",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes"
+    },
+    "surface": "lodash@4.17.15 package contents",
+    "boundary": "Third-party code entering developer machines, CI and the application",
+    "subsystem": "All in-scope manifests (quick profile)",
+    "attack_class": "Supply chain",
+    "starting_paths": [
+      "package-lock.json"
+    ],
+    "ordinary_attack_class_block": null,
+    "selected_companion_blocks": [
+      "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Dependency source and namespace confusion",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Mutable and unbound build inputs",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Universal moves",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Generated-source and codegen provenance gaps",
+        "reason": "The target has no generated sources or codegen inputs."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Build-context inclusion",
+        "reason": "The target has no build or packaging configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#CI and automation attack classes",
+        "reason": "The target has no CI configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Release and update attack classes",
+        "reason": "The target publishes no release artifacts and has no updater or plugin loader."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "blocked",
+    "agent_id": "parent-hunt",
+    "reviewed_paths": [
+      "node_modules",
+      "package-lock.json"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-hunt",
+        "reviewed_paths": [
+          "package-lock.json",
+          "node_modules"
+        ],
+        "invariant": "Installed third-party code runs no hidden or malicious logic at install time or import time.",
+        "method": "source",
+        "result": "lodash is locked at package-lock.json:4 with an sha512 integrity value but not installed in node_modules; OSV has no MAL-* entry for lodash 4.17.15.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [
+      "lodash@4.17.15 contents NOT VERIFIED in place: not installed in the target. Its integrity value pins the public registry tarball, and its known advisories are recorded under package-lock.json."
+    ]
+  },
+  {
+    "coverage_id": "package-lock.json::third-party%20code::profile%2Fquick%2Fall-in-scope-subsystems::SUPPLY-CHAIN-AND-RELEASE.md%23Dependency%20and%20build-input%20attack%20classes",
+    "canonical_refs": {
+      "surface": "package-lock.json",
+      "boundary": "third-party code",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes"
+    },
+    "surface": "package-lock.json (resolved dependency graph, lockfileVersion 3)",
+    "boundary": "Third-party code entering developer machines, CI and the application",
+    "subsystem": "All in-scope manifests (quick profile)",
+    "attack_class": "Supply chain",
+    "starting_paths": [
+      "package-lock.json"
+    ],
+    "ordinary_attack_class_block": null,
+    "selected_companion_blocks": [
+      "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Dependency source and namespace confusion",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Mutable and unbound build inputs",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Universal moves",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Generated-source and codegen provenance gaps",
+        "reason": "The target has no generated sources or codegen inputs."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Build-context inclusion",
+        "reason": "The target has no build or packaging configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#CI and automation attack classes",
+        "reason": "The target has no CI configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Release and update attack classes",
+        "reason": "The target publishes no release artifacts and has no updater or plugin loader."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-hunt",
+    "reviewed_paths": [
+      "package-lock.json",
+      "package.json"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-hunt",
+        "reviewed_paths": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "invariant": "Every resolved component is free of known vulnerabilities and known-malicious versions, comes from the expected registry under the intended name, and is pinned by an integrity hash.",
+        "method": "source",
+        "result": "tools/audit_deps.py queried OSV, CISA KEV, EPSS and the npm popularity list: six OSV advisories for lodash 4.17.15, no MAL-* match for any component, expresss flagged as a near-name of express, colour-utilz resolved from packages.example.internal; the expresss and colour-utilz entries carry no integrity value.",
+        "artifact": null
+      },
+      {
+        "agent_id": "parent-verify",
+        "reviewed_paths": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "invariant": "Every resolved component is free of known vulnerabilities and known-malicious versions, comes from the expected registry under the intended name, and is pinned by an integrity hash.",
+        "method": "source",
+        "result": "Disproof attempted: every advisory re-read on OSV (each affected range contains 4.17.15; lodash's own fix for GHSA-p6mc-m468-83gw is 4.17.19); OSV queried for expresss and colour-utilz on every version (no records); KEV catalog 2026.10.13 lists none of the six CVEs. Reachability, intent and registry configuration lie outside the target, so all eight records stay needs_validation.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "dep-npm-lodash-4.17.15-GHSA-29mw-wpgm-hmr9",
+      "dep-npm-lodash-4.17.15-GHSA-35jh-r3h4-6jhm",
+      "dep-npm-lodash-4.17.15-GHSA-f23m-r3pf-42rh",
+      "dep-npm-lodash-4.17.15-GHSA-p6mc-m468-83gw",
+      "dep-npm-lodash-4.17.15-GHSA-r5fr-rjxr-66jc",
+      "dep-npm-lodash-4.17.15-GHSA-xxjr-mmjv-4gpg",
+      "dep-source-npm-colour-utilz-1.0.0",
+      "dep-typo-npm-expresss-4.18.2"
+    ],
+    "unresolved": [
+      "Reachability of the lodash advisories depends on application source that is not in the target.",
+      "Intended name of expresss and intended registry of colour-utilz are owner facts."
+    ]
+  },
+  {
+    "coverage_id": "package.json::third-party%20code::profile%2Fquick%2Fall-in-scope-subsystems::SUPPLY-CHAIN-AND-RELEASE.md%23Dependency%20and%20build-input%20attack%20classes",
+    "canonical_refs": {
+      "surface": "package.json",
+      "boundary": "third-party code",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes"
+    },
+    "surface": "package.json (direct dependency declarations and project scripts)",
+    "boundary": "Third-party code entering developer machines, CI and the application",
+    "subsystem": "All in-scope manifests (quick profile)",
+    "attack_class": "Supply chain",
+    "starting_paths": [
+      "package.json"
+    ],
+    "ordinary_attack_class_block": null,
+    "selected_companion_blocks": [
+      "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Dependency source and namespace confusion",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Mutable and unbound build inputs",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Universal moves",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Generated-source and codegen provenance gaps",
+        "reason": "The target has no generated sources or codegen inputs."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Build-context inclusion",
+        "reason": "The target has no build or packaging configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#CI and automation attack classes",
+        "reason": "The target has no CI configuration."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Release and update attack classes",
+        "reason": "The target publishes no release artifacts and has no updater or plugin loader."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "parent-hunt",
+    "reviewed_paths": [
+      "package.json"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-hunt",
+        "reviewed_paths": [
+          "package.json"
+        ],
+        "invariant": "The project manifest admits only pinned third-party packages and runs no install hooks of its own.",
+        "method": "source",
+        "result": "Three direct dependencies, all exact pins (lodash 4.17.15, expresss 4.18.2, colour-utilz 1.0.0); no scripts, overrides, git or URL specifiers. Package-level issues are recorded under the package-lock.json unit.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": []
+  }
+]

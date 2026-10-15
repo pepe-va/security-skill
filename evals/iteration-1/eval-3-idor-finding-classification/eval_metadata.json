@@ -1,0 +1,15 @@
+{
+  "eval_id": 3,
+  "eval_name": "idor-finding-classification",
+  "prompt": "Pentest finding to classify: on our REST API, GET /api/v1/orders/{id} returns any customer's order (name, address, items) to any logged-in customer who changes the id. Nothing else is exposed and orders can't be modified this way. Give me the CWE, the CVSS 4.0 vector and score, the severity, and exactly which requirements it breaks in which standards.",
+  "assertions": [
+    "Names CWE-639 (Authorization Bypass Through User-Controlled Key) as the weakness",
+    "Gives a CVSS 4.0 base vector matching the facts (AV:N/AC:L/AT:N/PR:L/UI:N, VC:H or L, no integrity, availability or subsequent impact)",
+    "The stated CVSS score is the one FIRST's algorithm gives for the stated vector",
+    "Severity is High (consistent with the cross-customer read)",
+    "Cites the ASVS 5.0.0 object-level authorisation requirement (8.2.2)",
+    "Cites OWASP API Security Top 10 2023 API1 (BOLA)",
+    "Cites OWASP Top 10:2025 A01, not only the 2021 edition",
+    "Cites no identifier that is invented, retired or from a superseded edition"
+  ]
+}

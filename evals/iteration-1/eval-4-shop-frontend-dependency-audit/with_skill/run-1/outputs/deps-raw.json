@@ -1,0 +1,21 @@
+{
+  "target": "shop-frontend",
+  "generated": "2026-10-14T19:12:46+00:00",
+  "manifests": [
+    "package-lock.json",
+    "package.json"
+  ],
+  "components": 3,
+  "by_ecosystem": {
+    "npm": 3
+  },
+  "vulnerable_components": 1,
+  "malware_signals": 1,
+  "typosquat_suspects": 1,
+  "nonstandard_sources": 1,
+  "not_verified": [],
+  "hardening_notes": [],
+  "limits": [
+    "Static analysis finds known malware and indicators; it cannot prove that a package is clean."
+  ]
+}

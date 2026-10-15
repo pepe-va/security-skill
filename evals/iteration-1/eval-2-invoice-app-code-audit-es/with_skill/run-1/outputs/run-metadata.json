@@ -1,0 +1,51 @@
+{
+  "run_id": "run-1",
+  "repo": "invoice-app",
+  "target": "evals/fixtures/invoice-app",
+  "source_ref": "no VCS · sha256(README.md, app.py, auth.py, seed.py) 9028bab187a5eb4979ceccce8e9b77d06611ecd6290de7d59f4e99983d3af256",
+  "profile": "standard",
+  "modes": ["code"],
+  "scope_paths": [],
+  "budget": null,
+  "execution_policy": "sandboxed-source-and-local-only",
+  "selected_companions": [
+    "references/audit/upstream/WEB-PROTOCOL-AND-AUTH.md",
+    "references/audit/upstream/DATA-ISOLATION-AND-LIFECYCLE.md",
+    "references/audit/upstream/RESOURCE-EXHAUSTION-AND-AVAILABILITY.md"
+  ],
+  "prior_runs": [],
+  "shared_file_owners": {
+    "run-metadata.json": "parent",
+    "architecture.md": "parent",
+    "coverage-ledger.json": "parent",
+    "findings.json": "parent",
+    "REPORT.md": "parent",
+    "FINDINGS-DETAIL.md": "parent",
+    "NEEDS-VALIDATION.md": "parent"
+  },
+  "independent_verification": false,
+  "independent_verification_reason": "No isolated sub-agents were used in this run. A single agent performed every role in sequence: hunting closed before validation began, and each candidate was validated by trying to refute it from source and with the bounded local sandbox check. Treat confirmed findings as reviewed by the same agent that found them.",
+  "posture": "A very small WSGI invoicing service with correct password cryptography (PBKDF2-SHA512 600k, random salt, constant-time compare, 256-bit tokens) and parameterized queries on most routes. But two routes break per-user isolation: /invoices/<id> does not bind the invoice to its owner (IDOR) and /search concatenates input into the SQL (injection), letting any authenticated user read everyone else's invoices and password hashes. Transport without TLS is left pending validation because it depends on deployment.",
+  "context": {
+    "system_type": "HTTP API (WSGI service)",
+    "component": "4 routes: POST /login, GET /invoices, GET /invoices/<id>, GET /search",
+    "phase": "review and testing (source-code audit)",
+    "exposure": "Source binds to 127.0.0.1 (loopback); external exposure not determinable from source · logically multi-tenant (invoices carry a per-user owner_id)",
+    "data": "Financial data (invoice amount and IBAN) and credentials (PBKDF2 salt and hash, session tokens) · applicable regimes (tier B, not verifiable here): PCI DSS / GDPR depending on the real data",
+    "identity": "Username/password authentication; session via in-memory bearer token · no roles or admin · effective downstream privileges: direct access to the local SQLite database",
+    "integrations": "None: Python standard library only (wsgiref, sqlite3, hashlib, hmac, secrets); no third-party dependencies, CI or containers",
+    "ai_context": "no",
+    "business_domain": "Moves value (invoicing with IBAN) · MITRE F3 and API6:2023 would be relevant for business-logic abuse, not observed on this surface",
+    "asvs_level": "L2 (multi-user API with financial data; external exposure unconfirmed)",
+    "out_of_scope": "MASVS (not mobile); LLM01-10, ASI, ATLAS, AI RMF, AI 600-1 (no AI/models); ATT&CK ICS (not OT); SLSA, supply-chain SSDF (no pipeline or dependencies); ASVS V3/V17 frontend/WebRTC (no browser); mTLS/JWT/OAuth/SAML/MFA/API keys (not present); tier-B standard text (PCI DSS, ISO, SOC 2) not held by the skill"
+  },
+  "hardening_notes": [
+    "Insufficient session expiration (CWE-613, ASVS 5.0.0 v5.0.0-7.4.1): tokens in the in-memory SESSIONS dict (auth.py:8,20-21) never expire and there is no logout route; a token is valid until the process restarts. Add inactivity and absolute timeouts, and invalidation on logout.",
+    "No brute-force or attempt-limit control on /login (ASVS 5.0.0 v5.0.0-6.3.1): there is no rate limiting or lockout after repeated failures.",
+    "Username-enumeration timing oracle (ASVS 5.0.0 v5.0.0-6.3.8, level L3): at auth.py:18 the PBKDF2 hash is computed only when the user exists (the 'or' short-circuits), so a non-existent user responds much faster than an existing user with a wrong password. Always compute a dummy reference hash to equalize timing.",
+    "Shared demo credentials (CWE-798): seed.py:15 creates alice and bob with the same fixed password 'demo-password'. It is test data ('dummy data only'), but seed.py must never seed a real deployment.",
+    "Reference server not suited for production: wsgiref.simple_server (app.py:62) is single-threaded with no body-size or connection limits; use a production WSGI server behind a proxy with limits and TLS.",
+    "Data minimization: GET /invoices/<id> returns owner_id and iban and /search does not restrict fields; exposing only what is needed reduces the impact of any residual authorization flaw."
+  ],
+  "run_status": "complete"
+}

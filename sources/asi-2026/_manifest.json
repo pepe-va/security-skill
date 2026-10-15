@@ -1,0 +1,30 @@
+{
+  "order": [
+    "Preface_Figure",
+    "OWASP_Top_10_For_Agentic_Applications_2026",
+    "OWASP_Top_10_For_Agentic_Applications_2026_Figure_3",
+    "Table_of_Content",
+    "Letter_from_The_Agentic_Top_10_Leaders",
+    "Agentic_Top_10_At_A_Glance",
+    "Agentic_Top_10_At_A_Glance_Figure_2",
+    "ASI01_Agent_Goal_Hijack",
+    "ASI02_Tool_Misuse_and_Exploitation",
+    "ASI03_Identity_and_Privilege_Abuse",
+    "ASI04_Agentic_Supply_Chain_Vulnerabilities",
+    "ASI05_Unexpected_Code_Execution_RCE",
+    "ASI06_Memory_Context_Poisoning",
+    "ASI07_Insecure_Inter_Agent_Communication",
+    "ASI08_Cascading_Failures",
+    "ASI09_Human_Agent_Trust_Exploitation",
+    "ASI10_Rogue_Agents",
+    "Appendix_A_OWASP_Agentic_AI_Security_Mapping_Matrix",
+    "Appendix_B_Relationship_to_OWASP_CycloneDX_and_AIBOM",
+    "Appendix_C_Mapping_Between_OWASP_Non_Human_Identities_Top_10_2025_and_OWASP_Agentic_AI_Top_10",
+    "Appendix_C_Mapping_Between_OWASP_Non_Human_Identities_Top_10_2025_and_OWASP_Agentic_AI_Top_10_Figure",
+    "Appendix_D_ASI_Agentic_Exploits_Incidents_Tracker",
+    "Appendix_E_Abbreviations",
+    "Acknowledgements",
+    "Acknowledgements_Figure_3",
+    "Project_Supporters"
+  ]
+}

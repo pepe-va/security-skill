@@ -1,0 +1,1134 @@
+{
+  "id": "ASI08",
+  "name": "Cascading Agent Failures",
+  "source_list": "Agentic-Top10-2026",
+  "version": "2026-Q3",
+  "severity": "Critical",
+  "aivss_score": 9.1,
+  "audience": [
+    "security-engineer",
+    "ciso",
+    "compliance",
+    "red-teamer",
+    "ml-engineer",
+    "ot-engineer",
+    "auditor",
+    "developer"
+  ],
+  "mappings": [
+    {
+      "framework": "CoSAI",
+      "control_id": "WS4-AGT-2.4",
+      "control_name": "Agent blast radius containment",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "CoSAI 2025",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CoSAI",
+      "control_id": "WS4-AGT-3.3",
+      "control_name": "Real-time agent monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "CoSAI 2025",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CoSAI",
+      "control_id": "WS4-AGT-1.3",
+      "control_name": "Agent accountability chain",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "CoSAI 2025",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act Code of Practice",
+      "control_id": "CoP-III-C3-M3.3",
+      "control_name": "Systemic risk modelling",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "GPAI CoP Final",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act Code of Practice",
+      "control_id": "CoP-III-C4-M4.1",
+      "control_name": "Risk acceptance criteria and tiers",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "GPAI CoP Final",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act Code of Practice",
+      "control_id": "CoP-III-C9-M9.1",
+      "control_name": "Incident tracking and documentation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "GPAI CoP Final",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0029",
+      "control_name": "Denial of AI Service",
+      "tier": "Foundational",
+      "scope": "Both",
+      "url": "https://atlas.mitre.org/techniques/AML.T0029",
+      "notes": "Triggering cascading failure propagation to exhaust system resources or degrade service",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0034",
+      "control_name": "Cost Harvesting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "url": "https://atlas.mitre.org/techniques/AML.T0034",
+      "notes": "Crafting inputs that trigger runaway agent loops generating unbounded costs",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0049",
+      "control_name": "Exploit Public-Facing Application",
+      "tier": "Foundational",
+      "scope": "Both",
+      "url": "https://atlas.mitre.org/techniques/AML.T0049",
+      "notes": "Exploiting an exposed agent endpoint to introduce a fault that cascades internally",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "MP-4.1",
+      "control_name": "Risk tolerance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade blast radius defined and accepted per deployment — maximum affected systems documented",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "MS-2.5",
+      "control_name": "Testing — adversarial",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade resilience testing — circuit breaker effectiveness, failover scenarios, chaos engineering",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "MG-2.2",
+      "control_name": "Risk response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Incident response for cascade events — defined suspension procedure, process control fallback",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "MG-3.2",
+      "control_name": "Residual risk",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Residual cascade risk documented — BCP coverage for agent cluster failures",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade scenarios in Art. 9 risk management — maximum affected systems, circuit breaker thresholds",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act",
+      "control_id": "Art. 14",
+      "control_name": "Human oversight",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Circuit breakers and kill switches are Art. 14 human oversight mechanisms",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Circuit breakers, fail-safe defaults, and cascade containment architecture are Art. 15 requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.8.16",
+      "control_name": "Monitoring activities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade indicators monitored — correlated failure patterns across agent cluster detected before physical impact",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.5.30",
+      "control_name": "ICT readiness for business continuity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Agent cluster failures covered in BCP — RTO/RPO defined, failover tested, circuit breakers as resilience controls",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.5.24",
+      "control_name": "Information security incident management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade events treated as security incidents — defined response, kill switch activation, operations notification",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.8.13",
+      "control_name": "Backup",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Agent state and configuration backed up — recovery to known-good state after cascade incident",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "A.6.2.3",
+      "control_name": "AI system security",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Circuit breakers and blast radius limits as AIMS security design requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "A.6.2.8",
+      "control_name": "Monitoring of AI systems",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade indicators monitored in operation — correlated failure patterns detected as AIMS monitoring",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "6.1",
+      "control_name": "Risk assessment",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade blast radius in AI risk register — maximum affected systems formally documented and accepted",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "9",
+      "control_name": "Performance evaluation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade incidents in AIMS performance evaluation — circuit breaker effectiveness, recovery times in management review",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "4.1",
+      "control_name": "Establish secure configuration process",
+      "tier": "Foundational",
+      "scope": "Both",
+      "parent": "CIS-4",
+      "notes": "Secure configuration includes circuit breakers and rate limits — cascade prevention as configuration requirement",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "12.6",
+      "control_name": "Use network-based URL filters",
+      "tier": "Foundational",
+      "scope": "Both",
+      "parent": "CIS-12",
+      "notes": "Network controls prevent cascade propagation across agent cluster boundaries",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "17.1",
+      "control_name": "Designate personnel for incident response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "parent": "CIS-17",
+      "notes": "Defined response for cascade events — kill switch activation, process control fallback, operations notification",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "8.6",
+      "control_name": "Collect DNS query audit logs",
+      "tier": "Foundational",
+      "scope": "Both",
+      "parent": "CIS-8",
+      "notes": "Agent traffic monitored — cascade indicators detected before physical impact",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V2.3.1",
+      "control_name": "Verify that the application will only process business logic flows for the same user in the expected sequential step order and without skipping steps.",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade blast radius documented as business logic assumption — maximum affected systems formally accepted",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V2.4.2",
+      "control_name": "Verify that business logic flows require realistic human timing, preventing excessively rapid transaction submissions.",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Circuit breakers as business logic controls — cascade propagation limited by design",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V1.5.3",
+      "control_name": "Verify API rate limiting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify that different parsers used in the application for the same data type (e.g., JSON parsers, XML parsers, URL parsers), perform parsing in a consistent way and use the same character encoding mechanism to avoid issues such as JSON Interoperability vulnerabilities or different URI or file parsing behavior being exploited in Remote File Inclusio",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V16.5.1",
+      "control_name": "Verify that a generic message is returned to the consumer when an unexpected or security-sensitive error occurs, ensuring no exposure of sensitive internal system data such as stack traces, queries, secret keys, and tokens.",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade errors handled gracefully — no sensitive system information in error responses",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 7.6",
+      "control_name": "Denial of service protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Circuit breakers preventing cascade propagation — agent failure contained within defined blast radius",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 7.7",
+      "control_name": "Control system backup",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Agent system failures cannot affect backup and recovery of OT process control",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 6.6",
+      "control_name": "Timely response to events",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade indicators detected and responded to before physical process impact",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 5.1",
+      "control_name": "Information flow restriction",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Agent-to-agent information flows restricted — cascade paths limited by design",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "§5.3",
+      "control_name": "ICS vulnerabilities",
+      "tier": "Advanced",
+      "scope": "Both",
+      "notes": "Safety system bypass is the highest severity OT threat",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
+      "tier": "Advanced",
+      "scope": "Both",
+      "notes": "Safety control inversion must be in OT risk register",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "§7.1",
+      "control_name": "Secure architecture",
+      "tier": "Advanced",
+      "scope": "Both",
+      "notes": "Mandatory: safety function must be independent of AI decision layer",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "PR.IR-01",
+      "control_name": "Infrastructure Resilience",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Networks and environments protected for resilience — circuit breakers, blast radius limits, fail-safe defaults",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "DE.CM-01",
+      "control_name": "Continuous Monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade indicators detected — correlated failure patterns across agent cluster monitored",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "RS.MI-01",
+      "control_name": "Incident Mitigation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Incidents contained — kill switch activated, process control fallback initiated",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "RC.RP-01",
+      "control_name": "Incident Recovery",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Recovery plan includes agent cluster failures — BCP covers AI system availability, RTO/RPO defined",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "A1.1",
+      "control_name": "Availability commitments",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Availability SLA, BCP documentation",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "A1.2",
+      "control_name": "Environmental protections and recovery",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitoring dashboards, alert configuration",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "CC7.3",
+      "control_name": "Security event evaluation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "IR plan covering cascade scenarios, incident records",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "CC3.3",
+      "control_name": "COSO principle 8 — Fraud risk",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Risk register with cascade failure entries",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 10.7",
+      "control_name": "Failures of critical security control systems are detected, reported, and responded to promptly.",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitoring configuration, alert records, detection evidence",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 12.3",
+      "control_name": "Risks to the cardholder data environment are formally identified, evaluated, and managed.",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Risk analysis documentation",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 1.3",
+      "control_name": "Network access to and from the cardholder data environment is restricted.",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Network diagram, segmentation evidence",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 2.2",
+      "control_name": "System components are configured and managed securely.",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Hardening baseline documentation",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "MON",
+      "control_name": "Monitoring and Detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Early warning detection of failure propagation across agent ecosystem — AI-specific anomaly detection for cascade signatures",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "IRS",
+      "control_name": "Incident Response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "AI incident response plan covers cascading agent failures — circuit breaker activation, agent isolation, service recovery procedures",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "L2",
+      "control_name": "Governance and Risk (GOV)",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade failure risk documented in AI risk register — blast radius analysis, circuit breaker design, residual risk",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "L1",
+      "control_name": "General ICT — Business Continuity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Multi-agent deployment covered by BCM — recovery time and recovery point objectives defined per agent tier",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "D-SA",
+      "control_name": "Design / Security Architecture",
+      "tier": "Advanced",
+      "scope": "Both",
+      "notes": "Safety controls must be layered — no single-point bypass path",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "V-AA",
+      "control_name": "Verification / Architecture Assessment",
+      "tier": "Advanced",
+      "scope": "Both",
+      "notes": "Independent review of every safety control bypass scenario",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "V-ST",
+      "control_name": "Verification / Security Testing",
+      "tier": "Advanced",
+      "scope": "Both",
+      "notes": "Dedicated red team exercise targeting guardrail bypass",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-IM",
+      "control_name": "Operations / Incident Management",
+      "tier": "Advanced",
+      "scope": "Both",
+      "notes": "Alert immediately when output validator is disabled or bypassed",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "G-SM",
+      "control_name": "Governance / Strategy & Metrics",
+      "tier": "Advanced",
+      "scope": "Both",
+      "notes": "No production agent deployment without signed safety control architecture review",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-400",
+      "control_name": "Uncontrolled Resource Consumption",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Agent resource consumption not bounded — enables exhaustion propagation across cluster",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-703",
+      "control_name": "Improper Check or Handling of Exceptional Conditions",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Agent failures not caught and handled — exception propagates to downstream agents",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-755",
+      "control_name": "Improper Handling of Exceptional Conditions",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cascade fails because upstream agents do not handle failure conditions gracefully",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-730",
+      "control_name": "OWASP ReDoS",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Regex-based input processing causing runaway computation propagating through pipeline",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-674",
+      "control_name": "Uncontrolled Recursion",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Recursive agent calls without depth limits enabling stack exhaustion cascade",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "AVT",
+      "control_name": "Availability",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Inject failures to verify circuit breaker activates at threshold; test recovery path",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify failure in one agent cluster does not propagate to adjacent clusters",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify monitoring raises alert on cascade indicators before physical impact",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MAESTRO",
+      "control_id": "L7",
+      "control_name": "Agent Ecosystem",
+      "tier": "Foundational",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MAESTRO",
+      "control_id": "L4",
+      "control_name": "Deployment & Infrastructure",
+      "tier": "Foundational",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MAESTRO",
+      "control_id": "L5",
+      "control_name": "Evaluation & Observability",
+      "tier": "Foundational",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "D",
+      "control_name": "Reliability (full domain)",
+      "tier": "Foundational",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "B006",
+      "control_name": "Prevent unauthorized AI agent actions",
+      "tier": "Foundational",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "E",
+      "control_name": "Accountability (full domain)",
+      "tier": "Foundational",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Least privilege per agent — cascade blast radius limited by credential scope",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Unique identity per agent — cascade cannot leverage shared credentials for lateral movement",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Short-lived credentials — cascade event triggers automatic revocation of all affected tokens",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software to meet security requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Ensures cascade prevention is a design-phase requirement",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Validates cascade prevention controls under attack conditions",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.2.1-PS",
+      "control_name": "Assess, prioritise, and remediate vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enables rapid response to cascading automation failures",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Establishes automation boundaries as mandatory requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — inter-agent boundaries",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce boundary protection between agents in multi-agent systems; prevent uncontrolled propagation of failures or attacks across agent boundaries",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — cascade detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor multi-agent systems for cascade indicators — error propagation, resource exhaustion spreading, and anomalous inter-agent communication patterns",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "IR-4",
+      "control_name": "Incident Handling — cascading failure response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define incident handling procedures for cascading agent failures; include automated circuit breakers, agent isolation, and multi-agent system shutdown procedures",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — automation risk",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include cascading automation risk in the organisational risk management strategy; define acceptable multi-agent coupling thresholds and circuit breaker requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 11",
+      "control_name": "Response and Recovery — cascading failure response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define response and recovery procedures for cascading agent failures; include automated circuit breakers, agent isolation, and multi-agent system safe-state transitions",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — cascade indicator monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor multi-agent systems for cascade indicators — error propagation, resource exhaustion spreading, and anomalous inter-agent communication patterns",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 12",
+      "control_name": "Backup Policies — agent system continuity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain backup configurations, memory snapshots, and fallback agent deployments; enable restoration of agent systems to known-good state",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — cascading risk governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include cascading automation risk in ICT risk management; define acceptable multi-agent coupling thresholds and circuit breaker requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.1.3",
+      "control_name": "Verify that a swarm-level kill-switch exists that can halt all active agent instances.",
+      "tier": "Advanced",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c91-execution-budgets-loop-control-and-circuit-breakers",
+      "notes": "Level 2. Swarm-level kill-switch able to halt all active agent instances, the direct containment control for a propagating failure",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.1.2",
+      "control_name": "Verify that per-execution budgets (e.g., max recursion depth, token use, and monetary spend) are configured and enforced by the runtime.",
+      "tier": "Advanced",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c91-execution-budgets-loop-control-and-circuit-breakers",
+      "notes": "Level 1. Per-execution budgets including max recursion depth bound runaway amplification",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.1.1",
+      "control_name": "Verify that per-tool quotas and timeouts (e.g., CPU, memory, disk, egress, and execution time) are enforced.",
+      "tier": "Advanced",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c91-execution-budgets-loop-control-and-circuit-breakers",
+      "notes": "Level 1. Per-tool quotas and timeouts contain a single failing component",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.6.1",
+      "control_name": "Verify that a manual kill-switch mechanism exists to immediately halt AI model inference and outputs.",
+      "tier": "Advanced",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c96-shutdown-and-graceful-degradation",
+      "notes": "Level 1. Manual kill-switch to immediately halt model inference and outputs",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.6.3",
+      "control_name": "Verify that kill-switch commands are implemented through an out-of-band channel that is isolated from the agent runtime.",
+      "tier": "Advanced",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c96-shutdown-and-graceful-degradation",
+      "notes": "Level 3. Kill-switch commands implemented through an out-of-band channel isolated from the agent runtime, so containment survives runtime compromise",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.2.10",
+      "control_name": "Verify that approval gates for multi-step or multi-agent action chains enforce the highest-impact reversibility classification present anywhere in ...",
+      "tier": "Advanced",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c92-high-impact-action-approval-and-irreversibility-controls",
+      "notes": "Level 3. Approval gates for multi-step or multi-agent chains enforce the highest-impact reversibility classification present anywhere in the chain",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.3.8",
+      "control_name": "Verify that policy violations trigger automated tool containment.",
+      "tier": "Advanced",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c93-component-isolation-and-tool-authorization",
+      "notes": "Level 3. Policy violations trigger automated tool containment",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "12.3.4",
+      "control_name": "Verify that unexplained behavioral shifts are distinguished from gradual, expected operational drift.",
+      "tier": "Advanced",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C12-Monitoring-and-Logging.md#c123-model-data-and-performance-drift-detection",
+      "notes": "Level 3. Unexplained behavioral shifts distinguished from gradual expected operational drift, detecting cascade onset",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    }
+  ],
+  "tools": [
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "Resilience4j",
+      "type": "open-source",
+      "url": "https://resilience4j.readme.io"
+    },
+    {
+      "name": "LangSmith",
+      "type": "commercial",
+      "url": "https://smith.langchain.com"
+    },
+    {
+      "name": "Claroty",
+      "type": "commercial",
+      "url": "https://claroty.com"
+    },
+    {
+      "name": "Prometheus",
+      "type": "open-source",
+      "url": "https://prometheus.io"
+    },
+    {
+      "name": "Netflix Hystrix",
+      "type": "open-source",
+      "url": "https://github.com/Netflix/Hystrix"
+    },
+    {
+      "name": "LiteLLM",
+      "type": "open-source",
+      "url": "https://github.com/BerriAI/litellm"
+    },
+    {
+      "name": "Kong Gateway",
+      "type": "open-source",
+      "url": "https://github.com/Kong/kong"
+    },
+    {
+      "name": "Istio",
+      "type": "open-source",
+      "url": "https://istio.io"
+    },
+    {
+      "name": "PagerDuty",
+      "type": "commercial",
+      "url": "https://www.pagerduty.com"
+    },
+    {
+      "name": "AgentOps",
+      "url": "https://github.com/AgentOps-AI/agentops",
+      "type": "open-source"
+    },
+    {
+      "name": "Agentic Security",
+      "url": "https://github.com/msoedov/agentic_security",
+      "type": "open-source"
+    }
+  ],
+  "incidents": [
+    {
+      "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-017"
+    },
+    {
+      "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-020"
+    },
+    {
+      "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-023"
+    },
+    {
+      "name": "Multi-agent financial trading system flash crash — cascading autonomous failures",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-041"
+    },
+    {
+      "name": "Claude computer use red-team: autonomous agent browses to attacker-controlled site and follows instructions",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-069"
+    },
+    {
+      "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-090"
+    },
+    {
+      "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2026,
+      "incident_id": "INC-091"
+    }
+  ],
+  "crossrefs": {
+    "llm_top10": [
+      "LLM06",
+      "LLM01",
+      "LLM05"
+    ],
+    "dsgai_2026": [
+      "DSGAI17",
+      "DSGAI05"
+    ]
+  },
+  "changelog": [
+    {
+      "date": "2026-03-27",
+      "version": "1.0.0",
+      "change": "Initial entry — generated from OWASP GenAI Crosswalk v1.5.1 mapping files",
+      "author": "OWASP GenAI Data Security Initiative"
+    }
+  ]
+}

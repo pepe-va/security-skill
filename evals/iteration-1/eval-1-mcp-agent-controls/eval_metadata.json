@@ -1,0 +1,14 @@
+{
+  "eval_id": 1,
+  "eval_name": "mcp-agent-controls",
+  "prompt": "We're building an internal agent for our engineering org: it reads Jira tickets through an MCP server and can open pull requests on our GitHub with a bot token, so it fixes simple bugs on its own. Before we roll it out to everyone, which security controls apply? Be concrete about what we must do and why.",
+  "assertions": [
+    "Identifies the lethal trifecta (untrusted ticket content + private code/data + outbound action) and requires removing a leg or human approval",
+    "Treats indirect prompt injection through ticket content as a primary threat",
+    "Requires a least-privilege GitHub token enforced by GitHub itself (fine-grained / repo-scoped, no merge, branch protection)",
+    "Treats the MCP server and its tool descriptions as supply chain (pin, verify, review descriptions)",
+    "Authorisation of the agent's actions is decided outside the model (deterministic policy / target system)",
+    "Cites at least 8 distinct standard identifiers that exist in the current version of their standard",
+    "Cites no identifier that is invented, retired or from a superseded edition"
+  ]
+}

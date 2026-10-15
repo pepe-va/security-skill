@@ -1,0 +1,16 @@
+{
+  "name": "cybersec",
+  "owner": {
+    "name": "cybersec-skill maintainers"
+  },
+  "description": "The cybersec-skill security standards skill, as an installable Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "cybersec-skill",
+      "source": "./",
+      "description": "Security consultant and scanner built on 29 official standards, with code and dependency audits.",
+      "category": "security",
+      "keywords": ["security", "appsec", "audit", "standards"]
+    }
+  ]
+}

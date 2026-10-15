@@ -1,0 +1,1027 @@
+{
+  "SAMM-v2-PDF.pdf": {
+    "group": "samm",
+    "url": null,
+    "final_url": null,
+    "bytes": 2644874,
+    "sha256": "6f8abdca2b2f2c52a393ee4f38d3bf333c8760e368c15fd24312303c4a509be3",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "ai-rmf/NIST.AI.100-1.pdf": {
+    "group": "ai-rmf",
+    "url": "https://doi.org/10.6028/NIST.AI.100-1",
+    "final_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+    "bytes": 1946127,
+    "sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "ai-rmf/NIST.AI.600-1.pdf": {
+    "group": "ai-600-1",
+    "url": "https://doi.org/10.6028/NIST.AI.600-1",
+    "final_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+    "bytes": 1174643,
+    "sha256": "6e73620ab6b64e90ef2c04bf0e0d6246185a2f4b1b13cab0df494496cff89b6a",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "ai-rmf/playbook.json": {
+    "group": "ai-rmf",
+    "url": "https://airc.nist.gov/docs/playbook.json",
+    "final_url": "https://airc.nist.gov/docs/playbook.json",
+    "bytes": 413720,
+    "sha256": "aecbee3d3c8820816d295b11d10fb61324b17c25c2ff39ee95e2aa5654555bba",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0x10-api-security-risks.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0x10-api-security-risks.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0x10-api-security-risks.md",
+    "bytes": 2184,
+    "sha256": "4691516bc9053e631f517e6a7800682d6006afdb693d9b8da80500e59ad8ee3c",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0x11-t10.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0x11-t10.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0x11-t10.md",
+    "bytes": 4331,
+    "sha256": "c396a9fc70a64ea6bccba608b482a99750f00f0ad6c283d6fbdd5c4d936040a3",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0xa1-broken-object-level-authorization.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa1-broken-object-level-authorization.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa1-broken-object-level-authorization.md",
+    "bytes": 5340,
+    "sha256": "f5a827897509a005095c306d05e56b8dc713717a78cb5360a2ba4b3c29bf4b2b",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0xa2-broken-authentication.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa2-broken-authentication.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa2-broken-authentication.md",
+    "bytes": 5939,
+    "sha256": "9c15446740599f7bcf709a406ca5627028793e701dd1798ba711a95e9b933971",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0xa3-broken-object-property-level-authorization.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa3-broken-object-property-level-authorization.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa3-broken-object-property-level-authorization.md",
+    "bytes": 5904,
+    "sha256": "d316b89ee31f4689d4a4fafd1b97b62b7d05ac880945a478991ae4abf64a961d",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0xa4-unrestricted-resource-consumption.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa4-unrestricted-resource-consumption.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa4-unrestricted-resource-consumption.md",
+    "bytes": 7447,
+    "sha256": "8df9df403fd0007bc28bd9a9a60e46739c6797b1f7135c7f0f683a7362f40e38",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0xa5-broken-function-level-authorization.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa5-broken-function-level-authorization.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa5-broken-function-level-authorization.md",
+    "bytes": 4858,
+    "sha256": "bdaf0f1f0ec6e527c0c30aaca50a7328ed5b3c386bf6ab86e878116f4a3dd808",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0xa6-unrestricted-access-to-sensitive-business-flows.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa6-unrestricted-access-to-sensitive-business-flows.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa6-unrestricted-access-to-sensitive-business-flows.md",
+    "bytes": 5129,
+    "sha256": "b499f299f634b20557d0f9e335b105d6a738039fe5436b3eb09fe7f74ce63a27",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0xa7-server-side-request-forgery.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa7-server-side-request-forgery.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa7-server-side-request-forgery.md",
+    "bytes": 5818,
+    "sha256": "f1abf2f9d55a0b50a2004e44bc2ea95348c41452197bc5d1bc7dd71b70f52e6c",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0xa8-security-misconfiguration.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa8-security-misconfiguration.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa8-security-misconfiguration.md",
+    "bytes": 6524,
+    "sha256": "13b9629746921f2ccd6fac1364cdfbb50f10d7b11faf668589d9994716c333de",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0xa9-improper-inventory-management.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa9-improper-inventory-management.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa9-improper-inventory-management.md",
+    "bytes": 6122,
+    "sha256": "8d5d7e6130fac2b28f5808508d4f90683d99ae5a37f9d3d0d9714c853c39ca4f",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "api-top10-2023/0xaa-unsafe-consumption-of-apis.md": {
+    "group": "api-top10",
+    "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xaa-unsafe-consumption-of-apis.md",
+    "final_url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xaa-unsafe-consumption-of-apis.md",
+    "bytes": 4989,
+    "sha256": "b5fe9034253ca2d7f7c4c9ef0a6db2b71da1689490911a5bb1f5aad2cab78706",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "asi-2026/ASI01_Agent_Goal_Hijack.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/ASI01_Agent_Goal_Hijack.md",
+    "final_url": null,
+    "bytes": 6551,
+    "sha256": "c1b2501a712fa165d1b12d33ba2d64e7211cbcf2787375b2f456686e6f2c06a8",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/ASI02_Tool_Misuse_and_Exploitation.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/ASI02_Tool_Misuse_and_Exploitation.md",
+    "final_url": null,
+    "bytes": 7539,
+    "sha256": "aa1433ac556cf897b61827284e712ce71ec90dd8b193dd1bbf8000d5256f101e",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/ASI03_Identity_and_Privilege_Abuse.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/ASI03_Identity_and_Privilege_Abuse.md",
+    "final_url": null,
+    "bytes": 7800,
+    "sha256": "a0d2a924e79c856b7e16c1886b0ee72c3e2e15f0c5bad77a9f4e330fcc5bebd7",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/ASI04_Agentic_Supply_Chain_Vulnerabilities.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/ASI04_Agentic_Supply_Chain_Vulnerabilities.md",
+    "final_url": null,
+    "bytes": 7030,
+    "sha256": "6a943e0a2b6c117bf21411afa205ad0ae032f7d2657a6897eed18457507806db",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/ASI05_Unexpected_Code_Execution_RCE.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/ASI05_Unexpected_Code_Execution_RCE.md",
+    "final_url": null,
+    "bytes": 5615,
+    "sha256": "6cb57ad9f312afe23f9a68f85bf44d7e77f73f1570934890b908d117140516c1",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/ASI06_Memory_Context_Poisoning.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/ASI06_Memory_Context_Poisoning.md",
+    "final_url": null,
+    "bytes": 6649,
+    "sha256": "036e2544399cab4ed5702632213e83214597c71dfa45dc67fe73810247f82bee",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/ASI07_Insecure_Inter_Agent_Communication.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/ASI07_Insecure_Inter_Agent_Communication.md",
+    "final_url": null,
+    "bytes": 6798,
+    "sha256": "dcf065d53d1bd40325f59d662897d5550f872b50f229f86b004edcdf8aa6bdca",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/ASI08_Cascading_Failures.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/ASI08_Cascading_Failures.md",
+    "final_url": null,
+    "bytes": 7934,
+    "sha256": "8b6962ba682e7a21071d2c6ac223cc93cb9ee1139638eec90a1e31ef64ca54a0",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/ASI09_Human_Agent_Trust_Exploitation.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/ASI09_Human_Agent_Trust_Exploitation.md",
+    "final_url": null,
+    "bytes": 7523,
+    "sha256": "e2301e0f2294b9f4b719b2f88ebdb0390638d83b7b04e4899a883b7e74349aec",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/ASI10_Rogue_Agents.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/ASI10_Rogue_Agents.md",
+    "final_url": null,
+    "bytes": 5916,
+    "sha256": "de755963f35b13ec61a7d1ea758267879c2e3178035cd35e2591315f18c5c82d",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/Acknowledgements.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/Acknowledgements.md",
+    "final_url": null,
+    "bytes": 2994,
+    "sha256": "3fd05720d2708bd6ed79384048bb71ddaf7c2d207cb19e7cf2dfe96c9794782b",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/Agentic_Top_10_At_A_Glance.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/Agentic_Top_10_At_A_Glance.md",
+    "final_url": null,
+    "bytes": 629,
+    "sha256": "58ceb499b7c92aebe520d4c8b2dfb5f91f9a26e19339f9e7f8c51558338f6edf",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/Appendix_A_OWASP_Agentic_AI_Security_Mapping_Matrix.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/Appendix_A_OWASP_Agentic_AI_Security_Mapping_Matrix.md",
+    "final_url": null,
+    "bytes": 3143,
+    "sha256": "3e4a85ebd73223b35af53b8a86a3824f4c5c333aa68bd1b677c3e5de5d77dcdb",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/Appendix_B_Relationship_to_OWASP_CycloneDX_and_AIBOM.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/Appendix_B_Relationship_to_OWASP_CycloneDX_and_AIBOM.md",
+    "final_url": null,
+    "bytes": 1390,
+    "sha256": "ae09a6677f062c7d9f670b431a347dadc60886a24318415aad4d0b0310d7764f",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/Appendix_C_Mapping_Between_OWASP_Non_Human_Identities_Top_10_2025_and_OWASP_Agentic_AI_Top_10.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/Appendix_C_Mapping_Between_OWASP_Non_Human_Identities_Top_10_2025_and_OWASP_Agentic_AI_Top_10.md",
+    "final_url": null,
+    "bytes": 3078,
+    "sha256": "5897f17ef9abb270ff30ca2030751a668eb05d9a761abe4889cd109a48f079d5",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/Appendix_D_ASI_Agentic_Exploits_Incidents_Tracker.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/Appendix_D_ASI_Agentic_Exploits_Incidents_Tracker.md",
+    "final_url": null,
+    "bytes": 8507,
+    "sha256": "d92cb0b97db4799f10e7d753b476645a16e40cb93c52b7bd011e8edede90d594",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/Appendix_E_Abbreviations.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/Appendix_E_Abbreviations.md",
+    "final_url": null,
+    "bytes": 1858,
+    "sha256": "0da1bb545c2969975fdc67be6e7348e3cc23254899a2d79e3a63bdbe784d2ae5",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/Letter_from_The_Agentic_Top_10_Leaders.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/Letter_from_The_Agentic_Top_10_Leaders.md",
+    "final_url": null,
+    "bytes": 3984,
+    "sha256": "8d7f195b1c215efac479d5a6ddee76e9a4ccf6c7d2ee1ed179db075d6beb7222",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/OWASP_Top_10_For_Agentic_Applications_2026.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/OWASP_Top_10_For_Agentic_Applications_2026.md",
+    "final_url": null,
+    "bytes": 1401,
+    "sha256": "c3d0c2f3dd535fec1d14145b0e5514fabce60b3fe3a18ea0b85634782f55a68b",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/Project_Supporters.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/Project_Supporters.md",
+    "final_url": null,
+    "bytes": 1345,
+    "sha256": "522db6469ed9369fe535476907f2cf97b6366d510eca96c9f9cfaa9f1a1a5e76",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asi-2026/Table_of_Content.md": {
+    "group": "asi",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/translations/main/owasp-top-10-for-agentic-applications-2026-12-6-1/_source/Table_of_Content.md",
+    "final_url": null,
+    "bytes": 2347,
+    "sha256": "1a730517a4557dd86d21524fddf9b4e42e2ca5d6b56c87744be268a0b54b8294",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "asvs.csv": {
+    "group": "asvs",
+    "url": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv",
+    "final_url": null,
+    "bytes": 105100,
+    "sha256": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "atlas-2026.09.yaml": {
+    "group": "atlas",
+    "url": "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml",
+    "final_url": null,
+    "bytes": 841482,
+    "sha256": "935efa93e28294432d3e2f537eb94991ef8d1f8c58341cd360ea3321ddb66688",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "attack/enterprise-attack-20.0.json": {
+    "group": "attack",
+    "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack-20.0.json",
+    "final_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack-20.0.json",
+    "bytes": 55271014,
+    "sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352",
+    "fetched": "2026-10-14",
+    "shipped": false
+  },
+  "attack/ics-attack-20.0.json": {
+    "group": "attack",
+    "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/ics-attack/ics-attack-20.0.json",
+    "final_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/ics-attack/ics-attack-20.0.json",
+    "bytes": 5266683,
+    "sha256": "c9ca0ce523a1b5e512060a390415e8aefe8f6d32c5f82d7de81264960c1e1183",
+    "fetched": "2026-10-14",
+    "shipped": false
+  },
+  "attack/mobile-attack-20.0.json": {
+    "group": "attack",
+    "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/mobile-attack/mobile-attack-20.0.json",
+    "final_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/mobile-attack/mobile-attack-20.0.json",
+    "bytes": 6095145,
+    "sha256": "824f7d8a37e7893b29e4c6ca6d87b5fbbf3b228ec6384f1a69ee20d523ff59e5",
+    "fetched": "2026-10-14",
+    "shipped": false
+  },
+  "cisa-ztmm/zero_trust_maturity_model_v2_508.pdf": {
+    "group": "ztmm",
+    "url": "https://www.cisa.gov/sites/default/files/2023-04/zero_trust_maturity_model_v2_508.pdf",
+    "final_url": "https://www.cisa.gov/sites/default/files/2023-04/zero_trust_maturity_model_v2_508.pdf",
+    "bytes": 1466397,
+    "sha256": "4a95fdff55a64e2468b69af075b7f208176b88c751af92aefc3b7dacad26fdb4",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "crosswalk/ASI01.json": {
+    "group": "crosswalk",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/crosswalk/main/data/entries/ASI01.json",
+    "final_url": null,
+    "bytes": 51058,
+    "sha256": "3e54fac4977de887d7e76600ea7a30ff46b4b993a28816423a135854a1777f5d",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "crosswalk/ASI02.json": {
+    "group": "crosswalk",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/crosswalk/main/data/entries/ASI02.json",
+    "final_url": null,
+    "bytes": 48094,
+    "sha256": "9a6425133564a62cea75a2895733dcff7bef7c1347207d2bccfca757a3444c96",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "crosswalk/ASI03.json": {
+    "group": "crosswalk",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/crosswalk/main/data/entries/ASI03.json",
+    "final_url": null,
+    "bytes": 50609,
+    "sha256": "d1f30ca455147dfd601e228b3d620507e82aa0f09ec5e52e413849f1a182ccc4",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "crosswalk/ASI04.json": {
+    "group": "crosswalk",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/crosswalk/main/data/entries/ASI04.json",
+    "final_url": null,
+    "bytes": 43897,
+    "sha256": "39895876c93d0f424cb47e93f734c04920f5329df7686da2fd8e56b5afbb60f5",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "crosswalk/ASI05.json": {
+    "group": "crosswalk",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/crosswalk/main/data/entries/ASI05.json",
+    "final_url": null,
+    "bytes": 44118,
+    "sha256": "b7a7e6e14836275d45cc68d4062c334b155d1f1bf1f14f797b347ee97c4cd192",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "crosswalk/ASI06.json": {
+    "group": "crosswalk",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/crosswalk/main/data/entries/ASI06.json",
+    "final_url": null,
+    "bytes": 42125,
+    "sha256": "7c54b6f8fb9738a177997772b0c5d78cd1a60c817792b036b489d29586f31099",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "crosswalk/ASI07.json": {
+    "group": "crosswalk",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/crosswalk/main/data/entries/ASI07.json",
+    "final_url": null,
+    "bytes": 40672,
+    "sha256": "d02b13fcb7bb1fe189fc5d47df87f4d4ad816966d14f267abcc22e8df9a1d09a",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "crosswalk/ASI08.json": {
+    "group": "crosswalk",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/crosswalk/main/data/entries/ASI08.json",
+    "final_url": null,
+    "bytes": 40661,
+    "sha256": "26901fa0635393c987aca2c0dcd87630e8f74beff28c2d1012ea30ba402b9dab",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "crosswalk/ASI09.json": {
+    "group": "crosswalk",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/crosswalk/main/data/entries/ASI09.json",
+    "final_url": null,
+    "bytes": 43196,
+    "sha256": "b5db42b06925abb36c9bfa725b829a53d0732115566965cf548867dbfe962f44",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "crosswalk/ASI10.json": {
+    "group": "crosswalk",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/crosswalk/main/data/entries/ASI10.json",
+    "final_url": null,
+    "bytes": 44713,
+    "sha256": "9274a9276f1b10bfa763ac82b19bcc62e29d39f5987d4cd8dd30776c0e2a878d",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  },
+  "csf/csf-2.0.0.json": {
+    "group": "csf",
+    "url": "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/csf_2_0_0/export/json?element=all",
+    "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/csf_2_0_0/export/json?element=all",
+    "bytes": 753380,
+    "sha256": "de36759d2f3f70a0f28ab9a95505259e568467923295a13d510a068939773e5a",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "cvss/calculator/cvss_details.js": {
+    "group": "cvss",
+    "url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/cvss_details.js",
+    "final_url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/cvss_details.js",
+    "bytes": 351,
+    "sha256": "8cb2c30fb503aa87fd0b7332eecbc4491e1f3a36b9188216b10e250fa2608962",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "cvss/calculator/cvss_lookup.js": {
+    "group": "cvss",
+    "url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/cvss_lookup.js",
+    "final_url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/cvss_lookup.js",
+    "bytes": 4638,
+    "sha256": "d533fe625d95e15b7b488a4bf93dab5f7df16b7e38b0c8ee01281d7b31a8165e",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "cvss/calculator/cvss_score.js": {
+    "group": "cvss",
+    "url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/cvss_score.js",
+    "final_url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/cvss_score.js",
+    "bytes": 16097,
+    "sha256": "453ce6767b5c3939b51d1f21315f2649e47b5abeca674be287e94b524472a1bc",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "cvss/calculator/max_composed.js": {
+    "group": "cvss",
+    "url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/max_composed.js",
+    "final_url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/max_composed.js",
+    "bytes": 968,
+    "sha256": "be707cc82c17993a04a84e47b1a8aaa1d0d212b56852254659ce77fd7d959f63",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "cvss/calculator/max_severity.js": {
+    "group": "cvss",
+    "url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/max_severity.js",
+    "final_url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/max_severity.js",
+    "bytes": 371,
+    "sha256": "f838ecb41bfd5114456e7fa7df8a8449ca2735c176867886fa34bd011dee0b24",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "cvss/calculator/metrics.js": {
+    "group": "cvss",
+    "url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/metrics.js",
+    "final_url": "https://raw.githubusercontent.com/FIRSTdotorg/cvss-v4-calculator/main/metrics.js",
+    "bytes": 1263,
+    "sha256": "99ee2643587071bf744cd090c4bb2db58d523ed0276efd809871b00a12985a4c",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "cvss/examples.html": {
+    "group": "cvss",
+    "url": "https://www.first.org/cvss/v4.0/examples",
+    "final_url": "https://www.first.org/cvss/v4.0/examples",
+    "bytes": 228606,
+    "sha256": "c3a723b81993df0950869fb533c024f1d8cc7c3c7601c7eeb8f3ec506a4da8f9",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "cvss/specification-document.html": {
+    "group": "cvss",
+    "url": "https://www.first.org/cvss/v4.0/specification-document",
+    "final_url": "https://www.first.org/cvss/v4.0/specification-document",
+    "bytes": 118046,
+    "sha256": "8cf92a67e68d0e624eb8fc8d86faa243c6393978d0a0f525c6a23aa4e1ca4cd7",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "cwe/2025_cwe_top25.html": {
+    "group": "cwe",
+    "url": "https://cwe.mitre.org/top25/archive/2025/2025_cwe_top25.html",
+    "final_url": "https://cwe.mitre.org/top25/archive/2025/2025_cwe_top25.html",
+    "bytes": 41662,
+    "sha256": "5549e8bdd7b93dfe01f16dd7d646ca79056332564501debccab0026d073c1c87",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "cwe/cwec_latest.xml.zip": {
+    "group": "cwe",
+    "url": "https://cwe.mitre.org/data/xml/cwec_latest.xml.zip",
+    "final_url": "https://cwe.mitre.org/data/xml/cwec_latest.xml.zip",
+    "bytes": 2021351,
+    "sha256": "3976f599e5e5200219a3108bb896d06e2a88fbb293369e1883cb423a5e9d7d50",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "d3fend/d3fend.json": {
+    "group": "d3fend",
+    "url": "https://d3fend.mitre.org/ontologies/d3fend.json",
+    "final_url": "https://d3fend.mitre.org/ontologies/d3fend.json",
+    "bytes": 4833645,
+    "sha256": "e1546d432c6aa64d45b62dd9e9484b0774ae84de7ff3605ff9dd4e20278957bf",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "f3/f3-stix-v1.1.json": {
+    "group": "f3",
+    "url": "https://raw.githubusercontent.com/center-for-threat-informed-defense/fight-fraud-framework/main/public/f3-stix-v1.1.json",
+    "final_url": "https://raw.githubusercontent.com/center-for-threat-informed-defense/fight-fraud-framework/main/public/f3-stix-v1.1.json",
+    "bytes": 196981,
+    "sha256": "40dc99fdca9e52641a7ac1038f59b650e89a2bac3f222df14ad8abf720bed4e4",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "f3/f3-stix-v1.2.json": {
+    "group": "f3",
+    "url": "https://raw.githubusercontent.com/center-for-threat-informed-defense/fight-fraud-framework/main/public/f3-stix-v1.2.json",
+    "final_url": "https://raw.githubusercontent.com/center-for-threat-informed-defense/fight-fraud-framework/main/public/f3-stix-v1.2.json",
+    "bytes": 218333,
+    "sha256": "e42360e8a3dba4314d53a4e56a4594b3f6a1802e19d905a4029a95dce811e35a",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/Appendix_A_Related_Framework_Mappings.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/Appendix_A_Related_Framework_Mappings.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/Appendix_A_Related_Framework_Mappings.md",
+    "bytes": 74693,
+    "sha256": "291bb2f9cd79976ed236265d20816f0cbd395690602dc6c0a67cf4e8c29bd9b7",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/Appendix_B_LLM_Application_Architecture_and_Threat_Modeling.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/Appendix_B_LLM_Application_Architecture_and_Threat_Modeling.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/Appendix_B_LLM_Application_Architecture_and_Threat_Modeling.md",
+    "bytes": 424,
+    "sha256": "c54695cfe6532fbe76ed322202806d8c9796cf22b41fcc11de1661984ea656b7",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM00_Preface.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM00_Preface.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM00_Preface.md",
+    "bytes": 6397,
+    "sha256": "e563f38b1bb6c6b7054ee70eb9a1b92293b6c2007c9ec6a97a7602a97c10c649",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM01_PromptInjection.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM01_PromptInjection.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM01_PromptInjection.md",
+    "bytes": 19879,
+    "sha256": "ff036047755c505e6d7837a0114f6056f8f751a3628061b6711b6eac19e1f8b0",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM02_SensitiveInformationDisclosure.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM02_SensitiveInformationDisclosure.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM02_SensitiveInformationDisclosure.md",
+    "bytes": 12182,
+    "sha256": "009153f4880fdabd79585cf1b74e60e2dfe79668c5581853890aa2bec36ab05e",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM03_ExcessiveAgency.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM03_ExcessiveAgency.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM03_ExcessiveAgency.md",
+    "bytes": 9410,
+    "sha256": "e961d0d9fe8382be4086aaddd65c1fad0d5d53220174493fe8c287f864c0529e",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM04_SupplyChain.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM04_SupplyChain.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM04_SupplyChain.md",
+    "bytes": 12752,
+    "sha256": "b5cb83fe937ecf38b8017918ac90b378da6d9c8ec9e2b485f422c08e4d66ac9e",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM05_DataModelPoisoning.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM05_DataModelPoisoning.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM05_DataModelPoisoning.md",
+    "bytes": 10178,
+    "sha256": "28ba5d86c102c82916066aae4bde2c10605cdb98cca51f572093ba002d2a198d",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM06_UnboundedConsumption.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM06_UnboundedConsumption.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM06_UnboundedConsumption.md",
+    "bytes": 10003,
+    "sha256": "e121147737d4750f89466fe191b5581fe71a822d8e1cfb621ea91d0d6a1dc6d5",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM07_Misinformation.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM07_Misinformation.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM07_Misinformation.md",
+    "bytes": 5109,
+    "sha256": "5686479c061cd2057b9905775ce70fc92b1b26e9daf296928521d56837ad4732",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM08_HiddenContextExposure.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM08_HiddenContextExposure.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM08_HiddenContextExposure.md",
+    "bytes": 8667,
+    "sha256": "e00d214f81757f626510df57e92116bec026b6c31ef7c3fb2bb52b71318c5ffe",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM09_VectorAndEmbeddingWeaknesses.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM09_VectorAndEmbeddingWeaknesses.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM09_VectorAndEmbeddingWeaknesses.md",
+    "bytes": 12339,
+    "sha256": "e1a3aff504a708d46c5dbf1c4bbc9ae05f3206cc6ea8e6e9d544b3f0d0ff7c23",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLM10_ImproperOutputHandling.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM10_ImproperOutputHandling.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLM10_ImproperOutputHandling.md",
+    "bytes": 6705,
+    "sha256": "d61a5ca0eddb38cdd0f485d642ed263c259638e2f1cf82eb1563c064491d67f0",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/LLMZZ_Appendix_AISVS_Mapping.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLMZZ_Appendix_AISVS_Mapping.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/LLMZZ_Appendix_AISVS_Mapping.md",
+    "bytes": 4511,
+    "sha256": "73ca5470c4e949be3f8f3887764b20ff0073668d6d78fba2bdfab55e61bf058e",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "llm-top10-2026/references.md": {
+    "group": "llm-top10",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/references.md",
+    "final_url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/llm-top10/2026/references.md",
+    "bytes": 34564,
+    "sha256": "964e839ee8309cba203a4c22b950ab0fcc5f2e3125d9ae2a5e5983b225bec6d0",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "masvs/OWASP_MASVS-2.1.0.yaml": {
+    "group": "masvs",
+    "url": "https://github.com/OWASP/masvs/releases/download/v2.1.0/OWASP_MASVS.yaml",
+    "final_url": "https://release-assets.githubusercontent.com/github-production-release-asset/67674352/1aab93b0-11b3-45e5-8be9-c28aaf9d14b4?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-14T14%3A21%3A30Z&rscd=attachment%3B+filename%3DOWASP_MASVS.yaml&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-14T13%3A20%3A54Z&ske=2026-10-14T14%3A21%3A30Z&sks=b&skv=2018-11-09&sig=fbCwssnrrlNs8j5UyNkuAVK15BSCztpw663nyCU%2Ffd8%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTk4NTA5NywibmJmIjoxNzkxOTg0Nzk3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.KK9lcV11QANZXU-63NIGPiX4odzLA9dGNwul9n4fBCw&response-content-disposition=attachment%3B%20filename%3DOWASP_MASVS.yaml&response-content-type=application%2Foctet-stream",
+    "bytes": 23244,
+    "sha256": "1175fe92ddb846c327b48f8efbd3fcb0148397cfb1ae0bb5a06f8c169e5e34a8",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "nist-800-53/NIST_SP-800-53_rev5_catalog.json": {
+    "group": "800-53",
+    "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+    "final_url": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+    "bytes": 10442037,
+    "sha256": "01f37cf90ea99d92242c936cbfbdebcc338eef1f71454e2acac36cc56e9bc062",
+    "fetched": "2026-10-14",
+    "shipped": false
+  },
+  "nist-800-63b-4/sp800-63b.html": {
+    "group": "800-63b",
+    "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+    "final_url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+    "bytes": 354118,
+    "sha256": "c8cb8a7d8264d4c3d3c3b5bd42afa48080b001791ea701c3206b33d72e7afac5",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "nist-guides/NIST.SP.800-115.pdf": {
+    "group": "nist-guides",
+    "url": "https://doi.org/10.6028/NIST.SP.800-115",
+    "final_url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf",
+    "bytes": 544047,
+    "sha256": "58e5ed41e5c8ca34ce14fd80b70f118f2c6d613d1647bc307edca30bcc45f063",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "nist-guides/NIST.SP.800-190.pdf": {
+    "group": "nist-guides",
+    "url": "https://doi.org/10.6028/NIST.SP.800-190",
+    "final_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf",
+    "bytes": 666229,
+    "sha256": "0ebad52c4a3aba971b3a707b056e57238d1c4ad8f212dffd461ff9f5fed1bdb6",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "nist-guides/NIST.SP.800-207.pdf": {
+    "group": "nist-guides",
+    "url": "https://doi.org/10.6028/NIST.SP.800-207",
+    "final_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf",
+    "bytes": 966908,
+    "sha256": "0290d6ece24874287316f4bf430fef770aa4ec08a2227c8f2c1e5b2ff975e03d",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "nist-guides/NIST.SP.800-40r4.pdf": {
+    "group": "nist-guides",
+    "url": "https://doi.org/10.6028/NIST.SP.800-40r4",
+    "final_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-40r4.pdf",
+    "bytes": 562944,
+    "sha256": "351f4a828d6c0bc8bf98f25ba3f87ec5add0ed8cf8bb4a6e6cb4e7e4a9731833",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "nist-guides/NIST.SP.800-61r3.pdf": {
+    "group": "nist-guides",
+    "url": "https://doi.org/10.6028/NIST.SP.800-61r3",
+    "final_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+    "bytes": 1040566,
+    "sha256": "e5593d6bb85daecec7e8d9549400c7b3473bcc3f06e469c82218073afa7fba2d",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "nist-guides/NIST.SP.800-86.pdf": {
+    "group": "nist-guides",
+    "url": "https://doi.org/10.6028/NIST.SP.800-86",
+    "final_url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-86.pdf",
+    "bytes": 2818618,
+    "sha256": "ea7eb645bcd3feaf3ab9ea7dfc3c8987a08bf260c40682df1e5e8292bf9fe9b4",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/about.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/about.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/about.md",
+    "bytes": 7866,
+    "sha256": "8a77569a635525cfd036b7847a01f142301ec3ce843f80fa065a892a2d073857",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/assessing-build-platforms.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/assessing-build-platforms.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/assessing-build-platforms.md",
+    "bytes": 11267,
+    "sha256": "792ccdb8adb1936018541e71d5b7ced215382d761068eb4cfd74b96ebd61e05a",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/assessing-source-systems.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/assessing-source-systems.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/assessing-source-systems.md",
+    "bytes": 8775,
+    "sha256": "4d0e4c971d7a9cb4395285a51fe5e99ac9349ff27b85269ce601ac339b6f34ac",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/build-provenance.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/build-provenance.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/build-provenance.md",
+    "bytes": 25746,
+    "sha256": "182ab5cf823c374874136371466ba43f99f0a9ba87a8046757d26a2ed74854a0",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/build-requirements.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/build-requirements.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/build-requirements.md",
+    "bytes": 14795,
+    "sha256": "555e2aa823cc7ba0c2a714f87cea676b1defc899b38cfabaa4648c974fa7a422",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/build-track-basics.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/build-track-basics.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/build-track-basics.md",
+    "bytes": 6469,
+    "sha256": "34b57d8975d02fde8519f857da3fb61bc184d110800d257e4228e0072547ff8f",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/index.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/index.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/index.md",
+    "bytes": 1164,
+    "sha256": "9f5d7a2d247e8a23cfc9d26c152015ba786ba7542384631676ade5cba017465f",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/requirements.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/requirements.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/requirements.md",
+    "bytes": 390,
+    "sha256": "ef9c1fd3906219783389fb10147496cd0c851b73248bc6fa195864a6bfa60f4f",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/source-requirements.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/source-requirements.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/source-requirements.md",
+    "bytes": 32143,
+    "sha256": "3b8a86e436b7dee18514923e8c0e959b28b922c2300aaad564a4dfb00094ae31",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/terminology.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/terminology.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/terminology.md",
+    "bytes": 21224,
+    "sha256": "c306d645caaa060cc9ca5d987a819f2860fec74fccbe7c06e5a55f82ab38818b",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/threats-overview.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/threats-overview.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/threats-overview.md",
+    "bytes": 6949,
+    "sha256": "c18ea2862672465665a697492cdd9514e90c1a0e61475f8f2aee3bcffa919af4",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/threats.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/threats.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/threats.md",
+    "bytes": 48854,
+    "sha256": "2d86d5ed3b2d70771773eb79724ce6cc034ef131ade49ebb48f28a2fe2961cda",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/tracks.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/tracks.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/tracks.md",
+    "bytes": 2580,
+    "sha256": "b5ffe7ec5af5cd5b9aa651886069a7d8030456c3e4e880b23b1e28a01d4c79d7",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/verifying-artifacts.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/verifying-artifacts.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/verifying-artifacts.md",
+    "bytes": 15053,
+    "sha256": "acdfe8f67f1f6ebc66094304491dde776fde01e9f5c14568e1f71e199de2c263",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/verifying-source.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/verifying-source.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/verifying-source.md",
+    "bytes": 8339,
+    "sha256": "d17a7928b157cc0d1f1e62ca73589174bf961735b5fcc459c1848e6d66ace11f",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "slsa-1.2/whats-new.md": {
+    "group": "slsa",
+    "url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/whats-new.md",
+    "final_url": "https://raw.githubusercontent.com/slsa-framework/slsa/v1.2/docs/spec/v1.2/whats-new.md",
+    "bytes": 1166,
+    "sha256": "1a1074f114596850289d7417462949de989914abb2c533cef51de23da54da281",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "ssdf/NIST.SP.800-218A.pdf": {
+    "group": "218a",
+    "url": "https://doi.org/10.6028/NIST.SP.800-218A",
+    "final_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf",
+    "bytes": 650661,
+    "sha256": "e088c8bc75716824dae7c36a987f408364638561d381ed001b5c12254a7b10d8",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "ssdf/sp800-218-1.1.0.json": {
+    "group": "ssdf",
+    "url": "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_218_1_1_0/export/json?element=all",
+    "final_url": "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_218_1_1_0/export/json?element=all",
+    "bytes": 766901,
+    "sha256": "ac74d59adbef7696d57d64dbb7c27bc9ebfb17e78ca2302797d00d781c237658",
+    "fetched": "2026-10-14",
+    "shipped": true
+  },
+  "threats-1.1.pdf": {
+    "group": "threats",
+    "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-Security-Advisor/main/corpus/agentic-top10/companions/Agentic-AI-Threats-and-Mitigations-1.1.pdf",
+    "final_url": null,
+    "bytes": 2398898,
+    "sha256": "65e3bd59f99c411b055c6caf2bac96ab361dff8c010e4bef532a593ce10345ff",
+    "fetched": "2026-10-14",
+    "adopted": true,
+    "shipped": true
+  }
+}

@@ -1,0 +1,1181 @@
+{
+  "id": "ASI06",
+  "name": "Memory and Context Poisoning",
+  "source_list": "Agentic-Top10-2026",
+  "version": "2026-Q3",
+  "severity": "High",
+  "aivss_score": 8.7,
+  "audience": [
+    "security-engineer",
+    "ciso",
+    "compliance",
+    "red-teamer",
+    "ml-engineer",
+    "ot-engineer",
+    "auditor",
+    "developer"
+  ],
+  "mappings": [
+    {
+      "framework": "CoSAI",
+      "control_id": "WS4-AGT-2.3",
+      "control_name": "Continuous behavior validation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "CoSAI 2025",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CoSAI",
+      "control_id": "WS1-SSC-4",
+      "control_name": "Training data supply chain integrity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "CoSAI 2025",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CoSAI",
+      "control_id": "WS2-DEF-5",
+      "control_name": "AI security monitoring and telemetry",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "CoSAI 2025",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act Code of Practice",
+      "control_id": "CoP-III-C2-M2.1",
+      "control_name": "Systemic risk identification process",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "GPAI CoP Final",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act Code of Practice",
+      "control_id": "CoP-III-C3-M3.5",
+      "control_name": "Post-market monitoring and external evaluation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "GPAI CoP Final",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act Code of Practice",
+      "control_id": "CoP-III-C7-M7.5",
+      "control_name": "Material changes to risk landscape",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "GPAI CoP Final",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0070",
+      "control_name": "RAG Poisoning",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://atlas.mitre.org/techniques/AML.T0070",
+      "notes": "Injecting malicious content into agent persistent memory or RAG stores",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0066",
+      "control_name": "Retrieval Content Crafting",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://atlas.mitre.org/techniques/AML.T0066",
+      "notes": "Crafting content whose embeddings bias future retrieval results in attacker's favour",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0020",
+      "control_name": "Backdoor via Poisoned Memory",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://atlas.mitre.org/techniques/AML.T0020",
+      "notes": "Establishing persistent trigger-response patterns in agent memory stores — **DRAFT — not an ATLAS technique name; retarget pending SME review (#93)**",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "GV-1.6",
+      "control_name": "Policies for data privacy",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory treated as sensitive data asset — classification, access controls, retention policy",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "MP-2.3",
+      "control_name": "Risk categorisation",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory poisoning risk mapped per agent — memory stores, trust levels, access controls, TTL documented",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "MS-2.5",
+      "control_name": "Testing — adversarial",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Adversarial testing of memory integrity — poisoning scenarios, anomaly detection effectiveness",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "MG-2.4",
+      "control_name": "Risk response — data",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Response for confirmed memory poisoning — audit procedure, content purge, operational impact assessment",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act",
+      "control_id": "Art. 10",
+      "control_name": "Data and data governance",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory governance — classification, access controls, integrity validation, retention — is an Art. 10 requirement",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory integrity monitoring and access controls are Art. 15 requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory anomaly detection in post-market monitoring programme",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.8.3",
+      "control_name": "Information access restriction",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Access controls on all agent memory stores — only agent and designated administrators can write",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.8.24",
+      "control_name": "Use of cryptography",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory stores encrypted at rest — embeddings, long-term memory, operational knowledge base",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.8.16",
+      "control_name": "Monitoring activities",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory store access and content monitored — anomalous write patterns, statistical integrity checks",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.8.12",
+      "control_name": "Data leakage prevention",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "DLP on memory write paths — credential patterns, sensitive content detected before memory write",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "A.7.2",
+      "control_name": "Data quality",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory content quality requirements — access controls, integrity verification, TTL as data quality controls",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "A.7.3",
+      "control_name": "Data provenance and characteristics",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory provenance tracked — source, write access controls, TTL, modification history in AIMS",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "A.6.2.3",
+      "control_name": "AI system security",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory store access controls and integrity monitoring as AIMS security design requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "A.6.2.8",
+      "control_name": "Monitoring of AI systems",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory integrity monitored in operation — anomalous write patterns, content integrity checks as AIMS monitoring",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "3.11",
+      "control_name": "Encrypt sensitive data at rest",
+      "tier": "Hardening",
+      "scope": "Both",
+      "parent": "CIS-3",
+      "notes": "Agent memory stores encrypted at rest — embeddings, long-term memory, operational knowledge",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "8.2",
+      "control_name": "Collect audit logs",
+      "tier": "Hardening",
+      "scope": "Both",
+      "parent": "CIS-8",
+      "notes": "Memory write operations logged — who or what wrote, when, content hash",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "16.1",
+      "control_name": "Establish secure development standards",
+      "tier": "Hardening",
+      "scope": "Both",
+      "parent": "CIS-16",
+      "notes": "Memory write validation as secure development requirement — untrusted sources cannot write directly",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "13.3",
+      "control_name": "Deploy a network-based intrusion detection system",
+      "tier": "Hardening",
+      "scope": "Both",
+      "parent": "CIS-13",
+      "notes": "Memory store access monitored — bulk read, anomalous write patterns detected",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V15.3.7",
+      "control_name": "Verify that the application has defenses against HTTP parameter pollution attacks, particularly if the application framework makes no distinction about the source of request parameters (query string, body parameters, cookies, or header fields).",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "All content entering agent memory validated — injection patterns rejected at write boundary",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V8.2.1",
+      "control_name": "Verify that the application ensures that function-level access is restricted to consumers with explicit permissions.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory write access restricted to minimum required sources — only agent and authorised administrators can write",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V14.1.1",
+      "control_name": "Verify that all sensitive data created and processed by the application has been identified and classified into protection levels. This includes data that is only encoded and therefore easily decoded, such as Base64 strings or the plaintext payload inside a JWT. Protection levels need to take into account any data protection and privacy regulations and standards which the application is required to comply with.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory stores encrypted at rest — embeddings, long-term memory",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V5.2.1",
+      "control_name": "Verify that the application will only accept files of a size which it can process without causing a loss of performance or a denial of service attack.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Content entering agent memory scanned — adversarial content, injection patterns detected before write",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 3.3",
+      "control_name": "Software and information integrity",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory content validated for integrity — unauthorised modifications detected",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 3.7",
+      "control_name": "Software and information integrity (monitoring)",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Continuous monitoring of agent memory for anomalous content patterns or unexpected modifications",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 6.1",
+      "control_name": "Timely response to events",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory poisoning indicators treated as security events — agent suspended, memory audited, human notified",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 3.1",
+      "control_name": "Software and information integrity (baseline)",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory baseline established and maintained — deviations from baseline detectable",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "§5.4",
+      "control_name": "Data confidentiality risks in OT",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "OT data exfiltration via compromised automation",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Assess outbound data paths from agent",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "§7.3",
+      "control_name": "Network monitoring",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Monitor all outbound data from OT zone",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "PR.DS-01",
+      "control_name": "Data Security",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory stores protected at rest — access controls, encryption, integrity verification",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "DE.CM-09",
+      "control_name": "Continuous Monitoring",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Monitoring for anomalous data — memory content integrity checks, unusual write patterns detected",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "ID.AM-08",
+      "control_name": "Asset Management",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory stores inventoried as data assets — content classification, access controls, TTL documented",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "RS.AN-03",
+      "control_name": "Incident Analysis",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory poisoning incidents analysed — affected sessions identified, operational decisions influenced reviewed",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "CC3.3",
+      "control_name": "COSO principle 8 — Fraud risk",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Risk register with memory poisoning entries",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "CC7.2",
+      "control_name": "Event monitoring",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory access log, anomaly alert configuration",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "PI1.1",
+      "control_name": "Processing integrity — input completeness and accuracy",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Integrity verification configuration",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "CC5.2",
+      "control_name": "COSO principle 11 — Technology controls",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory access policy, write access controls",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 3.4",
+      "control_name": "Access to displays of full PAN and ability to copy PAN is restricted.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Memory store review, PAN protection evidence",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 3.5",
+      "control_name": "Primary account number (PAN) is secured wherever it is stored.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Encryption configuration, key management records",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 6.5",
+      "control_name": "Secure system changes",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Change management records",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 11.3",
+      "control_name": "External and internal vulnerabilities are regularly identified, prioritized, and addressed.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Pen test report",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "L2",
+      "control_name": "Data and Model Security (DMS)",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory stores classified and protected as sensitive AI data assets — integrity verification, access controls, immutable audit log",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "L2",
+      "control_name": "AI System Integrity (ASI)",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "AI system integrity verification includes memory poisoning testing — adversarial inputs designed to corrupt persistent agent state",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "L2",
+      "control_name": "Monitoring and Detection (MON)",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory stores monitored for unexpected modifications — drift detection on persistent context",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "L1",
+      "control_name": "General ICT — Data Protection",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent memory stores access-controlled — only the owning agent process has write access",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "D-TA",
+      "control_name": "Design / Threat Assessment",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Enumerate all outbound data paths from agent: tools, APIs, generated output",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "V-ST",
+      "control_name": "Verification / Security Testing",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Test whether agent can be instructed to exfiltrate via each outbound channel",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-IM",
+      "control_name": "Operations / Incident Management",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Alert on unexpected data volumes in tool calls or API responses",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-OM",
+      "control_name": "Operations / Operational Management",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Apply DLP controls to all agent-generated output before delivery",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "D-SA",
+      "control_name": "Design / Security Architecture",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "All agent outputs pass through content inspection before leaving system boundary",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-349",
+      "control_name": "Acceptance of Extraneous Untrusted Data with Trusted Data",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Agent memory store accepts writes from untrusted sources alongside trusted operational knowledge",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-345",
+      "control_name": "Insufficient Verification of Data Authenticity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Memory content not integrity-verified before storage or retrieval",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-20",
+      "control_name": "Improper Input Validation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Content entering agent memory not validated before write",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-284",
+      "control_name": "Improper Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Vector store and memory databases with insufficient access controls permitting unauthorised writes",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-1341",
+      "control_name": "Multiple Releases of Same Resource or Handle",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Memory TTL not enforced — entries persist beyond intended lifetime",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Attempt to poison memory through every channel that can write to agent memory stores",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Verify that behaviour influenced by poisoned memory differs detectably from baseline",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Verify memory store content integrity monitoring detects unauthorised modification",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MAESTRO",
+      "control_id": "L2",
+      "control_name": "Data Operations",
+      "tier": "Hardening",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MAESTRO",
+      "control_id": "L1",
+      "control_name": "Foundation Models",
+      "tier": "Hardening",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MAESTRO",
+      "control_id": "L5",
+      "control_name": "Evaluation & Observability",
+      "tier": "Hardening",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "A",
+      "control_name": "Data & Privacy (full domain)",
+      "tier": "Hardening",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "B002",
+      "control_name": "Detect adversarial input",
+      "tier": "Hardening",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "B005",
+      "control_name": "Implement real-time input filtering",
+      "tier": "Hardening",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Scan all paths where memory store credentials could leak — logs, config, agent context",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Secret manager for all memory store credentials — no cleartext anywhere",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Short-lived credentials for memory store access — rotate on each agent session",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Prevents direct tampering with agent memory and context",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.3.1-PS",
+      "control_name": "Archive and protect software releases",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Ensures recovery capability for memory poisoning incidents",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review the software for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Catches memory poisoning effects before they propagate",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.3.1-PS",
+      "control_name": "Analyse root causes",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enables thorough incident response for memory poisoning events",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-28",
+      "control_name": "Protection of Information at Rest — memory store protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Encrypt agent memory stores and context databases at rest; enforce access controls and integrity verification on all memory read and write operations",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-3",
+      "control_name": "Malicious Code Protection — adversarial memory detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Extend malicious content detection to agent memory stores; detect poisoned memories, manipulated context, and adversarial state modifications",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — memory operation audit",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log all agent memory operations — reads, writes, deletions — with sufficient detail to detect poisoning and support forensic investigation",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "RA-5",
+      "control_name": "Vulnerability Scanning — memory infrastructure",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include agent memory stores, context databases, and shared state infrastructure in vulnerability scanning and security assessment",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — memory integrity controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement security controls protecting agent memory stores from poisoning, tampering, and unauthorised modification; enforce access controls and integrity verification",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — memory manipulation detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Deploy detection mechanisms for agent memory manipulation; monitor for anomalous writes, content inconsistencies, and cross-session poisoning patterns",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — memory store assets",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Register agent memory stores, context databases, and shared state systems in the ICT asset inventory; classify by data sensitivity",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 13",
+      "control_name": "Learning and Evolving — memory poisoning post-mortem",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct post-incident analysis for memory poisoning events; trace poisoned content to source and assess impact on agent decisions",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "8.2.3",
+      "control_name": "Verify that agent outputs and tool outputs are not automatically written to trusted agent memory without explicit source validation.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C08-Memory-Embeddings-and-Vector-Database.md#c82-embedding-sanitization--validation",
+      "notes": "Level 2. Agent and tool outputs not automatically written to trusted agent memory without explicit source validation, the direct control",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "8.1.2",
+      "control_name": "Verify that document metadata tags are immutable after the initial write.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C08-Memory-Embeddings-and-Vector-Database.md#c81-access-controls-on-memory--rag-indices",
+      "notes": "Level 2. Document metadata tags immutable after initial write",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "12.5.4",
+      "control_name": "Verify that every ingested document is tagged at write time with source, writer identity, and timestamp.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C12-Monitoring-and-Logging.md#c125-training-data--model-lifecycle-audit",
+      "notes": "Level 2. Every ingested document tagged at write time with source, writer identity and timestamp, making poisoned entries attributable",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "8.2.4",
+      "control_name": "Verify that content crafted to manipulate retrieval results is detected and rejected or quarantined before vectorization.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C08-Memory-Embeddings-and-Vector-Database.md#c82-embedding-sanitization--validation",
+      "notes": "Level 3. Content crafted to manipulate retrieval results detected and rejected or quarantined before vectorization",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "8.2.5",
+      "control_name": "Verify that new content written to memory is checked for contradictions with what is already stored and that conflicts trigger alerts.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C08-Memory-Embeddings-and-Vector-Database.md#c82-embedding-sanitization--validation",
+      "notes": "Level 3. New content written to memory checked for contradictions with what is already stored, with conflicts alerting",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "8.3.2",
+      "control_name": "Verify that memory can be reset.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C08-Memory-Embeddings-and-Vector-Database.md#c83-memory-expiry--revocation",
+      "notes": "Level 2. Memory can be reset, giving a recovery path once poisoning is confirmed",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "8.3.3",
+      "control_name": "Verify that quarantined content is retained but excluded from all retrieval results.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C08-Memory-Embeddings-and-Vector-Database.md#c83-memory-expiry--revocation",
+      "notes": "Level 3. Quarantined content retained but excluded from all retrieval results, preserving evidence without re-exposure",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.4.4",
+      "control_name": "Verify that agent state persisted between invocations is integrity-protected.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c94-agent-and-orchestrator-identity",
+      "notes": "Level 3. Agent state persisted between invocations is integrity-protected",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    }
+  ],
+  "tools": [
+    {
+      "name": "Weaviate (with RBAC)",
+      "type": "open-source",
+      "url": "https://weaviate.io"
+    },
+    {
+      "name": "LlamaIndex",
+      "type": "open-source",
+      "url": "https://www.llamaindex.ai"
+    },
+    {
+      "name": "Langfuse",
+      "type": "open-source",
+      "url": "https://langfuse.com"
+    },
+    {
+      "name": "Langfuse (audit logging)",
+      "type": "open-source",
+      "url": "https://langfuse.com"
+    },
+    {
+      "name": "Claroty",
+      "type": "commercial",
+      "url": "https://claroty.com"
+    },
+    {
+      "name": "LLM Guard",
+      "type": "open-source",
+      "url": "https://github.com/protectai/llm-guard"
+    },
+    {
+      "name": "Azure AI Content Safety",
+      "type": "commercial",
+      "url": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety"
+    },
+    {
+      "name": "Chroma",
+      "type": "open-source",
+      "url": "https://www.trychroma.com"
+    },
+    {
+      "name": "LAAF (LLM Agent Assessment Framework)",
+      "type": "open-source",
+      "url": "https://github.com/qorvexconsulting1/laaf-V2.0"
+    },
+    {
+      "name": "Garak",
+      "type": "open-source",
+      "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "Great Expectations",
+      "type": "open-source",
+      "url": "https://greatexpectations.io"
+    },
+    {
+      "name": "Weaviate",
+      "type": "open-source",
+      "url": "https://weaviate.io"
+    },
+    {
+      "name": "LangSmith",
+      "type": "commercial",
+      "url": "https://smith.langchain.com"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "HashiCorp Vault",
+      "type": "commercial",
+      "url": "https://www.vaultproject.io"
+    },
+    {
+      "name": "LAAF v2.0",
+      "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+      "type": "open-source"
+    }
+  ],
+  "incidents": [
+    {
+      "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-016"
+    },
+    {
+      "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2026,
+      "incident_id": "INC-021"
+    },
+    {
+      "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-023"
+    },
+    {
+      "name": "Crescendo: multi-turn escalation attack (Microsoft)",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-029"
+    },
+    {
+      "name": "Adversarial embedding attacks on production RAG systems",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-046"
+    },
+    {
+      "name": "EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-089"
+    },
+    {
+      "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-090"
+    },
+    {
+      "name": "Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2026,
+      "incident_id": "INC-095"
+    },
+    {
+      "name": "AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2026,
+      "incident_id": "INC-100"
+    },
+    {
+      "name": "PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-108"
+    },
+    {
+      "name": "MCPHub: missing authorisation let any user overwrite the prompts and resources served to everyone",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2026,
+      "incident_id": "INC-133"
+    }
+  ],
+  "crossrefs": {
+    "llm_top10": [
+      "LLM05",
+      "LLM09",
+      "LLM02",
+      "LLM04"
+    ],
+    "dsgai_2026": [
+      "DSGAI04",
+      "DSGAI13",
+      "DSGAI06",
+      "DSGAI08"
+    ]
+  },
+  "changelog": [
+    {
+      "date": "2026-03-27",
+      "version": "1.0.0",
+      "change": "Initial entry — generated from OWASP GenAI Crosswalk v1.5.1 mapping files",
+      "author": "OWASP GenAI Data Security Initiative"
+    }
+  ]
+}

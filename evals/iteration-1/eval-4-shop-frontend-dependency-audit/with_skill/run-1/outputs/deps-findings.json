@@ -1,0 +1,607 @@
+[
+  {
+    "fingerprint": "dep-npm-lodash-4.17.15-GHSA-29mw-wpgm-hmr9",
+    "title": "lodash@4.17.15 has known vulnerability GHSA-29mw-wpgm-hmr9 (CVE-2020-28500)",
+    "description": "Regular Expression Denial of Service (ReDoS) in lodash Advisory severity: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L. Priority: EPSS 0.07.",
+    "category": "dependency",
+    "package": {
+      "ecosystem": "npm",
+      "name": "lodash",
+      "version": "4.17.15",
+      "manifest": "package-lock.json",
+      "advisories": [
+        "CVE-2020-28500",
+        "GHSA-29mw-wpgm-hmr9"
+      ],
+      "fixed_versions": [
+        "4.17.21"
+      ]
+    },
+    "verdict": "needs_validation",
+    "claimed_root_cause": "lodash@4.17.15 is affected by GHSA-29mw-wpgm-hmr9; whether the vulnerable code is reachable from this project is not yet established.",
+    "trace": [
+      {
+        "kind": "sink",
+        "file": "package-lock.json",
+        "line": 4,
+        "scope": "lodash@4.17.15",
+        "description": "Resolved vulnerable version."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "package-lock.json",
+        "line": 4,
+        "description": "Resolved version 4.17.15; OSV GHSA-29mw-wpgm-hmr9."
+      }
+    ],
+    "blockers": [
+      "Reachability: no call path from this project's code to the vulnerable functionality has been traced yet."
+    ],
+    "validation_plan": {
+      "local": "Search the source for uses of the affected API of lodash named in GHSA-29mw-wpgm-hmr9; if reached with attacker-influenced input, write a bounded local test and promote the record to confirmed. Fixed in: 4.17.21."
+    },
+    "sources": [
+      {
+        "standard": "OWASP ASVS",
+        "version": "5.0.0",
+        "id": "v5.0.0-15.2.1",
+        "file": "references/standards/owasp-asvs-5.0.0.md",
+        "relation": "violated-requirement",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE CWE",
+        "version": "4.20",
+        "id": "CWE-1395",
+        "file": "references/standards/cwe/weaknesses.md",
+        "relation": "weakness",
+        "tier": "A"
+      },
+      {
+        "standard": "OWASP Top 10",
+        "version": "2025",
+        "id": "A03:2025",
+        "file": "references/standards/owasp-top10-2025.md",
+        "relation": "risk-category",
+        "tier": "A"
+      }
+    ]
+  },
+  {
+    "fingerprint": "dep-npm-lodash-4.17.15-GHSA-35jh-r3h4-6jhm",
+    "title": "lodash@4.17.15 has known vulnerability GHSA-35jh-r3h4-6jhm (CVE-2021-23337, CVE-2026-4800)",
+    "description": "Command Injection in lodash Advisory severity: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H. Priority: EPSS 0.21.",
+    "category": "dependency",
+    "package": {
+      "ecosystem": "npm",
+      "name": "lodash",
+      "version": "4.17.15",
+      "manifest": "package-lock.json",
+      "advisories": [
+        "CVE-2021-23337",
+        "CVE-2026-4800",
+        "GHSA-35jh-r3h4-6jhm"
+      ],
+      "fixed_versions": [
+        "4.17.21"
+      ]
+    },
+    "verdict": "needs_validation",
+    "claimed_root_cause": "lodash@4.17.15 is affected by GHSA-35jh-r3h4-6jhm; whether the vulnerable code is reachable from this project is not yet established.",
+    "trace": [
+      {
+        "kind": "sink",
+        "file": "package-lock.json",
+        "line": 4,
+        "scope": "lodash@4.17.15",
+        "description": "Resolved vulnerable version."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "package-lock.json",
+        "line": 4,
+        "description": "Resolved version 4.17.15; OSV GHSA-35jh-r3h4-6jhm."
+      }
+    ],
+    "blockers": [
+      "Reachability: no call path from this project's code to the vulnerable functionality has been traced yet."
+    ],
+    "validation_plan": {
+      "local": "Search the source for uses of the affected API of lodash named in GHSA-35jh-r3h4-6jhm; if reached with attacker-influenced input, write a bounded local test and promote the record to confirmed. Fixed in: 4.17.21."
+    },
+    "sources": [
+      {
+        "standard": "OWASP ASVS",
+        "version": "5.0.0",
+        "id": "v5.0.0-15.2.1",
+        "file": "references/standards/owasp-asvs-5.0.0.md",
+        "relation": "violated-requirement",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE CWE",
+        "version": "4.20",
+        "id": "CWE-1395",
+        "file": "references/standards/cwe/weaknesses.md",
+        "relation": "weakness",
+        "tier": "A"
+      },
+      {
+        "standard": "OWASP Top 10",
+        "version": "2025",
+        "id": "A03:2025",
+        "file": "references/standards/owasp-top10-2025.md",
+        "relation": "risk-category",
+        "tier": "A"
+      }
+    ]
+  },
+  {
+    "fingerprint": "dep-npm-lodash-4.17.15-GHSA-f23m-r3pf-42rh",
+    "title": "lodash@4.17.15 has known vulnerability GHSA-f23m-r3pf-42rh (CVE-2025-13465, CVE-2026-2950)",
+    "description": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit` Advisory severity: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L. Priority: EPSS 0.02.",
+    "category": "dependency",
+    "package": {
+      "ecosystem": "npm",
+      "name": "lodash",
+      "version": "4.17.15",
+      "manifest": "package-lock.json",
+      "advisories": [
+        "CVE-2025-13465",
+        "CVE-2026-2950",
+        "GHSA-f23m-r3pf-42rh"
+      ],
+      "fixed_versions": [
+        "4.18.0"
+      ]
+    },
+    "verdict": "needs_validation",
+    "claimed_root_cause": "lodash@4.17.15 is affected by GHSA-f23m-r3pf-42rh; whether the vulnerable code is reachable from this project is not yet established.",
+    "trace": [
+      {
+        "kind": "sink",
+        "file": "package-lock.json",
+        "line": 4,
+        "scope": "lodash@4.17.15",
+        "description": "Resolved vulnerable version."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "package-lock.json",
+        "line": 4,
+        "description": "Resolved version 4.17.15; OSV GHSA-f23m-r3pf-42rh."
+      }
+    ],
+    "blockers": [
+      "Reachability: no call path from this project's code to the vulnerable functionality has been traced yet."
+    ],
+    "validation_plan": {
+      "local": "Search the source for uses of the affected API of lodash named in GHSA-f23m-r3pf-42rh; if reached with attacker-influenced input, write a bounded local test and promote the record to confirmed. Fixed in: 4.18.0."
+    },
+    "sources": [
+      {
+        "standard": "OWASP ASVS",
+        "version": "5.0.0",
+        "id": "v5.0.0-15.2.1",
+        "file": "references/standards/owasp-asvs-5.0.0.md",
+        "relation": "violated-requirement",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE CWE",
+        "version": "4.20",
+        "id": "CWE-1395",
+        "file": "references/standards/cwe/weaknesses.md",
+        "relation": "weakness",
+        "tier": "A"
+      },
+      {
+        "standard": "OWASP Top 10",
+        "version": "2025",
+        "id": "A03:2025",
+        "file": "references/standards/owasp-top10-2025.md",
+        "relation": "risk-category",
+        "tier": "A"
+      }
+    ]
+  },
+  {
+    "fingerprint": "dep-npm-lodash-4.17.15-GHSA-p6mc-m468-83gw",
+    "title": "lodash@4.17.15 has known vulnerability GHSA-p6mc-m468-83gw (CVE-2020-8203)",
+    "description": "Prototype Pollution in lodash Advisory severity: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H. Priority: EPSS 0.05.",
+    "category": "dependency",
+    "package": {
+      "ecosystem": "npm",
+      "name": "lodash",
+      "version": "4.17.15",
+      "manifest": "package-lock.json",
+      "advisories": [
+        "CVE-2020-8203",
+        "GHSA-p6mc-m468-83gw"
+      ],
+      "fixed_versions": [
+        "4.17.19",
+        "4.17.20"
+      ]
+    },
+    "verdict": "needs_validation",
+    "claimed_root_cause": "lodash@4.17.15 is affected by GHSA-p6mc-m468-83gw; whether the vulnerable code is reachable from this project is not yet established.",
+    "trace": [
+      {
+        "kind": "sink",
+        "file": "package-lock.json",
+        "line": 4,
+        "scope": "lodash@4.17.15",
+        "description": "Resolved vulnerable version."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "package-lock.json",
+        "line": 4,
+        "description": "Resolved version 4.17.15; OSV GHSA-p6mc-m468-83gw."
+      }
+    ],
+    "blockers": [
+      "Reachability: no call path from this project's code to the vulnerable functionality has been traced yet."
+    ],
+    "validation_plan": {
+      "local": "Search the source for uses of the affected API of lodash named in GHSA-p6mc-m468-83gw; if reached with attacker-influenced input, write a bounded local test and promote the record to confirmed. Fixed in: 4.17.19, 4.17.20."
+    },
+    "sources": [
+      {
+        "standard": "OWASP ASVS",
+        "version": "5.0.0",
+        "id": "v5.0.0-15.2.1",
+        "file": "references/standards/owasp-asvs-5.0.0.md",
+        "relation": "violated-requirement",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE CWE",
+        "version": "4.20",
+        "id": "CWE-1395",
+        "file": "references/standards/cwe/weaknesses.md",
+        "relation": "weakness",
+        "tier": "A"
+      },
+      {
+        "standard": "OWASP Top 10",
+        "version": "2025",
+        "id": "A03:2025",
+        "file": "references/standards/owasp-top10-2025.md",
+        "relation": "risk-category",
+        "tier": "A"
+      }
+    ]
+  },
+  {
+    "fingerprint": "dep-npm-lodash-4.17.15-GHSA-r5fr-rjxr-66jc",
+    "title": "lodash@4.17.15 has known vulnerability GHSA-r5fr-rjxr-66jc (CVE-2021-23337, CVE-2026-4800)",
+    "description": "lodash vulnerable to Code Injection via `_.template` imports key names Advisory severity: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H. Priority: EPSS 0.21.",
+    "category": "dependency",
+    "package": {
+      "ecosystem": "npm",
+      "name": "lodash",
+      "version": "4.17.15",
+      "manifest": "package-lock.json",
+      "advisories": [
+        "CVE-2021-23337",
+        "CVE-2026-4800",
+        "GHSA-r5fr-rjxr-66jc"
+      ],
+      "fixed_versions": [
+        "4.18.0"
+      ]
+    },
+    "verdict": "needs_validation",
+    "claimed_root_cause": "lodash@4.17.15 is affected by GHSA-r5fr-rjxr-66jc; whether the vulnerable code is reachable from this project is not yet established.",
+    "trace": [
+      {
+        "kind": "sink",
+        "file": "package-lock.json",
+        "line": 4,
+        "scope": "lodash@4.17.15",
+        "description": "Resolved vulnerable version."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "package-lock.json",
+        "line": 4,
+        "description": "Resolved version 4.17.15; OSV GHSA-r5fr-rjxr-66jc."
+      }
+    ],
+    "blockers": [
+      "Reachability: no call path from this project's code to the vulnerable functionality has been traced yet."
+    ],
+    "validation_plan": {
+      "local": "Search the source for uses of the affected API of lodash named in GHSA-r5fr-rjxr-66jc; if reached with attacker-influenced input, write a bounded local test and promote the record to confirmed. Fixed in: 4.18.0."
+    },
+    "sources": [
+      {
+        "standard": "OWASP ASVS",
+        "version": "5.0.0",
+        "id": "v5.0.0-15.2.1",
+        "file": "references/standards/owasp-asvs-5.0.0.md",
+        "relation": "violated-requirement",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE CWE",
+        "version": "4.20",
+        "id": "CWE-1395",
+        "file": "references/standards/cwe/weaknesses.md",
+        "relation": "weakness",
+        "tier": "A"
+      },
+      {
+        "standard": "OWASP Top 10",
+        "version": "2025",
+        "id": "A03:2025",
+        "file": "references/standards/owasp-top10-2025.md",
+        "relation": "risk-category",
+        "tier": "A"
+      }
+    ]
+  },
+  {
+    "fingerprint": "dep-npm-lodash-4.17.15-GHSA-xxjr-mmjv-4gpg",
+    "title": "lodash@4.17.15 has known vulnerability GHSA-xxjr-mmjv-4gpg (CVE-2025-13465, CVE-2026-2950)",
+    "description": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions Advisory severity: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:H/SI:H/SA:H/E:P. Priority: EPSS 0.02.",
+    "category": "dependency",
+    "package": {
+      "ecosystem": "npm",
+      "name": "lodash",
+      "version": "4.17.15",
+      "manifest": "package-lock.json",
+      "advisories": [
+        "CVE-2025-13465",
+        "CVE-2026-2950",
+        "GHSA-xxjr-mmjv-4gpg"
+      ],
+      "fixed_versions": [
+        "4.17.23"
+      ]
+    },
+    "verdict": "needs_validation",
+    "claimed_root_cause": "lodash@4.17.15 is affected by GHSA-xxjr-mmjv-4gpg; whether the vulnerable code is reachable from this project is not yet established.",
+    "trace": [
+      {
+        "kind": "sink",
+        "file": "package-lock.json",
+        "line": 4,
+        "scope": "lodash@4.17.15",
+        "description": "Resolved vulnerable version."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "package-lock.json",
+        "line": 4,
+        "description": "Resolved version 4.17.15; OSV GHSA-xxjr-mmjv-4gpg."
+      }
+    ],
+    "blockers": [
+      "Reachability: no call path from this project's code to the vulnerable functionality has been traced yet."
+    ],
+    "validation_plan": {
+      "local": "Search the source for uses of the affected API of lodash named in GHSA-xxjr-mmjv-4gpg; if reached with attacker-influenced input, write a bounded local test and promote the record to confirmed. Fixed in: 4.17.23."
+    },
+    "sources": [
+      {
+        "standard": "OWASP ASVS",
+        "version": "5.0.0",
+        "id": "v5.0.0-15.2.1",
+        "file": "references/standards/owasp-asvs-5.0.0.md",
+        "relation": "violated-requirement",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE CWE",
+        "version": "4.20",
+        "id": "CWE-1395",
+        "file": "references/standards/cwe/weaknesses.md",
+        "relation": "weakness",
+        "tier": "A"
+      },
+      {
+        "standard": "OWASP Top 10",
+        "version": "2025",
+        "id": "A03:2025",
+        "file": "references/standards/owasp-top10-2025.md",
+        "relation": "risk-category",
+        "tier": "A"
+      }
+    ]
+  },
+  {
+    "fingerprint": "dep-signal-npm-colour-utilz-1.0.0",
+    "title": "Install-time or obfuscated code signals in colour-utilz@1.0.0",
+    "description": "Static signals usually seen in malicious packages: eval-of-decoded.",
+    "category": "dependency",
+    "package": {
+      "ecosystem": "npm",
+      "name": "colour-utilz",
+      "version": "1.0.0",
+      "manifest": "node_modules/colour-utilz/package.json"
+    },
+    "verdict": "needs_validation",
+    "claimed_root_cause": "The package may run hidden code at install or import time.",
+    "trace": [
+      {
+        "kind": "sink",
+        "file": "node_modules/colour-utilz/setup.js",
+        "line": 3,
+        "scope": "colour-utilz",
+        "description": "eval-of-decoded: eval(Buffer.from"
+      }
+    ],
+    "evidence": [
+      {
+        "file": "node_modules/colour-utilz/setup.js",
+        "line": 3,
+        "description": "eval-of-decoded: eval(Buffer.from"
+      }
+    ],
+    "blockers": [
+      "A static signal is not proof of malice: the code's actual behaviour has not been reviewed."
+    ],
+    "validation_plan": {
+      "local": "Read the flagged files and the install hooks in full; decode any encoded payload as text without executing it; compare the package contents with the registry's published tarball for the same version."
+    },
+    "sources": [
+      {
+        "standard": "NIST SP 800-218 (SSDF)",
+        "version": "1.1",
+        "id": "PW.4.4",
+        "file": "references/standards/nist-ssdf-800-218.md",
+        "relation": "violated-requirement",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE CWE",
+        "version": "4.20",
+        "id": "CWE-506",
+        "file": "references/standards/cwe/weaknesses.md",
+        "relation": "weakness",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE ATT&CK",
+        "version": "20.0",
+        "id": "T1195.002",
+        "file": "references/standards/mitre-attack/enterprise-techniques.md",
+        "relation": "attack-technique",
+        "tier": "A"
+      }
+    ]
+  },
+  {
+    "fingerprint": "dep-source-npm-colour-utilz-1.0.0",
+    "title": "Dependency resolved from a non-default registry: colour-utilz",
+    "description": "colour-utilz@1.0.0 resolves from https://packages.example.internal/colour-utilz-1.0.0.tgz, unlike the rest of the graph.",
+    "category": "dependency",
+    "package": {
+      "ecosystem": "npm",
+      "name": "colour-utilz",
+      "version": "1.0.0",
+      "manifest": "package-lock.json"
+    },
+    "verdict": "needs_validation",
+    "claimed_root_cause": "Mixed registries can let a public package shadow an internal one (dependency confusion), or pull code from an untrusted host.",
+    "trace": [
+      {
+        "kind": "sink",
+        "file": "package-lock.json",
+        "line": 6,
+        "scope": "colour-utilz",
+        "description": "Resolved URL."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "package-lock.json",
+        "line": 6,
+        "description": "resolved: https://packages.example.internal/colour-utilz-1.0.0.tgz"
+      }
+    ],
+    "blockers": [
+      "The intended registry for this package and the registry configuration (.npmrc scopes) are not visible here."
+    ],
+    "validation_plan": {
+      "deployment": "Confirm the expected registry for this package and that scope-to-registry mapping prevents a public package with the same name from being chosen."
+    },
+    "sources": [
+      {
+        "standard": "OWASP ASVS",
+        "version": "5.0.0",
+        "id": "v5.0.0-15.2.4",
+        "file": "references/standards/owasp-asvs-5.0.0.md",
+        "relation": "violated-requirement",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE CWE",
+        "version": "4.20",
+        "id": "CWE-1357",
+        "file": "references/standards/cwe/weaknesses.md",
+        "relation": "weakness",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE ATT&CK",
+        "version": "20.0",
+        "id": "T1195.001",
+        "file": "references/standards/mitre-attack/enterprise-techniques.md",
+        "relation": "attack-technique",
+        "tier": "A"
+      }
+    ]
+  },
+  {
+    "fingerprint": "dep-typo-npm-expresss-4.18.2",
+    "title": "Possible typosquat: expresss looks like popular package express",
+    "description": "expresss is one edit away from the widely used express and is not itself on the popularity list.",
+    "category": "dependency",
+    "package": {
+      "ecosystem": "npm",
+      "name": "expresss",
+      "version": "4.18.2",
+      "manifest": "package-lock.json"
+    },
+    "verdict": "needs_validation",
+    "claimed_root_cause": "The project may depend on expresss by mistake instead of express.",
+    "trace": [
+      {
+        "kind": "sink",
+        "file": "package-lock.json",
+        "line": 5,
+        "scope": "expresss",
+        "description": "Resolved package name."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "package-lock.json",
+        "line": 5,
+        "description": "Resolved expresss@4.18.2; nearest popular name express."
+      }
+    ],
+    "blockers": [
+      "Whether the name was chosen on purpose is a fact only the owners know."
+    ],
+    "validation_plan": {
+      "deployment": "Ask the owners whether expresss is intended; compare its publisher, repository and download history with express."
+    },
+    "sources": [
+      {
+        "standard": "OWASP ASVS",
+        "version": "5.0.0",
+        "id": "v5.0.0-15.2.4",
+        "file": "references/standards/owasp-asvs-5.0.0.md",
+        "relation": "violated-requirement",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE CWE",
+        "version": "4.20",
+        "id": "CWE-1357",
+        "file": "references/standards/cwe/weaknesses.md",
+        "relation": "weakness",
+        "tier": "A"
+      },
+      {
+        "standard": "MITRE ATT&CK",
+        "version": "20.0",
+        "id": "T1195.001",
+        "file": "references/standards/mitre-attack/enterprise-techniques.md",
+        "relation": "attack-technique",
+        "tier": "A"
+      }
+    ]
+  }
+]

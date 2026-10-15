@@ -1,0 +1,230 @@
+{
+  "ghsa_id": "GHSA-35jh-r3h4-6jhm",
+  "cve_id": "CVE-2021-23337",
+  "url": "https://api.github.com/advisories/GHSA-35jh-r3h4-6jhm",
+  "html_url": "https://github.com/advisories/GHSA-35jh-r3h4-6jhm",
+  "summary": "Command Injection in lodash",
+  "description": "`lodash` versions prior to 4.17.21 are vulnerable to Command Injection via the template function.",
+  "type": "reviewed",
+  "severity": "high",
+  "repository_advisory_url": null,
+  "source_code_location": "https://github.com/lodash/lodash",
+  "identifiers": [
+    {
+      "value": "GHSA-35jh-r3h4-6jhm",
+      "type": "GHSA"
+    },
+    {
+      "value": "CVE-2021-23337",
+      "type": "CVE"
+    }
+  ],
+  "references": [
+    "https://nvd.nist.gov/vuln/detail/CVE-2021-23337",
+    "https://github.com/lodash/lodash/commit/3469357cff396a26c363f8c1b5a91dde28ba4b1c",
+    "https://snyk.io/vuln/SNYK-JS-LODASH-1040724",
+    "https://github.com/lodash/lodash/blob/ddfd9b11a0126db2302cb70ec9973b66baec0975/lodash.js#L14851",
+    "https://snyk.io/vuln/SNYK-JAVA-ORGFUJIONWEBJARS-1074932",
+    "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1074930",
+    "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1074928",
+    "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074931",
+    "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1074929",
+    "https://www.oracle.com//security-alerts/cpujul2021.html",
+    "https://www.oracle.com/security-alerts/cpuoct2021.html",
+    "https://www.oracle.com/security-alerts/cpujan2022.html",
+    "https://www.oracle.com/security-alerts/cpujul2022.html",
+    "https://cert-portal.siemens.com/productcert/pdf/ssa-637483.pdf",
+    "https://security.netapp.com/advisory/ntap-20210312-0006",
+    "https://github.com/rubysec/ruby-advisory-db/blob/master/gems/lodash-rails/CVE-2021-23337.yml",
+    "https://github.com/advisories/GHSA-35jh-r3h4-6jhm"
+  ],
+  "published_at": "2021-05-06T16:05:51Z",
+  "updated_at": "2025-08-12T21:44:25Z",
+  "github_reviewed_at": "2021-03-31T23:59:26Z",
+  "nvd_published_at": "2021-02-15T13:15:00Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "lodash"
+      },
+      "vulnerable_version_range": "< 4.17.21",
+      "first_patched_version": "4.17.21",
+      "vulnerable_functions": [
+
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "lodash-es"
+      },
+      "vulnerable_version_range": "< 4.17.21",
+      "first_patched_version": "4.17.21",
+      "vulnerable_functions": [
+
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "lodash.template"
+      },
+      "vulnerable_version_range": "<= 4.5.0",
+      "first_patched_version": null,
+      "vulnerable_functions": [
+
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "lodash-template"
+      },
+      "vulnerable_version_range": "<= 1.0.0",
+      "first_patched_version": null,
+      "vulnerable_functions": [
+
+      ]
+    },
+    {
+      "package": {
+        "ecosystem": "rubygems",
+        "name": "lodash-rails"
+      },
+      "vulnerable_version_range": "< 4.17.21",
+      "first_patched_version": "4.17.21",
+      "vulnerable_functions": [
+
+      ]
+    }
+  ],
+  "cvss_severities": {
+    "cvss_v3": {
+      "vector_string": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "score": 7.2
+    },
+    "cvss_v4": {
+      "vector_string": null,
+      "score": 0.0
+    }
+  },
+  "cwes": [
+    {
+      "cwe_id": "CWE-77",
+      "name": "Improper Neutralization of Special Elements used in a Command ('Command Injection')"
+    },
+    {
+      "cwe_id": "CWE-94",
+      "name": "Improper Control of Generation of Code ('Code Injection')"
+    }
+  ],
+  "credits": [
+    {
+      "user": {
+        "login": "mitchell-codecov",
+        "id": 88285871,
+        "node_id": "MDQ6VXNlcjg4Mjg1ODcx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/88285871?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mitchell-codecov",
+        "html_url": "https://github.com/mitchell-codecov",
+        "followers_url": "https://api.github.com/users/mitchell-codecov/followers",
+        "following_url": "https://api.github.com/users/mitchell-codecov/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mitchell-codecov/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mitchell-codecov/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mitchell-codecov/subscriptions",
+        "organizations_url": "https://api.github.com/users/mitchell-codecov/orgs",
+        "repos_url": "https://api.github.com/users/mitchell-codecov/repos",
+        "events_url": "https://api.github.com/users/mitchell-codecov/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mitchell-codecov/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "type": "analyst"
+    },
+    {
+      "user": {
+        "login": "nitaiapiiro",
+        "id": 108618197,
+        "node_id": "U_kgDOBnlh1Q",
+        "avatar_url": "https://avatars.githubusercontent.com/u/108618197?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/nitaiapiiro",
+        "html_url": "https://github.com/nitaiapiiro",
+        "followers_url": "https://api.github.com/users/nitaiapiiro/followers",
+        "following_url": "https://api.github.com/users/nitaiapiiro/following{/other_user}",
+        "gists_url": "https://api.github.com/users/nitaiapiiro/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/nitaiapiiro/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/nitaiapiiro/subscriptions",
+        "organizations_url": "https://api.github.com/users/nitaiapiiro/orgs",
+        "repos_url": "https://api.github.com/users/nitaiapiiro/repos",
+        "events_url": "https://api.github.com/users/nitaiapiiro/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/nitaiapiiro/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "type": "analyst"
+    },
+    {
+      "user": {
+        "login": "ebickle",
+        "id": 2086875,
+        "node_id": "MDQ6VXNlcjIwODY4NzU=",
+        "avatar_url": "https://avatars.githubusercontent.com/u/2086875?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/ebickle",
+        "html_url": "https://github.com/ebickle",
+        "followers_url": "https://api.github.com/users/ebickle/followers",
+        "following_url": "https://api.github.com/users/ebickle/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ebickle/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/ebickle/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ebickle/subscriptions",
+        "organizations_url": "https://api.github.com/users/ebickle/orgs",
+        "repos_url": "https://api.github.com/users/ebickle/repos",
+        "events_url": "https://api.github.com/users/ebickle/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/ebickle/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "type": "analyst"
+    },
+    {
+      "user": {
+        "login": "G-Rath",
+        "id": 3151613,
+        "node_id": "MDQ6VXNlcjMxNTE2MTM=",
+        "avatar_url": "https://avatars.githubusercontent.com/u/3151613?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/G-Rath",
+        "html_url": "https://github.com/G-Rath",
+        "followers_url": "https://api.github.com/users/G-Rath/followers",
+        "following_url": "https://api.github.com/users/G-Rath/following{/other_user}",
+        "gists_url": "https://api.github.com/users/G-Rath/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/G-Rath/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/G-Rath/subscriptions",
+        "organizations_url": "https://api.github.com/users/G-Rath/orgs",
+        "repos_url": "https://api.github.com/users/G-Rath/repos",
+        "events_url": "https://api.github.com/users/G-Rath/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/G-Rath/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "type": "analyst"
+    }
+  ],
+  "comments": 0,
+  "cvss": {
+    "vector_string": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+    "score": 7.2
+  },
+  "epss": {
+    "percentage": 0.21333,
+    "percentile": 0.97519
+  }
+}

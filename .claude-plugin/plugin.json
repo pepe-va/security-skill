@@ -1,0 +1,10 @@
+{
+  "name": "cybersec-skill",
+  "version": "1.0.0",
+  "description": "Security consultant and scanner built on 29 official standards (OWASP, NIST, MITRE, CWE, CVSS 4.0, SLSA, CISA): PASS/FAIL results with cited sources, code audit and dependency audit with a validated findings.json and an HTML report with a mitigation prompt.",
+  "license": "MIT",
+  "keywords": ["security", "appsec", "owasp", "nist", "mitre-attack", "cwe", "cvss", "supply-chain", "llm-security", "audit"],
+  "skills": [
+    "./skills/security/cybersec-skill"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "expectations": [
+    {
+      "text": "Identifies the lethal trifecta (untrusted ticket content + private code/data + outbound action) and requires removing a leg or human approval",
+      "passed": true,
+      "evidence": "mentions trifecta/Rule of Two and approval"
+    },
+    {
+      "text": "Treats indirect prompt injection through ticket content as a primary threat",
+      "passed": true,
+      "evidence": "prompt injection + tickets discussed"
+    },
+    {
+      "text": "Requires a least-privilege GitHub token enforced by GitHub itself (fine-grained / repo-scoped, no merge, branch protection)",
+      "passed": true,
+      "evidence": "least privilege + branch protection / no merge"
+    },
+    {
+      "text": "Treats the MCP server and its tool descriptions as supply chain (pin, verify, review descriptions)",
+      "passed": true,
+      "evidence": "MCP as supply chain"
+    },
+    {
+      "text": "Authorisation of the agent's actions is decided outside the model (deterministic policy / target system)",
+      "passed": true,
+      "evidence": "decision outside the model"
+    },
+    {
+      "text": "Cites at least 8 distinct standard identifiers that exist in the current version of their standard",
+      "passed": true,
+      "evidence": "44 verified identifiers: AC-3, AC-5, AC-6, AML.T0051.001, ASI01, ASI02, ASI03, ASI04, ASI05, ASI06, ASI08, ASI09, ASI10, AU-10, AU-12"
+    },
+    {
+      "text": "Cites no identifier that is invented, retired or from a superseded edition",
+      "passed": false,
+      "evidence": "LLM01:2025 (not an LLM Top 10 2026 risk); LLM02:2025 (not an LLM Top 10 2026 risk); LLM05:2025 (not an LLM Top 10 2026 risk); LLM06:2025 (not an LLM Top 10 2026 risk); LLM07:2025 (not an LLM Top 10 2026 risk); LLM09:2025 (not an LLM Top 10 2026 risk); LLM10:2025 (not an LLM Top 10 2026 risk)"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 1,
+    "total": 7,
+    "pass_rate": 0.86
+  },
+  "timing": {
+    "total_tokens": 67124,
+    "duration_ms": 415176,
+    "total_duration_seconds": 415.2
+  }
+}

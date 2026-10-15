@@ -1,0 +1,9 @@
+7ad48b2981c8deb3fafb3b6f00f4a0fc8660f30d92ddea8053706061e57f3f9e  ./invoice-app/app.py
+08d1b0f339db1730142965c0adab9614a684b9bb6e25a19fb4140a4724d72b4c  ./invoice-app/auth.py
+ad98fcb4e94d848bc8e16e1cb462b38f65ec7350775c497f52ad7a29a9dbaba0  ./invoice-app/README.md
+4af1e4ae0d83ffc3c7777cd28c3aa3eb4f939cfacb0381e2839f0c78bf226a7c  ./invoice-app/seed.py
+8222b8169ee86f25cdccd84d340340060ae3f0cff55e2ea9d344d7c332733b71  ./shop-frontend/node_modules/colour-utilz/index.js
+2d70bab7b9d193f04f580ada4995cadcf6e6fd24377afc6f26f1a99313cc51b9  ./shop-frontend/node_modules/colour-utilz/package.json
+f60a1a21f7d46762c4284dbab7ddc3d6954418b1d13c4adf1e8c9102bd0d01ef  ./shop-frontend/node_modules/colour-utilz/setup.js
+e9aaca189c7e995c7795aedd85602d41446bfb8ee630fdec4202dd2c51ae0037  ./shop-frontend/package.json
+6b0d947d77b3ed9ad302436de2bc4739b92acd9b46cc0cdbfc7dd1562347460a  ./shop-frontend/package-lock.json

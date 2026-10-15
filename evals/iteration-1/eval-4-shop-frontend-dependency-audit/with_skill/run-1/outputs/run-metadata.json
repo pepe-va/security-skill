@@ -1,0 +1,91 @@
+{
+  "run_id": "shop-frontend-deps-run-1",
+  "repo": "shop-frontend",
+  "target": "evals/fixtures/shop-frontend",
+  "source_ref": "not a git repository; sha256 package.json e9aaca18…0037, package-lock.json 6b0d947d…460a, node_modules/colour-utilz/{index.js 8222b816…3b71, package.json 2d70bab7…51b9, setup.js f60a1a21…01ef}",
+  "modes": [
+    "dependency audit (mode 3)"
+  ],
+  "profile": "quick",
+  "scope_paths": [
+    "package.json",
+    "package-lock.json",
+    "node_modules/colour-utilz"
+  ],
+  "budget": null,
+  "execution_policy": "sandboxed-source-and-local-only",
+  "execution_note": "No target code was installed, built or executed. The base64 payload was decoded as text by trusted code.",
+  "selected_companions": [
+    "references/audit/dependencies.md",
+    "references/audit/upstream/SUPPLY-CHAIN-AND-RELEASE.md"
+  ],
+  "prior_runs": [],
+  "prior_runs_note": "No compatible prior coverage-ledger.json or findings.json found.",
+  "shared_file_owners": {
+    "all shared run files": "parent"
+  },
+  "independent_verification": false,
+  "independent_verification_reason": "No isolated verifier agents were used: the run was delegated to a single agent instructed to do the work itself. Hunting finished before validation started, and each candidate was validated by trying to disprove it.",
+  "network_hosts": [
+    "api.osv.dev",
+    "www.cisa.gov",
+    "api.first.org",
+    "hugovk.github.io / hugovk.dev",
+    "raw.githubusercontent.com"
+  ],
+  "kev_catalog_version": "2026.10.13",
+  "context": {
+    "system_type": "Web application frontend (assumed from the folder name shop-frontend; no application source present)",
+    "component": "Third-party npm dependencies: package.json, package-lock.json (lockfileVersion 3) and the installed node_modules/colour-utilz",
+    "phase": "Build and supply chain",
+    "exposure": "Assumed external (public shop) · tenancy unknown · boundaries: third-party package code into developer machines and CI at install time (install hooks), and into the running application",
+    "data": "Assumed customer personal data and orders; payment handling unknown · tier-B regimes (PCI DSS) not assessed",
+    "identity": "Not visible in the target",
+    "integrations": "npm public registry (registry.npmjs.org) and a private registry (packages.example.internal)",
+    "ai_context": "None: no model, RAG, agent or MCP component in the target",
+    "business_domain": "E-commerce (moves money or value); fraud paths (MITRE F3, API6:2023) belong to a code audit and are out of scope here",
+    "asvs_level": "L2 (assumption: external e-commerce application handling customer personal data)",
+    "out_of_scope": [
+      "OWASP LLM Top 10 2026, ASI Top 10 2026, NIST SP 800-218A, MITRE ATLAS, NIST AI RMF and AI 600-1: NOT APPLICABLE, no AI component",
+      "OWASP MASVS: NOT APPLICABLE, not a mobile app",
+      "NIST SP 800-190: NOT APPLICABLE, no container definitions in the target",
+      "Mode 2 code audit (ASVS V1-V14, Top 10:2025 A01/A05/A07, API Top 10): out of scope, not requested and no first-party source present",
+      "Tier B (PCI DSS): not assessed"
+    ]
+  },
+  "assumptions": [
+    "The folder is the dependency set of a public e-commerce web frontend (from its name, shop-frontend); package.json calls it fixture-app and no application source is present.",
+    "ASVS level L2 (external application handling customer personal data). L3-only requirements such as v5.0.0-15.2.4 are named for reference, not used as the bar.",
+    "Network use was limited to vulnerability databases (api.osv.dev, www.cisa.gov, api.first.org) and the npm popularity list the collector uses for typosquat checks. The npm registry and the private registry packages.example.internal were not queried, so package contents that are not on disk were not inspected.",
+    "The user named the output directory, so it replaces the skill's default <parent>/<repo>-security-audit/run-<N>; it is outside the target.",
+    "Sub-agents were not used: this run was delegated to a single agent instructed to do the work itself, so hunting and validation were done by the same agent in separate, ordered passes."
+  ],
+  "posture": "No known-malicious package (OpenSSF MAL-* via OSV) is in the dependency graph, and the one alarming install-time signal (eval of a base64 string in colour-utilz's postinstall script) is inert on review. Two packages still need owner answers before they can be trusted: expresss, which looks like a typosquat of express and whose code was not available, and colour-utilz, served from a private registry with no integrity hash. lodash 4.17.15 has six published advisories, including two code-injection issues in _.template; lodash 4.18.0 or later clears all six. Whether any of them is exploitable depends on application code that is not in this folder. Confirmed findings: 0. Needs validation: 8. Rejected: 1.",
+  "hardening_notes": [
+    "package-lock.json: two of the three entries (expresss at line 5, colour-utilz at line 6) carry no `integrity` value, so npm cannot detect a changed tarball for them; only lodash (line 4) is pinned by sha512. Regenerate the lockfile from the intended registries so every entry has one. Sources: NIST SSDF 1.1 PW.4.4, notional example 6 (references/standards/nist-ssdf-800-218.md); MITRE CWE 4.20 CWE-494 (references/standards/cwe/weaknesses.md).",
+    "Install scripts: colour-utilz runs a postinstall hook (`node setup.js`), so every npm install or npm ci executes third-party code with the developer's or CI runner's privileges. Install with scripts disabled by default (`npm ci --ignore-scripts`, or `ignore-scripts=true` in the project .npmrc) and run the few build steps that genuinely need scripts explicitly. Sources: MITRE ATT&CK 20.0 T1195.001 (references/standards/mitre-attack/enterprise-techniques.md); NIST SSDF 1.1 PW.4.1 (references/standards/nist-ssdf-800-218.md).",
+    "node_modules does not match package-lock.json: only colour-utilz is installed, while lodash and expresss are locked but absent. Do not ship or reuse this node_modules; reinstall from a reviewed lockfile with npm ci (scripts disabled) once the open questions are answered. Source: NIST SSDF 1.1 PW.4.4 (references/standards/nist-ssdf-800-218.md).",
+    "Remediation time frames: ASVS v5.0.0-15.2.1 is judged against documented update and remediation time frames (v5.0.0-15.1.1, L1), and none are visible in the target. The lodash advisories found here were published between July 2020 (GHSA-p6mc-m468-83gw) and April 2026 (GHSA-f23m-r3pf-42rh, GHSA-r5fr-rjxr-66jc). Write the time frames down so 15.2.1 can be judged. Sources: OWASP ASVS 5.0.0 v5.0.0-15.1.1 and v5.0.0-15.2.1 (references/standards/owasp-asvs-5.0.0.md)."
+  ],
+  "positive_patterns": [
+    "All three direct dependencies are exact pins (no ranges) in package.json.",
+    "A lockfile (lockfileVersion 3) is present, and the lodash entry carries an sha512 integrity value.",
+    "The project's own package.json defines no install-time scripts."
+  ],
+  "not_verified": [
+    "Contents of expresss@4.18.2 and lodash@4.17.15: not installed in the target, npm registry not queried.",
+    "Whether the installed colour-utilz matches the tarball on packages.example.internal: private host, no integrity value.",
+    "Reachability of the six lodash advisories: no application source in the target."
+  ],
+  "limits": [
+    "Static analysis finds known malware and indicators; it cannot prove that a package is clean."
+  ],
+  "collector_outputs": [
+    "sbom.cdx.json",
+    "deps-raw.json",
+    "deps-findings.json"
+  ],
+  "started": "2026-10-14T19:12:46Z",
+  "finished": "2026-10-14T19:30:17Z",
+  "run_status": "complete"
+}

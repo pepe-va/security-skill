@@ -1,0 +1,2338 @@
+{
+  "checked": "2026-10-14",
+  "csrc": {
+    "sp/800/218/final": {
+      "path": "sp/800/218/final",
+      "title": "Secure Software Development Framework (SSDF) Version 1.1: Recommendations for Mitigating the Risk of Software Vulnerabilities",
+      "release": "February 2022",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/218/a/final": {
+      "path": "sp/800/218/a/final",
+      "title": "Secure Software Development Practices for Generative AI and Dual-Use Foundation Models: An SSDF Community Profile",
+      "release": "July 2024",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "cswp/29/the-nist-cybersecurity-framework-csf-20/final": {
+      "path": "cswp/29/the-nist-cybersecurity-framework-csf-20/final",
+      "title": "The NIST Cybersecurity Framework (CSF) 2.0",
+      "release": "February 26, 2024",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/63/b/4/final": {
+      "path": "sp/800/63/b/4/final",
+      "title": "Digital Identity Guidelines: Authentication and Authenticator Management",
+      "release": "July 2025",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/53/r5/upd1/final": {
+      "path": "sp/800/53/r5/upd1/final",
+      "title": "Security and Privacy Controls for Information Systems and Organizations",
+      "release": "September 2020 (includes updates as of Dec. 10, 2020)",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/190/final": {
+      "path": "sp/800/190/final",
+      "title": "Application Container Security Guide",
+      "release": "September 2017",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/207/final": {
+      "path": "sp/800/207/final",
+      "title": "Zero Trust Architecture",
+      "release": "August 2020",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/61/r3/final": {
+      "path": "sp/800/61/r3/final",
+      "title": "Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile",
+      "release": "April 2025",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/86/final": {
+      "path": "sp/800/86/final",
+      "title": "Guide to Integrating Forensic Techniques into Incident Response",
+      "release": "August 2006",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/115/final": {
+      "path": "sp/800/115/final",
+      "title": "Technical Guide to Information Security Testing and Assessment",
+      "release": "September 2008",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/40/r4/final": {
+      "path": "sp/800/40/r4/final",
+      "title": "Guide to Enterprise Patch Management Planning: Preventive Maintenance for Technology",
+      "release": "April 2022",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/171/final": {
+      "path": "sp/800/171/final",
+      "title": "Protecting Controlled Unclassified Information in Nonfederal Information Systems and Organizations",
+      "release": "June 2015",
+      "withdrawn": "October 01, 2015",
+      "superseded_by": [
+        {
+          "label": "SP 800-171",
+          "path": "sp/800/171/upd1/final"
+        }
+      ]
+    },
+    "sp/800/171/upd1/final": {
+      "path": "sp/800/171/upd1/final",
+      "title": "Protecting Controlled Unclassified Information in Nonfederal Information Systems and Organizations",
+      "release": "June 2015 (includes updates as of September 03, 2015)",
+      "withdrawn": "January 21, 2016",
+      "superseded_by": [
+        {
+          "label": "SP 800-171",
+          "path": "sp/800/171/upd2/final"
+        }
+      ]
+    },
+    "sp/800/171/upd2/final": {
+      "path": "sp/800/171/upd2/final",
+      "title": "Protecting Controlled Unclassified Information in Nonfederal Information Systems and Organizations",
+      "release": "June 2015 (Updated 1/14/2016)",
+      "withdrawn": "December 20, 2017",
+      "superseded_by": [
+        {
+          "label": "SP 800-171 Rev. 1",
+          "path": "sp/800/171/r1/final"
+        }
+      ]
+    },
+    "sp/800/171/r1/final": {
+      "path": "sp/800/171/r1/final",
+      "title": "Protecting Controlled Unclassified Information in Nonfederal Information Systems and Organizations",
+      "release": "December 2016",
+      "withdrawn": "November 28, 2017",
+      "superseded_by": [
+        {
+          "label": "SP 800-171 Rev. 1",
+          "path": "sp/800/171/r1/upd1/final"
+        }
+      ]
+    },
+    "sp/800/171/r1/upd1/final": {
+      "path": "sp/800/171/r1/upd1/final",
+      "title": "Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations",
+      "release": "December 2016 (Updated 11/28/2017)",
+      "withdrawn": "February 20, 2018",
+      "superseded_by": [
+        {
+          "label": "SP 800-171 Rev. 1",
+          "path": "sp/800/171/r1/upd2/final"
+        }
+      ]
+    },
+    "sp/800/171/r1/upd2/final": {
+      "path": "sp/800/171/r1/upd2/final",
+      "title": "Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations",
+      "release": "December 2016 (updated 02/20/2018)",
+      "withdrawn": "June 07, 2018",
+      "superseded_by": [
+        {
+          "label": "SP 800-171 Rev. 1",
+          "path": "sp/800/171/r1/upd3/final"
+        }
+      ]
+    },
+    "sp/800/171/r1/upd3/final": {
+      "path": "sp/800/171/r1/upd3/final",
+      "title": "Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations",
+      "release": "December 2016 (updated 06/07/2018)",
+      "withdrawn": "February 21, 2021",
+      "superseded_by": [
+        {
+          "label": "SP 800-171 Rev. 2",
+          "path": "sp/800/171/r2/final"
+        }
+      ]
+    },
+    "sp/800/171/r2/final": {
+      "path": "sp/800/171/r2/final",
+      "title": "Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations",
+      "release": "February 2020",
+      "withdrawn": "January 28, 2021",
+      "superseded_by": [
+        {
+          "label": "SP 800-171 Rev. 2",
+          "path": "sp/800/171/r2/upd1/final"
+        }
+      ]
+    },
+    "sp/800/171/r2/upd1/final": {
+      "path": "sp/800/171/r2/upd1/final",
+      "title": "Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations",
+      "release": "February 2020 (includes updates as of January 28, 2021)",
+      "withdrawn": "May 14, 2024",
+      "superseded_by": [
+        {
+          "label": "SP 800-171 Rev. 3",
+          "path": "sp/800/171/r3/final"
+        }
+      ]
+    },
+    "sp/800/171/r3/final": {
+      "path": "sp/800/171/r3/final",
+      "title": "Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations",
+      "release": "May 2024",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/172/final": {
+      "path": "sp/800/172/final",
+      "title": "Enhanced Security Requirements for Protecting Controlled Unclassified Information: A Supplement to NIST Special Publication 800-171",
+      "release": "February 2021",
+      "withdrawn": "May 13, 2026",
+      "superseded_by": [
+        {
+          "label": "SP 800-172 Rev. 3",
+          "path": "sp/800/172/r3/final"
+        }
+      ]
+    },
+    "sp/800/172/r3/final": {
+      "path": "sp/800/172/r3/final",
+      "title": "Enhanced Security Requirements for Protecting Controlled Unclassified Information",
+      "release": "May 2026",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/171/a/final": {
+      "path": "sp/800/171/a/final",
+      "title": "Assessing Security Requirements for Controlled Unclassified Information",
+      "release": "June 2018",
+      "withdrawn": "May 14, 2024",
+      "superseded_by": [
+        {
+          "label": "SP 800-171A Rev. 3",
+          "path": "sp/800/171/a/r3/final"
+        }
+      ]
+    },
+    "sp/800/171/a/r3/final": {
+      "path": "sp/800/171/a/r3/final",
+      "title": "Assessing Security Requirements for Controlled Unclassified Information",
+      "release": "May 2024",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/83/final": {
+      "path": "sp/800/83/final",
+      "title": "Guide to Malware Incident Prevention and Handling",
+      "release": "November 2005",
+      "withdrawn": "July 22, 2013",
+      "superseded_by": [
+        {
+          "label": "SP 800-83 Rev. 1",
+          "path": "sp/800/83/r1/final"
+        }
+      ]
+    },
+    "sp/800/83/r1/final": {
+      "path": "sp/800/83/r1/final",
+      "title": "Guide to Malware Incident Prevention and Handling for Desktops and Laptops",
+      "release": "July 2013",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/150/final": {
+      "path": "sp/800/150/final",
+      "title": "Guide to Cyber Threat Information Sharing",
+      "release": "October 2016",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/92/final": {
+      "path": "sp/800/92/final",
+      "title": "Guide to Computer Security Log Management",
+      "release": "September 2006",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/63/c/final": {
+      "path": "sp/800/63/c/final",
+      "title": "Digital Identity Guidelines: Federation and Assertions",
+      "release": "June 2017",
+      "withdrawn": "December 01, 2017",
+      "superseded_by": [
+        {
+          "label": "SP 800-63C",
+          "path": "sp/800/63/c/upd1/final"
+        }
+      ]
+    },
+    "sp/800/63/c/upd1/final": {
+      "path": "sp/800/63/c/upd1/final",
+      "title": "Digital Identity Guidelines: Federation and Assertions",
+      "release": "June 2017 (includes updates as of 12-01-2017)",
+      "withdrawn": "March 02, 2020",
+      "superseded_by": [
+        {
+          "label": "SP 800-63C",
+          "path": "sp/800/63/c/upd2/final"
+        }
+      ]
+    },
+    "sp/800/63/c/upd2/final": {
+      "path": "sp/800/63/c/upd2/final",
+      "title": "Digital Identity Guidelines: Federation and Assertions",
+      "release": "June 2017 (includes updates as of 03-02-2020)",
+      "withdrawn": "August 01, 2025",
+      "superseded_by": [
+        {
+          "label": "SP 800-63C-4",
+          "path": "sp/800/63/c/4/final"
+        }
+      ]
+    },
+    "sp/800/63/c/4/final": {
+      "path": "sp/800/63/c/4/final",
+      "title": "Digital Identity Guidelines: Federation and Assertions",
+      "release": "July 2025",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/162/final": {
+      "path": "sp/800/162/final",
+      "title": "Guide to Attribute Based Access Control (ABAC) Definition and Considerations",
+      "release": "January 2014",
+      "withdrawn": "February 25, 2019",
+      "superseded_by": [
+        {
+          "label": "SP 800-162",
+          "path": "sp/800/162/upd1/final"
+        }
+      ]
+    },
+    "sp/800/162/upd1/final": {
+      "path": "sp/800/162/upd1/final",
+      "title": "Guide to Attribute Based Access Control (ABAC) Definition and Considerations",
+      "release": "January 2014 (includes updates as of 02-25-2019)",
+      "withdrawn": "August 02, 2019",
+      "superseded_by": [
+        {
+          "label": "SP 800-162",
+          "path": "sp/800/162/upd2/final"
+        }
+      ]
+    },
+    "sp/800/162/upd2/final": {
+      "path": "sp/800/162/upd2/final",
+      "title": "Guide to Attribute Based Access Control (ABAC) Definition and Considerations",
+      "release": "January 2014 (includes updates as of 08-02-2019)",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/30/final": {
+      "path": "sp/800/30/final",
+      "title": "Risk Management Guide for Information Technology Systems",
+      "release": "July 2002",
+      "withdrawn": "September 01, 2012",
+      "superseded_by": [
+        {
+          "label": "SP 800-30 Rev. 1",
+          "path": "sp/800/30/r1/final"
+        }
+      ]
+    },
+    "sp/800/30/r1/final": {
+      "path": "sp/800/30/r1/final",
+      "title": "Guide for Conducting Risk Assessments",
+      "release": "September 2012",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/39/final": {
+      "path": "sp/800/39/final",
+      "title": "Managing Information Security Risk: Organization, Mission, and Information System View",
+      "release": "March 2011",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/37/final": {
+      "path": "sp/800/37/final",
+      "title": "Guide for the Security Certification and Accreditation of Federal Information Systems",
+      "release": "May 2004",
+      "withdrawn": "February 22, 2010",
+      "superseded_by": [
+        {
+          "label": "SP 800-37 Rev. 1",
+          "path": "sp/800/37/r1/final"
+        }
+      ]
+    },
+    "sp/800/37/r1/final": {
+      "path": "sp/800/37/r1/final",
+      "title": "Guide for Applying the Risk Management Framework to Federal Information Systems: A Security Life Cycle Approach",
+      "release": "February 2010",
+      "withdrawn": "June 10, 2014",
+      "superseded_by": [
+        {
+          "label": "SP 800-37 Rev. 1",
+          "path": "sp/800/37/r1/upd1/final"
+        }
+      ]
+    },
+    "sp/800/37/r1/upd1/final": {
+      "path": "sp/800/37/r1/upd1/final",
+      "title": "Guide for Applying the Risk Management Framework to Federal Information Systems: A Security Life Cycle Approach",
+      "release": "February 2010 (Updated 6/5/2014)",
+      "withdrawn": "December 20, 2019",
+      "superseded_by": [
+        {
+          "label": "SP 800-37 Rev. 2",
+          "path": "sp/800/37/r2/final"
+        }
+      ]
+    },
+    "sp/800/37/r2/final": {
+      "path": "sp/800/37/r2/final",
+      "title": "Risk Management Framework for Information Systems and Organizations: A System Life Cycle Approach for Security and Privacy",
+      "release": "December 2018",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "fips/199/final": {
+      "path": "fips/199/final",
+      "title": "Standards for Security Categorization of Federal Information and Information Systems",
+      "release": "February 2004",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "fips/200/final": {
+      "path": "fips/200/final",
+      "title": "Minimum Security Requirements for Federal Information and Information Systems",
+      "release": "March 2006",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/53/a/final": {
+      "path": "sp/800/53/a/final",
+      "title": "Guide for Assessing the Security Controls in Federal Information Systems and Organizations: Building Effective Security Assessment Plans",
+      "release": "July 2008",
+      "withdrawn": "June 29, 2011",
+      "superseded_by": [
+        {
+          "label": "SP 800-53A Rev. 1",
+          "path": "sp/800/53/a/r1/final"
+        }
+      ]
+    },
+    "sp/800/53/a/r1/final": {
+      "path": "sp/800/53/a/r1/final",
+      "title": "Guide for Assessing the Security Controls in Federal Information Systems and Organizations: Building Effective Security Assessment Plans",
+      "release": "June 2010",
+      "withdrawn": "December 10, 2015",
+      "superseded_by": [
+        {
+          "label": "SP 800-53A Rev. 4",
+          "path": "sp/800/53/a/r4/final"
+        }
+      ]
+    },
+    "sp/800/53/a/r4/final": {
+      "path": "sp/800/53/a/r4/final",
+      "title": "Assessing Security and Privacy Controls in Federal Information Systems and Organizations: Building Effective Assessment Plans",
+      "release": "December 2014",
+      "withdrawn": "December 18, 2014",
+      "superseded_by": [
+        {
+          "label": "SP 800-53A Rev. 4",
+          "path": "sp/800/53/a/r4/upd1/final"
+        }
+      ]
+    },
+    "sp/800/53/a/r4/upd1/final": {
+      "path": "sp/800/53/a/r4/upd1/final",
+      "title": "Assessing Security and Privacy Controls in Federal Information Systems and Organizations: Building Effective Assessment Plans",
+      "release": "December 2014 (Updated 12/18/2014)",
+      "withdrawn": "January 25, 2023",
+      "superseded_by": [
+        {
+          "label": "SP 800-53A Rev. 5",
+          "path": "sp/800/53/a/r5/final"
+        }
+      ]
+    },
+    "sp/800/53/a/r5/final": {
+      "path": "sp/800/53/a/r5/final",
+      "title": "Assessing Security and Privacy Controls in Information Systems and Organizations",
+      "release": "January 2022",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/50/final": {
+      "path": "sp/800/50/final",
+      "title": "Building an Information Technology Security Awareness and Training Program",
+      "release": "October 2003",
+      "withdrawn": "September 12, 2024",
+      "superseded_by": [
+        {
+          "label": "SP 800-50 Rev. 1",
+          "path": "sp/800/50/r1/final"
+        }
+      ]
+    },
+    "sp/800/50/r1/final": {
+      "path": "sp/800/50/r1/final",
+      "title": "Building a Cybersecurity and Privacy Learning Program",
+      "release": "September 2024",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/177/final": {
+      "path": "sp/800/177/final",
+      "title": "Trustworthy Email",
+      "release": "September 2016",
+      "withdrawn": "February 26, 2019",
+      "superseded_by": [
+        {
+          "label": "SP 800-177 Rev. 1",
+          "path": "sp/800/177/r1/final"
+        }
+      ]
+    },
+    "sp/800/177/r1/final": {
+      "path": "sp/800/177/r1/final",
+      "title": "Trustworthy Email",
+      "release": "February 2019",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/57/pt1/r5/final": {
+      "path": "sp/800/57/pt1/r5/final",
+      "title": "Recommendation for Key Management: Part 1 – General",
+      "release": "May 2020",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/94/final": {
+      "path": "sp/800/94/final",
+      "title": "Guide to Intrusion Detection and Prevention Systems (IDPS)",
+      "release": "February 2007",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "fips/140-2/final": {
+      "path": "fips/140-2/final",
+      "title": "Security Requirements for Cryptographic Modules",
+      "release": "May 25, 2001",
+      "withdrawn": "October 10, 2001",
+      "superseded_by": [
+        {
+          "label": "FIPS 140-2",
+          "path": "fips/140-2/upd1/final"
+        }
+      ]
+    },
+    "fips/140-2/upd1/final": {
+      "path": "fips/140-2/upd1/final",
+      "title": "Security Requirements for Cryptographic Modules",
+      "release": "May 25, 2001 (Change Notice 1, 10/10/2001)",
+      "withdrawn": "December 03, 2002",
+      "superseded_by": [
+        {
+          "label": "FIPS 140-2",
+          "path": "fips/140-2/upd2/final"
+        }
+      ]
+    },
+    "fips/140-2/upd2/final": {
+      "path": "fips/140-2/upd2/final",
+      "title": "Security Requirements for Cryptographic Modules",
+      "release": "May 25, 2001 (Change Notice 2, 12/3/2002)",
+      "withdrawn": null,
+      "superseded_by": [
+        {
+          "label": "FIPS 140-3",
+          "path": "fips/140-3/final"
+        }
+      ]
+    },
+    "fips/140-3/final": {
+      "path": "fips/140-3/final",
+      "title": "Security Requirements for Cryptographic Modules",
+      "release": "March 22, 2019",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/52/final": {
+      "path": "sp/800/52/final",
+      "title": "Guidelines for the Selection, Configuration, and Use of Transport Layer Security (TLS) Implementations",
+      "release": "June 2005",
+      "withdrawn": "March 13, 2013",
+      "superseded_by": [
+        {
+          "label": "SP 800-52 Rev. 1",
+          "path": "sp/800/52/r1/final"
+        }
+      ]
+    },
+    "sp/800/52/r1/final": {
+      "path": "sp/800/52/r1/final",
+      "title": "Guidelines for the Selection, Configuration, and Use of Transport Layer Security (TLS) Implementations",
+      "release": "April 2014",
+      "withdrawn": "August 29, 2019",
+      "superseded_by": [
+        {
+          "label": "SP 800-52 Rev. 2",
+          "path": "sp/800/52/r2/final"
+        }
+      ]
+    },
+    "sp/800/52/r2/final": {
+      "path": "sp/800/52/r2/final",
+      "title": "Guidelines for the Selection, Configuration, and Use of Transport Layer Security (TLS) Implementations",
+      "release": "August 2019",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/63/final": {
+      "path": "sp/800/63/final",
+      "title": "Electronic Authentication Guideline",
+      "release": "June 2004",
+      "withdrawn": "September 27, 2004",
+      "superseded_by": [
+        {
+          "label": "SP 800-63",
+          "path": "sp/800/63/upd1/final"
+        }
+      ]
+    },
+    "sp/800/63/upd1/final": {
+      "path": "sp/800/63/upd1/final",
+      "title": "Electronic Authentication Guideline",
+      "release": "September 2004 (update)",
+      "withdrawn": "April 30, 2006",
+      "superseded_by": [
+        {
+          "label": "SP 800-63",
+          "path": "sp/800/63/upd2/final"
+        }
+      ]
+    },
+    "sp/800/63/upd2/final": {
+      "path": "sp/800/63/upd2/final",
+      "title": "Electronic Authentication Guideline",
+      "release": "April 2006 (update)",
+      "withdrawn": "December 12, 2011",
+      "superseded_by": [
+        {
+          "label": "SP 800-63-1",
+          "path": "sp/800/63/1/final"
+        }
+      ]
+    },
+    "sp/800/63/1/final": {
+      "path": "sp/800/63/1/final",
+      "title": "Electronic Authentication Guideline",
+      "release": "December 2011",
+      "withdrawn": "August 29, 2013",
+      "superseded_by": [
+        {
+          "label": "SP 800-63-2",
+          "path": "sp/800/63/2/final"
+        }
+      ]
+    },
+    "sp/800/63/2/final": {
+      "path": "sp/800/63/2/final",
+      "title": "Electronic Authentication Guideline",
+      "release": "August 2013",
+      "withdrawn": "June 22, 2017",
+      "superseded_by": [
+        {
+          "label": "SP 800-63B",
+          "path": "sp/800/63/b/final"
+        },
+        {
+          "label": "SP 800-63A",
+          "path": "sp/800/63/a/final"
+        },
+        {
+          "label": "SP 800-63-3",
+          "path": "sp/800/63/3/final"
+        },
+        {
+          "label": "SP 800-63C",
+          "path": "sp/800/63/c/final"
+        }
+      ]
+    },
+    "sp/800/63/3/final": {
+      "path": "sp/800/63/3/final",
+      "title": "Digital Identity Guidelines",
+      "release": "June 2017",
+      "withdrawn": "December 01, 2017",
+      "superseded_by": [
+        {
+          "label": "SP 800-63-3",
+          "path": "sp/800/63/3/upd1/final"
+        }
+      ]
+    },
+    "sp/800/63/3/upd1/final": {
+      "path": "sp/800/63/3/upd1/final",
+      "title": "Digital Identity Guidelines",
+      "release": "June 2017 (includes updates as of 12-01-2017)",
+      "withdrawn": "March 02, 2020",
+      "superseded_by": [
+        {
+          "label": "SP 800-63-3",
+          "path": "sp/800/63/3/upd2/final"
+        }
+      ]
+    },
+    "sp/800/63/3/upd2/final": {
+      "path": "sp/800/63/3/upd2/final",
+      "title": "Digital Identity Guidelines",
+      "release": "June 2017 (includes updates as of 03-02-2020)",
+      "withdrawn": "August 01, 2025",
+      "superseded_by": [
+        {
+          "label": "SP 800-63-4",
+          "path": "sp/800/63/4/final"
+        }
+      ]
+    },
+    "sp/800/63/4/final": {
+      "path": "sp/800/63/4/final",
+      "title": "Digital Identity Guidelines",
+      "release": "July 2025",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/77/final": {
+      "path": "sp/800/77/final",
+      "title": "Guide to IPsec VPNs",
+      "release": "December 2005",
+      "withdrawn": "June 30, 2020",
+      "superseded_by": [
+        {
+          "label": "SP 800-77 Rev. 1",
+          "path": "sp/800/77/r1/final"
+        }
+      ]
+    },
+    "sp/800/77/r1/final": {
+      "path": "sp/800/77/r1/final",
+      "title": "Guide to IPsec VPNs",
+      "release": "June 2020",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/82/final": {
+      "path": "sp/800/82/final",
+      "title": "Guide to Industrial Control Systems (ICS) Security",
+      "release": "June 2011",
+      "withdrawn": "May 14, 2013",
+      "superseded_by": [
+        {
+          "label": "SP 800-82 Rev. 1",
+          "path": "sp/800/82/r1/final"
+        }
+      ]
+    },
+    "sp/800/82/r1/final": {
+      "path": "sp/800/82/r1/final",
+      "title": "Guide to Industrial Control Systems (ICS) Security",
+      "release": "May 2013",
+      "withdrawn": "May 29, 2015",
+      "superseded_by": [
+        {
+          "label": "SP 800-82 Rev. 2",
+          "path": "sp/800/82/r2/final"
+        }
+      ]
+    },
+    "sp/800/82/r2/final": {
+      "path": "sp/800/82/r2/final",
+      "title": "Guide to Industrial Control Systems (ICS) Security",
+      "release": "May 2015",
+      "withdrawn": "September 28, 2023",
+      "superseded_by": [
+        {
+          "label": "SP 800-82 Rev. 3",
+          "path": "sp/800/82/r3/final"
+        }
+      ]
+    },
+    "sp/800/82/r3/final": {
+      "path": "sp/800/82/r3/final",
+      "title": "Guide to Operational Technology (OT) Security",
+      "release": "September 2023",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/54/final": {
+      "path": "sp/800/54/final",
+      "title": "Border Gateway Protocol Security",
+      "release": "July 2007",
+      "withdrawn": "December 17, 2019",
+      "superseded_by": [
+        {
+          "label": "SP 800-189",
+          "path": "sp/800/189/final"
+        }
+      ]
+    },
+    "sp/800/189/final": {
+      "path": "sp/800/189/final",
+      "title": "Resilient Interdomain Traffic Exchange: BGP Security and DDoS Mitigation",
+      "release": "December 2019",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/161/final": {
+      "path": "sp/800/161/final",
+      "title": "Supply Chain Risk Management Practices for Federal Information Systems and Organizations",
+      "release": "April 2015",
+      "withdrawn": "May 05, 2022",
+      "superseded_by": [
+        {
+          "label": "SP 800-161 Rev. 1",
+          "path": "sp/800/161/r1/final"
+        }
+      ]
+    },
+    "sp/800/161/r1/final": {
+      "path": "sp/800/161/r1/final",
+      "title": "Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations",
+      "release": "May 2022",
+      "withdrawn": "November 01, 2024",
+      "superseded_by": [
+        {
+          "label": "SP 800-161 Rev. 1",
+          "path": "sp/800/161/r1/upd1/final"
+        }
+      ]
+    },
+    "sp/800/161/r1/upd1/final": {
+      "path": "sp/800/161/r1/upd1/final",
+      "title": "Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations",
+      "release": "May 2022 (includes updates as of 11-01-2024)",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/163/final": {
+      "path": "sp/800/163/final",
+      "title": "Vetting the Security of Mobile Applications",
+      "release": "January 2015",
+      "withdrawn": "April 19, 2019",
+      "superseded_by": [
+        {
+          "label": "SP 800-163 Rev. 1",
+          "path": "sp/800/163/r1/final"
+        }
+      ]
+    },
+    "sp/800/163/r1/final": {
+      "path": "sp/800/163/r1/final",
+      "title": "Vetting the Security of Mobile Applications",
+      "release": "April 2019",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/147/final": {
+      "path": "sp/800/147/final",
+      "title": "BIOS Protection Guidelines",
+      "release": "April 2011",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/60/v1/r1/final": {
+      "path": "sp/800/60/v1/r1/final",
+      "title": "Guide for Mapping Types of Information and Information Systems to Security Categories",
+      "release": "August 2008",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/53/b/final": {
+      "path": "sp/800/53/b/final",
+      "title": "Control Baselines for Information Systems and Organizations",
+      "release": "October 2020",
+      "withdrawn": "December 10, 2020",
+      "superseded_by": [
+        {
+          "label": "SP 800-53B",
+          "path": "sp/800/53/b/upd1/final"
+        }
+      ]
+    },
+    "sp/800/53/b/upd1/final": {
+      "path": "sp/800/53/b/upd1/final",
+      "title": "Control Baselines for Information Systems and Organizations",
+      "release": "September 2020 (includes updates as of Dec. 10, 2020)",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/137/final": {
+      "path": "sp/800/137/final",
+      "title": "Information Security Continuous Monitoring (ISCM) for Federal Information Systems and Organizations",
+      "release": "September 2011",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/123/final": {
+      "path": "sp/800/123/final",
+      "title": "Guide to General Server Security",
+      "release": "July 2008",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/132/final": {
+      "path": "sp/800/132/final",
+      "title": "Recommendation for Password-Based Key Derivation: Part 1: Storage Applications",
+      "release": "December 2010",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/38/a/final": {
+      "path": "sp/800/38/a/final",
+      "title": "Recommendation for Block Cipher Modes of Operation: Methods and Techniques",
+      "release": "December 2001",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "fips/197/final": {
+      "path": "fips/197/final",
+      "title": "Advanced Encryption Standard (AES)",
+      "release": "November 26, 2001; Updated May 9, 2023",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/16/final": {
+      "path": "sp/800/16/final",
+      "title": "Information Technology Security Training Requirements: a Role- and Performance-Based Model",
+      "release": "April 1998",
+      "withdrawn": "September 12, 2024",
+      "superseded_by": [
+        {
+          "label": "SP 800-50 Rev. 1",
+          "path": "sp/800/50/r1/final"
+        }
+      ]
+    },
+    "sp/800/167/final": {
+      "path": "sp/800/167/final",
+      "title": "Guide to Application Whitelisting",
+      "release": "October 2015",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/1800/35/final": {
+      "path": "sp/1800/35/final",
+      "title": "Implementing a Zero Trust Architecture: High-Level Document",
+      "release": "June 2025",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/124/final": {
+      "path": "sp/800/124/final",
+      "title": "Guidelines on Cell Phone and PDA Security",
+      "release": "October 2008",
+      "withdrawn": "June 21, 2013",
+      "superseded_by": [
+        {
+          "label": "SP 800-124 Rev. 1",
+          "path": "sp/800/124/r1/final"
+        }
+      ]
+    },
+    "sp/800/124/r1/final": {
+      "path": "sp/800/124/r1/final",
+      "title": "Guidelines for Managing the Security of Mobile Devices in the Enterprise",
+      "release": "June 2013",
+      "withdrawn": "May 17, 2023",
+      "superseded_by": [
+        {
+          "label": "SP 800-124 Rev. 2",
+          "path": "sp/800/124/r2/final"
+        }
+      ]
+    },
+    "sp/800/124/r2/final": {
+      "path": "sp/800/124/r2/final",
+      "title": "Guidelines for Managing the Security of Mobile Devices in the Enterprise",
+      "release": "May 2023",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "fips/186-5/final": {
+      "path": "fips/186-5/final",
+      "title": "Digital Signature Standard (DSS)",
+      "release": "February 3, 2023",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/111/final": {
+      "path": "sp/800/111/final",
+      "title": "Guide to Storage Encryption Technologies for End User Devices",
+      "release": "November 2007",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/45/final": {
+      "path": "sp/800/45/final",
+      "title": "Guidelines on Electronic Mail Security",
+      "release": "September 2002",
+      "withdrawn": "February 20, 2007",
+      "superseded_by": [
+        {
+          "label": "SP 800-45 Version 2",
+          "path": "sp/800/45/ver2/final"
+        }
+      ]
+    },
+    "sp/800/45/ver2/final": {
+      "path": "sp/800/45/ver2/final",
+      "title": "Guidelines on Electronic Mail Security",
+      "release": "February 2007",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/66/final": {
+      "path": "sp/800/66/final",
+      "title": "An Introductory Resource Guide for Implementing the Health Insurance Portability and Accountability Act (HIPAA) Security Rule",
+      "release": "March 2005",
+      "withdrawn": "October 23, 2008",
+      "superseded_by": [
+        {
+          "label": "SP 800-66 Rev. 1",
+          "path": "sp/800/66/r1/final"
+        }
+      ]
+    },
+    "sp/800/66/r1/final": {
+      "path": "sp/800/66/r1/final",
+      "title": "An Introductory Resource Guide for Implementing the Health Insurance Portability and Accountability Act (HIPAA) Security Rule",
+      "release": "October 2008",
+      "withdrawn": "February 14, 2024",
+      "superseded_by": [
+        {
+          "label": "SP 800-66 Rev. 2",
+          "path": "sp/800/66/r2/final"
+        }
+      ]
+    },
+    "sp/800/66/r2/final": {
+      "path": "sp/800/66/r2/final",
+      "title": "Implementing the Health Insurance Portability and Accountability Act (HIPAA) Security Rule: A Cybersecurity Resource Guide",
+      "release": "February 2024",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/125/b/final": {
+      "path": "sp/800/125/b/final",
+      "title": "Secure Virtual Network Configuration for Virtual Machine (VM) Protection",
+      "release": "March 2016",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/41/final": {
+      "path": "sp/800/41/final",
+      "title": "Guidelines on Firewalls and Firewall Policy",
+      "release": "January 2002",
+      "withdrawn": "September 28, 2009",
+      "superseded_by": [
+        {
+          "label": "SP 800-41 Rev. 1",
+          "path": "sp/800/41/r1/final"
+        }
+      ]
+    },
+    "sp/800/41/r1/final": {
+      "path": "sp/800/41/r1/final",
+      "title": "Guidelines on Firewalls and Firewall Policy",
+      "release": "September 2009",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/157/final": {
+      "path": "sp/800/157/final",
+      "title": "Guidelines for Derived Personal Identity Verification (PIV) Credentials",
+      "release": "December 2014",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/209/final": {
+      "path": "sp/800/209/final",
+      "title": "Security Guidelines for Storage Infrastructure",
+      "release": "October 2020",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "ir/8374/final": {
+      "path": "ir/8374/final",
+      "title": "Ransomware Risk Management: A Cybersecurity Framework Profile",
+      "release": "February 2022",
+      "withdrawn": "June 11, 2026",
+      "superseded_by": [
+        {
+          "label": "IR 8374 Rev. 1",
+          "path": "ir/8374/r1/final"
+        }
+      ]
+    },
+    "ir/8374/r1/final": {
+      "path": "ir/8374/r1/final",
+      "title": "Ransomware Risk Management: A Cybersecurity Framework 2.0 Community Profile",
+      "release": "June 2026",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/131/a/final": {
+      "path": "sp/800/131/a/final",
+      "title": "Transitions: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths",
+      "release": "January 2011",
+      "withdrawn": "November 06, 2015",
+      "superseded_by": [
+        {
+          "label": "SP 800-131A Rev. 1",
+          "path": "sp/800/131/a/r1/final"
+        }
+      ]
+    },
+    "sp/800/131/a/r1/final": {
+      "path": "sp/800/131/a/r1/final",
+      "title": "Transitions: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths",
+      "release": "November 2015",
+      "withdrawn": "March 21, 2019",
+      "superseded_by": [
+        {
+          "label": "SP 800-131A Rev. 2",
+          "path": "sp/800/131/a/r2/final"
+        }
+      ]
+    },
+    "sp/800/131/a/r2/final": {
+      "path": "sp/800/131/a/r2/final",
+      "title": "Transitioning the Use of Cryptographic Algorithms and Key Lengths",
+      "release": "March 2019",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/204/final": {
+      "path": "sp/800/204/final",
+      "title": "Security Strategies for Microservices-based Application Systems",
+      "release": "August 2019",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/81/final": {
+      "path": "sp/800/81/final",
+      "title": "Secure Domain Name System (DNS) Deployment Guide",
+      "release": "May 2006",
+      "withdrawn": "April 30, 2010",
+      "superseded_by": [
+        {
+          "label": "SP 800-81 Rev. 1",
+          "path": "sp/800/81/r1/final"
+        }
+      ]
+    },
+    "sp/800/81/r1/final": {
+      "path": "sp/800/81/r1/final",
+      "title": "Secure Domain Name System (DNS) Deployment Guide",
+      "release": "April 2010",
+      "withdrawn": "September 13, 2013",
+      "superseded_by": [
+        {
+          "label": "SP 800-81-2",
+          "path": "sp/800/81/2/final"
+        }
+      ]
+    },
+    "sp/800/81/2/final": {
+      "path": "sp/800/81/2/final",
+      "title": "Secure Domain Name System (DNS) Deployment Guide",
+      "release": "September 2013",
+      "withdrawn": "March 19, 2026",
+      "superseded_by": [
+        {
+          "label": "SP 800-81 Rev. 3",
+          "path": "sp/800/81/r3/final"
+        }
+      ]
+    },
+    "sp/800/81/r3/final": {
+      "path": "sp/800/81/r3/final",
+      "title": "Secure Domain Name System (DNS) Deployment Guide",
+      "release": "March 2026",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/207/a/final": {
+      "path": "sp/800/207/a/final",
+      "title": "A Zero Trust Architecture Model for Access Control in Cloud-Native Applications in Multi-Cloud Environments",
+      "release": "September 2023",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "fips/203/final": {
+      "path": "fips/203/final",
+      "title": "Module-Lattice-Based Key-Encapsulation Mechanism Standard",
+      "release": "August 13, 2024",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "fips/204/final": {
+      "path": "fips/204/final",
+      "title": "Module-Lattice-Based Digital Signature Standard",
+      "release": "August 13, 2024",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "fips/205/final": {
+      "path": "fips/205/final",
+      "title": "Stateless Hash-Based Digital Signature Standard",
+      "release": "August 13, 2024",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "fips/180-4/final": {
+      "path": "fips/180-4/final",
+      "title": "Secure Hash Standard (SHS)",
+      "release": "March 2012",
+      "withdrawn": "August 05, 2015",
+      "superseded_by": [
+        {
+          "label": "FIPS 180-4",
+          "path": "fips/180-4/upd1/final"
+        }
+      ]
+    },
+    "fips/180-4/upd1/final": {
+      "path": "fips/180-4/upd1/final",
+      "title": "Secure Hash Standard (SHS)",
+      "release": "August 2015",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/101/final": {
+      "path": "sp/800/101/final",
+      "title": "Guidelines on Cell Phone Forensics",
+      "release": "May 2007",
+      "withdrawn": "May 15, 2014",
+      "superseded_by": [
+        {
+          "label": "SP 800-101 Rev. 1",
+          "path": "sp/800/101/r1/final"
+        }
+      ]
+    },
+    "sp/800/101/r1/final": {
+      "path": "sp/800/101/r1/final",
+      "title": "Guidelines on Mobile Device Forensics",
+      "release": "May 2014",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "ir/8006/final": {
+      "path": "ir/8006/final",
+      "title": "NIST Cloud Computing Forensic Science Challenges",
+      "release": "August 2020",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/116/final": {
+      "path": "sp/800/116/final",
+      "title": "A Recommendation for the Use of PIV Credentials in Physical Access Control Systems (PACS)",
+      "release": "November 2008",
+      "withdrawn": "June 29, 2018",
+      "superseded_by": [
+        {
+          "label": "SP 800-116 Rev. 1",
+          "path": "sp/800/116/r1/final"
+        }
+      ]
+    },
+    "sp/800/116/r1/final": {
+      "path": "sp/800/116/r1/final",
+      "title": "Guidelines for the Use of PIV Credentials in Facility Access",
+      "release": "June 2018",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/46/final": {
+      "path": "sp/800/46/final",
+      "title": "Security for Telecommuting and Broadband Communications",
+      "release": "August 2002",
+      "withdrawn": "June 16, 2009",
+      "superseded_by": [
+        {
+          "label": "SP 800-46 Rev. 1",
+          "path": "sp/800/46/r1/final"
+        }
+      ]
+    },
+    "sp/800/46/r1/final": {
+      "path": "sp/800/46/r1/final",
+      "title": "Guide to Enterprise Telework and Remote Access Security",
+      "release": "June 2009",
+      "withdrawn": "July 29, 2016",
+      "superseded_by": [
+        {
+          "label": "SP 800-46 Rev. 2",
+          "path": "sp/800/46/r2/final"
+        }
+      ]
+    },
+    "sp/800/46/r2/final": {
+      "path": "sp/800/46/r2/final",
+      "title": "Guide to Enterprise Telework, Remote Access, and Bring Your Own Device (BYOD) Security",
+      "release": "July 2016",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "ir/8547/ipd": {
+      "path": "ir/8547/ipd",
+      "title": "Transition to Post-Quantum Cryptography Standards",
+      "release": "November 12, 2024",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/1800/26/final": {
+      "path": "sp/1800/26/final",
+      "title": "Data Integrity: Detecting and Responding to Ransomware and Other Destructive Events",
+      "release": "December 2020",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/84/final": {
+      "path": "sp/800/84/final",
+      "title": "Guide to Test, Training, and Exercise Programs for IT Plans and Capabilities",
+      "release": "September 2006",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/154/ipd": {
+      "path": "sp/800/154/ipd",
+      "title": "Guide to Data-Centric System Threat Modeling",
+      "release": "March 2016",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/153/final": {
+      "path": "sp/800/153/final",
+      "title": "Guidelines for Securing Wireless Local Area Networks (WLANs)",
+      "release": "February 2012",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/184/final": {
+      "path": "sp/800/184/final",
+      "title": "Guide for Cybersecurity Event Recovery",
+      "release": "December 2016",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/34/final": {
+      "path": "sp/800/34/final",
+      "title": "Contingency Planning Guide for Information Technology Systems",
+      "release": "June 2002",
+      "withdrawn": "May 31, 2010",
+      "superseded_by": [
+        {
+          "label": "SP 800-34 Rev. 1",
+          "path": "sp/800/34/r1/final"
+        }
+      ]
+    },
+    "sp/800/34/r1/final": {
+      "path": "sp/800/34/r1/final",
+      "title": "Contingency Planning Guide for Federal Information Systems",
+      "release": "May 2010",
+      "withdrawn": "November 11, 2010",
+      "superseded_by": [
+        {
+          "label": "SP 800-34 Rev. 1",
+          "path": "sp/800/34/r1/upd1/final"
+        }
+      ]
+    },
+    "sp/800/34/r1/upd1/final": {
+      "path": "sp/800/34/r1/upd1/final",
+      "title": "Contingency Planning Guide for Federal Information Systems",
+      "release": "May 2010 (Updated 11/11/2010)",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/155/ipd": {
+      "path": "sp/800/155/ipd",
+      "title": "BIOS Integrity Measurement Guidelines",
+      "release": "December 2011",
+      "withdrawn": "October 25, 2024",
+      "superseded_by": []
+    },
+    "sp/800/160/final": {
+      "path": "sp/800/160/final",
+      "title": "Systems Security Engineering: Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems",
+      "release": "November 2016",
+      "withdrawn": "January 03, 2018",
+      "superseded_by": [
+        {
+          "label": "SP 800-160",
+          "path": "sp/800/160/upd1/final"
+        }
+      ]
+    },
+    "sp/800/160/upd1/final": {
+      "path": "sp/800/160/upd1/final",
+      "title": "Systems Security Engineering: Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems",
+      "release": "November 2016 (Updated 1/3/2018)",
+      "withdrawn": "March 21, 2018",
+      "superseded_by": [
+        {
+          "label": "SP 800-160 Vol. 1",
+          "path": "sp/800/160/v1/upd2/final"
+        }
+      ]
+    },
+    "sp/800/160/v1/upd2/final": {
+      "path": "sp/800/160/v1/upd2/final",
+      "title": "Systems Security Engineering: Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems",
+      "release": "November 2016 (updated 3/21/2018)",
+      "withdrawn": "November 16, 2022",
+      "superseded_by": [
+        {
+          "label": "SP 800-160 Vol. 1 Rev. 1",
+          "path": "sp/800/160/v1/r1/final"
+        }
+      ]
+    },
+    "sp/800/160/v1/r1/final": {
+      "path": "sp/800/160/v1/r1/final",
+      "title": "Engineering Trustworthy Secure Systems",
+      "release": "November 2022",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "ir/7692/final": {
+      "path": "ir/7692/final",
+      "title": "Specification for the Open Checklist Interactive Language (OCIL) Version 2.0",
+      "release": "April 2011",
+      "withdrawn": null,
+      "superseded_by": []
+    },
+    "sp/800/61/r2/final": {
+      "path": "sp/800/61/r2/final",
+      "title": "Computer Security Incident Handling Guide",
+      "release": "August 2012",
+      "withdrawn": "April 03, 2025",
+      "superseded_by": [
+        {
+          "label": "SP 800-61 Rev. 3",
+          "path": "sp/800/61/r3/final"
+        }
+      ]
+    },
+    "sp/800/53/r5/final": {
+      "path": "sp/800/53/r5/final",
+      "title": "Security and Privacy Controls for Information Systems and Organizations",
+      "release": "September 2020",
+      "withdrawn": "December 10, 2020",
+      "superseded_by": [
+        {
+          "label": "SP 800-53 Rev. 5",
+          "path": "sp/800/53/r5/upd1/final"
+        }
+      ]
+    },
+    "sp/800/94/r1/ipd": {
+      "path": "sp/800/94/r1/ipd",
+      "title": "Guide to Intrusion Detection and Prevention Systems (IDPS)",
+      "release": "July 2012",
+      "withdrawn": "July 15, 2022",
+      "superseded_by": []
+    }
+  },
+  "chains": {
+    "nist-ssdf": [
+      "sp/800/218/final"
+    ],
+    "nist-218a": [
+      "sp/800/218/a/final"
+    ],
+    "nist-csf": [
+      "cswp/29/the-nist-cybersecurity-framework-csf-20/final"
+    ],
+    "nist-800-63b": [
+      "sp/800/63/b/4/final"
+    ],
+    "nist-800-53": [
+      "sp/800/53/r5/upd1/final"
+    ],
+    "nist-800-190": [
+      "sp/800/190/final"
+    ],
+    "nist-800-207": [
+      "sp/800/207/final"
+    ],
+    "nist-800-61": [
+      "sp/800/61/r3/final"
+    ],
+    "nist-800-86": [
+      "sp/800/86/final"
+    ],
+    "nist-800-115": [
+      "sp/800/115/final"
+    ],
+    "nist-800-40": [
+      "sp/800/40/r4/final"
+    ],
+    "NIST SP 800-171": [
+      "sp/800/171/final",
+      "sp/800/171/upd1/final",
+      "sp/800/171/upd2/final",
+      "sp/800/171/r1/final",
+      "sp/800/171/r1/upd1/final",
+      "sp/800/171/r1/upd2/final",
+      "sp/800/171/r1/upd3/final",
+      "sp/800/171/r2/final",
+      "sp/800/171/r2/upd1/final",
+      "sp/800/171/r3/final"
+    ],
+    "NIST SP 800-172": [
+      "sp/800/172/final",
+      "sp/800/172/r3/final"
+    ],
+    "NIST SP 800-171A": [
+      "sp/800/171/a/final",
+      "sp/800/171/a/r3/final"
+    ],
+    "NIST SP 800-83": [
+      "sp/800/83/final",
+      "sp/800/83/r1/final"
+    ],
+    "NIST SP 800-150": [
+      "sp/800/150/final"
+    ],
+    "NIST SP 800-92": [
+      "sp/800/92/final"
+    ],
+    "NIST SP 800-63C": [
+      "sp/800/63/c/final",
+      "sp/800/63/c/upd1/final",
+      "sp/800/63/c/upd2/final",
+      "sp/800/63/c/4/final"
+    ],
+    "NIST SP 800-162": [
+      "sp/800/162/final",
+      "sp/800/162/upd1/final",
+      "sp/800/162/upd2/final"
+    ],
+    "NIST SP 800-30": [
+      "sp/800/30/final",
+      "sp/800/30/r1/final"
+    ],
+    "NIST SP 800-39": [
+      "sp/800/39/final"
+    ],
+    "NIST SP 800-37": [
+      "sp/800/37/final",
+      "sp/800/37/r1/final",
+      "sp/800/37/r1/upd1/final",
+      "sp/800/37/r2/final"
+    ],
+    "FIPS 199": [
+      "fips/199/final"
+    ],
+    "FIPS 200": [
+      "fips/200/final"
+    ],
+    "NIST SP 800-53A": [
+      "sp/800/53/a/final",
+      "sp/800/53/a/r1/final",
+      "sp/800/53/a/r4/final",
+      "sp/800/53/a/r4/upd1/final",
+      "sp/800/53/a/r5/final"
+    ],
+    "NIST SP 800-50": [
+      "sp/800/50/final",
+      "sp/800/50/r1/final"
+    ],
+    "NIST SP 800-177": [
+      "sp/800/177/final",
+      "sp/800/177/r1/final"
+    ],
+    "NIST SP 800-57": [
+      "sp/800/57/pt1/r5/final"
+    ],
+    "NIST SP 800-94": [
+      "sp/800/94/final"
+    ],
+    "FIPS 140-2": [
+      "fips/140-2/final",
+      "fips/140-2/upd1/final",
+      "fips/140-2/upd2/final",
+      "fips/140-3/final"
+    ],
+    "FIPS 140-3": [
+      "fips/140-3/final"
+    ],
+    "NIST SP 800-52": [
+      "sp/800/52/final",
+      "sp/800/52/r1/final",
+      "sp/800/52/r2/final"
+    ],
+    "NIST SP 800-63": [
+      "sp/800/63/final",
+      "sp/800/63/upd1/final",
+      "sp/800/63/upd2/final",
+      "sp/800/63/1/final",
+      "sp/800/63/2/final",
+      "sp/800/63/3/final",
+      "sp/800/63/3/upd1/final",
+      "sp/800/63/3/upd2/final",
+      "sp/800/63/4/final"
+    ],
+    "NIST SP 800-77": [
+      "sp/800/77/final",
+      "sp/800/77/r1/final"
+    ],
+    "NIST SP 800-82": [
+      "sp/800/82/final",
+      "sp/800/82/r1/final",
+      "sp/800/82/r2/final",
+      "sp/800/82/r3/final"
+    ],
+    "NIST SP 800-54": [
+      "sp/800/54/final",
+      "sp/800/189/final"
+    ],
+    "NIST SP 800-161": [
+      "sp/800/161/final",
+      "sp/800/161/r1/final",
+      "sp/800/161/r1/upd1/final"
+    ],
+    "NIST SP 800-163": [
+      "sp/800/163/final",
+      "sp/800/163/r1/final"
+    ],
+    "NIST SP 800-147": [
+      "sp/800/147/final"
+    ],
+    "NIST SP 800-60": [
+      "sp/800/60/v1/r1/final"
+    ],
+    "NIST SP 800-53B": [
+      "sp/800/53/b/final",
+      "sp/800/53/b/upd1/final"
+    ],
+    "NIST SP 800-137": [
+      "sp/800/137/final"
+    ],
+    "NIST SP 800-123": [
+      "sp/800/123/final"
+    ],
+    "NIST SP 800-132": [
+      "sp/800/132/final"
+    ],
+    "NIST SP 800-38A": [
+      "sp/800/38/a/final"
+    ],
+    "FIPS 197": [
+      "fips/197/final"
+    ],
+    "NIST SP 800-16": [
+      "sp/800/16/final",
+      "sp/800/50/r1/final"
+    ],
+    "NIST SP 800-167": [
+      "sp/800/167/final"
+    ],
+    "NIST SP 1800-35": [
+      "sp/1800/35/final"
+    ],
+    "NIST SP 800-124": [
+      "sp/800/124/final",
+      "sp/800/124/r1/final",
+      "sp/800/124/r2/final"
+    ],
+    "FIPS 186-5": [
+      "fips/186-5/final"
+    ],
+    "NIST SP 800-111": [
+      "sp/800/111/final"
+    ],
+    "NIST SP 800-45": [
+      "sp/800/45/final",
+      "sp/800/45/ver2/final"
+    ],
+    "NIST SP 800-66": [
+      "sp/800/66/final",
+      "sp/800/66/r1/final",
+      "sp/800/66/r2/final"
+    ],
+    "NIST SP 800-125B": [
+      "sp/800/125/b/final"
+    ],
+    "NIST SP 800-41": [
+      "sp/800/41/final",
+      "sp/800/41/r1/final"
+    ],
+    "NIST SP 800-157": [
+      "sp/800/157/final"
+    ],
+    "NIST SP 800-209": [
+      "sp/800/209/final"
+    ],
+    "NISTIR 8374": [
+      "ir/8374/final",
+      "ir/8374/r1/final"
+    ],
+    "NIST SP 800-131A": [
+      "sp/800/131/a/final",
+      "sp/800/131/a/r1/final",
+      "sp/800/131/a/r2/final"
+    ],
+    "NIST SP 800-204": [
+      "sp/800/204/final"
+    ],
+    "NIST SP 800-81": [
+      "sp/800/81/final",
+      "sp/800/81/r1/final",
+      "sp/800/81/2/final",
+      "sp/800/81/r3/final"
+    ],
+    "NIST SP 800-207A": [
+      "sp/800/207/a/final"
+    ],
+    "FIPS 203": [
+      "fips/203/final"
+    ],
+    "FIPS 204": [
+      "fips/204/final"
+    ],
+    "FIPS 205": [
+      "fips/205/final"
+    ],
+    "FIPS 180-4": [
+      "fips/180-4/final",
+      "fips/180-4/upd1/final"
+    ],
+    "NIST SP 800-101": [
+      "sp/800/101/final",
+      "sp/800/101/r1/final"
+    ],
+    "NISTIR 8006": [
+      "ir/8006/final"
+    ],
+    "NIST SP 800-116": [
+      "sp/800/116/final",
+      "sp/800/116/r1/final"
+    ],
+    "NIST SP 800-46": [
+      "sp/800/46/final",
+      "sp/800/46/r1/final",
+      "sp/800/46/r2/final"
+    ],
+    "NISTIR 8547": [
+      "ir/8547/ipd"
+    ],
+    "NIST SP 1800-26": [
+      "sp/1800/26/final"
+    ],
+    "NIST SP 800-84": [
+      "sp/800/84/final"
+    ],
+    "NIST SP 800-154": [
+      "sp/800/154/ipd"
+    ],
+    "NIST SP 800-153": [
+      "sp/800/153/final"
+    ],
+    "NIST SP 800-184": [
+      "sp/800/184/final"
+    ],
+    "NIST SP 800-34": [
+      "sp/800/34/final",
+      "sp/800/34/r1/final",
+      "sp/800/34/r1/upd1/final"
+    ],
+    "NIST SP 800-155": [
+      "sp/800/155/ipd"
+    ],
+    "NIST SP 800-160": [
+      "sp/800/160/final",
+      "sp/800/160/upd1/final",
+      "sp/800/160/v1/upd2/final",
+      "sp/800/160/v1/r1/final"
+    ],
+    "NISTIR 7692": [
+      "ir/7692/final"
+    ],
+    "NIST SP 800-171 Rev. 2": [
+      "sp/800/171/r2/final",
+      "sp/800/171/r2/upd1/final",
+      "sp/800/171/r3/final"
+    ],
+    "NIST SP 800-61 Rev. 2": [
+      "sp/800/61/r2/final",
+      "sp/800/61/r3/final"
+    ],
+    "NIST SP 800-61 Rev. 3": [
+      "sp/800/61/r3/final"
+    ],
+    "NIST SP 800-40 Rev. 4": [
+      "sp/800/40/r4/final"
+    ],
+    "NIST SP 800-53 Rev. 5": [
+      "sp/800/53/r5/final",
+      "sp/800/53/r5/upd1/final"
+    ],
+    "NIST SP 800-30 Rev. 1": [
+      "sp/800/30/r1/final"
+    ],
+    "NIST SP 800-37 Rev. 2": [
+      "sp/800/37/r2/final"
+    ],
+    "NIST SP 800-94 Rev. 1": [
+      "sp/800/94/r1/ipd"
+    ],
+    "NIST SP 800-52 Rev. 2": [
+      "sp/800/52/r2/final"
+    ],
+    "NIST SP 800-83 Rev. 1": [
+      "sp/800/83/r1/final"
+    ],
+    "NIST SP 800-82 Rev. 3": [
+      "sp/800/82/r3/final"
+    ],
+    "NIST SP 800-177 Rev. 1": [
+      "sp/800/177/r1/final"
+    ],
+    "NIST SP 800-161 Rev. 1": [
+      "sp/800/161/r1/final",
+      "sp/800/161/r1/upd1/final"
+    ],
+    "NIST SP 800-163 Rev. 1": [
+      "sp/800/163/r1/final"
+    ],
+    "NIST SP 800-53A Rev. 5": [
+      "sp/800/53/a/r5/final"
+    ],
+    "NIST SP 800-124 Rev. 2": [
+      "sp/800/124/r2/final"
+    ],
+    "NIST SP 800-66 Rev. 2": [
+      "sp/800/66/r2/final"
+    ],
+    "NIST SP 800-41 Rev. 1": [
+      "sp/800/41/r1/final"
+    ],
+    "NIST SP 800-131A Rev. 2": [
+      "sp/800/131/a/r2/final"
+    ],
+    "NIST SP 800-101 Rev. 1": [
+      "sp/800/101/r1/final"
+    ],
+    "NIST SP 800-171 Rev. 3": [
+      "sp/800/171/r3/final"
+    ],
+    "NIST SP 800-116 Rev. 1": [
+      "sp/800/116/r1/final"
+    ],
+    "NIST SP 800-34 Rev. 1": [
+      "sp/800/34/r1/final",
+      "sp/800/34/r1/upd1/final"
+    ]
+  },
+  "github": {
+    "owasp-asvs": {
+      "latest": "v5.0.0_release",
+      "date": "2025-05-30"
+    },
+    "owasp-samm": {
+      "latest": "v2.2.0",
+      "date": "2026-07-06"
+    },
+    "owasp-masvs": {
+      "latest": "v2.1.0",
+      "date": "2024-01-18"
+    },
+    "mitre-atlas": {
+      "latest": "2026.09"
+    },
+    "owasp-api": {
+      "editions": [
+        "2019",
+        "2023"
+      ]
+    },
+    "slsa": {
+      "latest": "v1.2"
+    },
+    "mitre-f3": {
+      "latest": "1.2"
+    },
+    "mitre-attack": {
+      "latest": "20.0",
+      "date": "2026-10-13"
+    }
+  },
+  "rfc": {
+    "RFC1006": {
+      "title": "ISO Transport Service on top of the TCP Version: 3",
+      "date": "May 1987",
+      "status": "INTERNET STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC1918": {
+      "title": "Address Allocation for Private Internets",
+      "date": "February 1996",
+      "status": "BEST CURRENT PRACTICE",
+      "obsoleted_by": []
+    },
+    "RFC2616": {
+      "title": "Hypertext Transfer Protocol -- HTTP/1.1",
+      "date": "June 1999",
+      "status": "DRAFT STANDARD",
+      "obsoleted_by": [
+        "RFC7230",
+        "RFC7231",
+        "RFC7232",
+        "RFC7233",
+        "RFC7234",
+        "RFC7235"
+      ]
+    },
+    "RFC2986": {
+      "title": "PKCS #10: Certification Request Syntax Specification Version 1.7",
+      "date": "November 2000",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC3164": {
+      "title": "The BSD Syslog Protocol",
+      "date": "August 2001",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": [
+        "RFC5424"
+      ]
+    },
+    "RFC3227": {
+      "title": "Guidelines for Evidence Collection and Archiving",
+      "date": "February 2002",
+      "status": "BEST CURRENT PRACTICE",
+      "obsoleted_by": []
+    },
+    "RFC3339": {
+      "title": "Date and Time on the Internet: Timestamps",
+      "date": "July 2002",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC3647": {
+      "title": "Internet X.509 Public Key Infrastructure Certificate Policy and Certification Practices Framework",
+      "date": "November 2003",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC3748": {
+      "title": "Extensible Authentication Protocol (EAP)",
+      "date": "June 2004",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC3986": {
+      "title": "Uniform Resource Identifier (URI): Generic Syntax",
+      "date": "January 2005",
+      "status": "INTERNET STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC4180": {
+      "title": "Common Format and MIME Type for Comma-Separated Values (CSV) Files",
+      "date": "October 2005",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC4514": {
+      "title": "Lightweight Directory Access Protocol (LDAP): String Representation of Distinguished Names",
+      "date": "June 2006",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC5054": {
+      "title": "Using the Secure Remote Password (SRP) Protocol for TLS Authentication",
+      "date": "November 2007",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC5116": {
+      "title": "An Interface and Algorithms for Authenticated Encryption",
+      "date": "January 2008",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC5280": {
+      "title": "Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile",
+      "date": "May 2008",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC5424": {
+      "title": "The Syslog Protocol",
+      "date": "March 2009",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC5869": {
+      "title": "HMAC-based Extract-and-Expand Key Derivation Function (HKDF)",
+      "date": "May 2010",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC5958": {
+      "title": "Asymmetric Key Packages",
+      "date": "August 2010",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC6266": {
+      "title": "Use of the Content-Disposition Header Field in the Hypertext Transfer Protocol (HTTP)",
+      "date": "June 2011",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC6376": {
+      "title": "DomainKeys Identified Mail (DKIM) Signatures",
+      "date": "September 2011",
+      "status": "INTERNET STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC6455": {
+      "title": "The WebSocket Protocol",
+      "date": "December 2011",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC6480": {
+      "title": "An Infrastructure to Support Secure Internet Routing",
+      "date": "February 2012",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC6591": {
+      "title": "Authentication Failure Reporting Using the Abuse Reporting Format",
+      "date": "April 2012",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC6749": {
+      "title": "The OAuth 2.0 Authorization Framework",
+      "date": "October 2012",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC6750": {
+      "title": "The OAuth 2.0 Authorization Framework: Bearer Token Usage",
+      "date": "October 2012",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC6797": {
+      "title": "HTTP Strict Transport Security (HSTS)",
+      "date": "November 2012",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC6811": {
+      "title": "BGP Prefix Origin Validation",
+      "date": "January 2013",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC6960": {
+      "title": "X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP",
+      "date": "June 2013",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC6961": {
+      "title": "The Transport Layer Security (TLS) Multiple Certificate Status Request Extension",
+      "date": "June 2013",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": [
+        "RFC8446",
+        "RFC9846"
+      ]
+    },
+    "RFC6962": {
+      "title": "Certificate Transparency",
+      "date": "June 2013",
+      "status": "EXPERIMENTAL",
+      "obsoleted_by": [
+        "RFC9162"
+      ]
+    },
+    "RFC6979": {
+      "title": "Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA)",
+      "date": "August 2013",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC7009": {
+      "title": "OAuth 2.0 Token Revocation",
+      "date": "August 2013",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7208": {
+      "title": "Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1",
+      "date": "April 2014",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7239": {
+      "title": "Forwarded HTTP Extension",
+      "date": "June 2014",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7468": {
+      "title": "Textual Encodings of PKIX, PKCS, and CMS Structures",
+      "date": "April 2015",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7489": {
+      "title": "Domain-based Message Authentication, Reporting, and Conformance (DMARC)",
+      "date": "March 2015",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": [
+        "RFC9989",
+        "RFC9990",
+        "RFC9991"
+      ]
+    },
+    "RFC7515": {
+      "title": "JSON Web Signature (JWS)",
+      "date": "May 2015",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7517": {
+      "title": "JSON Web Key (JWK)",
+      "date": "May 2015",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7518": {
+      "title": "JSON Web Algorithms (JWA)",
+      "date": "May 2015",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7519": {
+      "title": "JSON Web Token (JWT)",
+      "date": "May 2015",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7568": {
+      "title": "Deprecating Secure Sockets Layer Version 3.0",
+      "date": "June 2015",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7636": {
+      "title": "Proof Key for Code Exchange by OAuth Public Clients",
+      "date": "September 2015",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7642": {
+      "title": "System for Cross-domain Identity Management: Definitions, Overview, Concepts, and Requirements",
+      "date": "September 2015",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC7643": {
+      "title": "System for Cross-domain Identity Management: Core Schema",
+      "date": "September 2015",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7644": {
+      "title": "System for Cross-domain Identity Management: Protocol",
+      "date": "September 2015",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7748": {
+      "title": "Elliptic Curves for Security",
+      "date": "January 2016",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC7858": {
+      "title": "Specification for DNS over Transport Layer Security (TLS)",
+      "date": "May 2016",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC7960": {
+      "title": "Interoperability Issues between Domain-based Message Authentication, Reporting, and Conformance (DMARC) and Indirect Email Flows",
+      "date": "September 2016",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC8017": {
+      "title": "PKCS #1: RSA Cryptography Specifications Version 2.2",
+      "date": "November 2016",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC8032": {
+      "title": "Edwards-Curve Digital Signature Algorithm (EdDSA)",
+      "date": "January 2017",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC8235": {
+      "title": "Schnorr Non-interactive Zero-Knowledge Proof",
+      "date": "September 2017",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC8301": {
+      "title": "Cryptographic Algorithm and Key Usage Update to DomainKeys Identified Mail (DKIM)",
+      "date": "January 2018",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8446": {
+      "title": "The Transport Layer Security (TLS) Protocol Version 1.3",
+      "date": "August 2018",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": [
+        "RFC9846"
+      ]
+    },
+    "RFC8447": {
+      "title": "IANA Registry Updates for TLS and DTLS",
+      "date": "August 2018",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8449": {
+      "title": "Record Size Limit Extension for TLS",
+      "date": "August 2018",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8470": {
+      "title": "Using Early Data in HTTP",
+      "date": "September 2018",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8471": {
+      "title": "The Token Binding Protocol Version 1.0",
+      "date": "October 2018",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8484": {
+      "title": "DNS Queries over HTTPS (DoH)",
+      "date": "October 2018",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8555": {
+      "title": "Automatic Certificate Management Environment (ACME)",
+      "date": "March 2019",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8601": {
+      "title": "Message Header Field for Indicating Message Authentication Status",
+      "date": "May 2019",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8616": {
+      "title": "Email Authentication for Internationalized Mail",
+      "date": "June 2019",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8617": {
+      "title": "The Authenticated Received Chain (ARC) Protocol",
+      "date": "July 2019",
+      "status": "EXPERIMENTAL",
+      "obsoleted_by": []
+    },
+    "RFC8628": {
+      "title": "OAuth 2.0 Device Authorization Grant",
+      "date": "August 2019",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8709": {
+      "title": "Ed25519 and Ed448 Public Key Algorithms for the Secure Shell (SSH) Protocol",
+      "date": "February 2020",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC8725": {
+      "title": "JSON Web Token Best Current Practices",
+      "date": "February 2020",
+      "status": "BEST CURRENT PRACTICE",
+      "obsoleted_by": []
+    },
+    "RFC8996": {
+      "title": "Deprecating TLS 1.0 and TLS 1.1",
+      "date": "March 2021",
+      "status": "BEST CURRENT PRACTICE",
+      "obsoleted_by": []
+    },
+    "RFC9106": {
+      "title": "Argon2 Memory-Hard Function for Password Hashing and Proof-of-Work Applications",
+      "date": "September 2021",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC9250": {
+      "title": "DNS over Dedicated QUIC Connections",
+      "date": "May 2022",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC9449": {
+      "title": "OAuth 2.0 Demonstrating Proof of Possession (DPoP)",
+      "date": "September 2023",
+      "status": "PROPOSED STANDARD",
+      "obsoleted_by": []
+    },
+    "RFC9683": {
+      "title": "Remote Integrity Verification of Network Devices Containing Trusted Platform Modules",
+      "date": "December 2024",
+      "status": "INFORMATIONAL",
+      "obsoleted_by": []
+    },
+    "RFC9700": {
+      "title": "Best Current Practice for OAuth 2.0 Security",
+      "date": "January 2025",
+      "status": "BEST CURRENT PRACTICE",
+      "obsoleted_by": []
+    }
+  }
+}

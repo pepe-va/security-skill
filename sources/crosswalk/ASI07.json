@@ -1,0 +1,1141 @@
+{
+  "id": "ASI07",
+  "name": "Insecure Inter-Agent Communications",
+  "source_list": "Agentic-Top10-2026",
+  "version": "2026-Q3",
+  "severity": "High",
+  "aivss_score": 8.2,
+  "audience": [
+    "security-engineer",
+    "ciso",
+    "compliance",
+    "red-teamer",
+    "ml-engineer",
+    "ot-engineer",
+    "auditor",
+    "developer"
+  ],
+  "mappings": [
+    {
+      "framework": "CoSAI",
+      "control_id": "WS4-AGT-2.2",
+      "control_name": "Agent cybersecurity baseline",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "CoSAI 2025",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CoSAI",
+      "control_id": "WS4-AGT-3.2",
+      "control_name": "Agent telemetry and observability",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "CoSAI 2025",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CoSAI",
+      "control_id": "WS4-AGT-3.4",
+      "control_name": "Agent action auditability",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "CoSAI 2025",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act Code of Practice",
+      "control_id": "CoP-III-C6-M6.2",
+      "control_name": "Security mitigation implementation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "GPAI CoP Final",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act Code of Practice",
+      "control_id": "CoP-III-C6-M6.1",
+      "control_name": "Security goal and threat actor definition",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "GPAI CoP Final",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act Code of Practice",
+      "control_id": "CoP-III-C7-M7.3",
+      "control_name": "Systemic risk documentation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "DRAFT — SME review required",
+      "framework_version": "GPAI CoP Final",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0006.002",
+      "control_name": "Active Scanning: Scan for Exposed AI Infrastructure",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://atlas.mitre.org/techniques/AML.T0006.002",
+      "notes": "Identifying and mapping inter-agent communication endpoints for targeting",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0012",
+      "control_name": "Valid Accounts",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://atlas.mitre.org/techniques/AML.T0012",
+      "notes": "Using compromised agent credentials to impersonate trusted agents in A2A channels",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0024",
+      "control_name": "Exfiltration via AI Inference API",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://atlas.mitre.org/techniques/AML.T0024",
+      "notes": "Intercepting inter-agent messages to exfiltrate sensitive context passed between agents",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "GV-1.6",
+      "control_name": "Policies for data privacy",
+      "tier": "Hardening",
+      "scope": "Build",
+      "notes": "A2A communication security policy — authentication, encryption, schema validation requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "MP-5.1",
+      "control_name": "Interdependencies",
+      "tier": "Hardening",
+      "scope": "Build",
+      "notes": "All A2A communication channels mapped — authentication method, encryption status, schema validation, logging",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "MS-2.5",
+      "control_name": "Testing — adversarial",
+      "tier": "Hardening",
+      "scope": "Build",
+      "notes": "A2A security testing — spoofing, replay, man-in-the-middle scenarios on all inter-agent channels",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST AI RMF 1.0",
+      "control_id": "MG-2.2",
+      "control_name": "Risk response",
+      "tier": "Hardening",
+      "scope": "Build",
+      "notes": "Incident response for A2A compromise — channel isolation, agent suspension, forensic capture",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Inter-agent channels in Art. 9 risk assessment — authentication, encryption, schema validation status",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Authenticated, encrypted A2A communication is an Art. 15 requirement for high-risk agentic systems",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "EU AI Act",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "A2A authentication and encryption documented in quality management system",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.8.20",
+      "control_name": "Networks security",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "A2A communication channels network-isolated — dedicated VLAN, traffic volume caps, protocol filtering",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.8.24",
+      "control_name": "Use of cryptography",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "A2A messages encrypted and integrity-verified — mutual TLS, nonce-based replay protection",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.8.15",
+      "control_name": "Logging",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "All A2A messages logged — sender identity, content hash, timestamp, schema validation results",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 27001:2022",
+      "control_id": "A.5.14",
+      "control_name": "Transfer of information",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Information transfer policies and agreements for A2A communication — authentication requirements, acceptable content",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "A.6.2.3",
+      "control_name": "AI system security",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "A2A authentication, encryption, and schema validation as AIMS security design requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "A.6.2.6",
+      "control_name": "Testing of AI systems",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "A2A security scenarios in AIMS testing — spoofing, replay, schema violations before deployment",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "A.10.1",
+      "control_name": "Third-party AI system acquisition",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "A2A communication infrastructure providers assessed — security obligations in arrangements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISO/IEC 42001:2023",
+      "control_id": "8",
+      "control_name": "Operation",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "A2A communication documented as AIMS operational control — authentication requirements, encryption standards",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "12.4",
+      "control_name": "Establish and maintain architecture diagram",
+      "tier": "Hardening",
+      "scope": "Both",
+      "parent": "CIS-12",
+      "notes": "A2A communication channels mapped in network architecture — authentication method, encryption status",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "3.10",
+      "control_name": "Encrypt sensitive data in transit",
+      "tier": "Hardening",
+      "scope": "Both",
+      "parent": "CIS-3",
+      "notes": "All A2A messages encrypted in transit — no cleartext inter-agent communication",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "8.5",
+      "control_name": "Collect detailed audit logs",
+      "tier": "Hardening",
+      "scope": "Both",
+      "parent": "CIS-8",
+      "notes": "All A2A messages logged — sender identity, content hash, timestamp, schema validation results",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CIS Controls v8.1",
+      "control_id": "16.1",
+      "control_name": "Establish secure development standards",
+      "tier": "Hardening",
+      "scope": "Both",
+      "parent": "CIS-16",
+      "notes": "A2A authentication and schema validation as secure development requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V12.2.1",
+      "control_name": "Verify that TLS is used for all connectivity between a client and external facing, HTTP-based services, and does not fall back to insecure or unencrypted communications.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "All A2A communication encrypted — mutual TLS, no cleartext inter-agent messages",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V7.4.1",
+      "control_name": "Verify that when session termination is triggered (such as logout or expiration), the application disallows any further use of the session. For reference tokens or stateful sessions, this means invalidating the session data at the application backend. Applications using self-contained tokens will need a solution such as maintaining a list of terminated tokens, disallowing tokens produced before a per-user date and time or rotating a per-user signing key.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Replay protection on all A2A messages — nonces, timestamps, sequence numbers",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V8.2.1",
+      "control_name": "Verify that the application ensures that function-level access is restricted to consumers with explicit permissions.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "A2A channels enforce sender identity — unauthenticated messages rejected",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP ASVS 5.0.0",
+      "control_id": "V16.3.1",
+      "control_name": "Verify that all authentication operations are logged, including successful and unsuccessful attempts. Additional metadata, such as the type of authentication or factors used, should also be collected.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "All A2A messages logged — sender identity, content hash, schema validation results",
+      "framework_version": "ASVS 5.0.0",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 1.3",
+      "control_name": "Use of authenticators",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "All inter-agent messages authenticated — no ambient trust between agents in OT context",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 4.1",
+      "control_name": "Data confidentiality in transit",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "All A2A communication encrypted — no cleartext agent messages on OT network segments",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 4.4",
+      "control_name": "Communication integrity",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Message integrity enforced — replay protection, nonces, sequence numbers on A2A channels",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ISA/IEC 62443",
+      "control_id": "SR 3.1",
+      "control_name": "Software and information integrity",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "A2A message schema validation — reject malformed or unexpected message structures",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "§5.5",
+      "control_name": "Supply chain risks",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Expanded to include agentic AI components",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "§6.3",
+      "control_name": "Supply chain risk management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "SBOM and vendor assessment for agentic stack",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "§8.4",
+      "control_name": "Third-party management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Formal vendor programme for OT agent components",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "PR.AA-01",
+      "control_name": "Identity Management, Authentication & Access Control",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent identities managed — each agent has a unique, verifiable identity for A2A authentication",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "PR.DS-02",
+      "control_name": "Data Security",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Data in transit protected — all A2A communication encrypted, integrity verified",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "DE.CM-01",
+      "control_name": "Continuous Monitoring",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "A2A channels monitored — replay attacks, spoofed senders, anomalous message patterns detected",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST CSF 2.0",
+      "control_id": "GV.SC-01",
+      "control_name": "Supply Chain Risk Management",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Inter-agent communication infrastructure treated as internal supply chain — authentication requirements documented",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "CC6.1",
+      "control_name": "Logical and physical access controls",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "mTLS configuration, certificate management records",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "CC5.2",
+      "control_name": "COSO principle 11 — Technology controls",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Inter-agent communication policy document",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "CC7.2",
+      "control_name": "Event monitoring",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Inter-agent traffic logs, anomaly alert records",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "SOC 2",
+      "control_id": "CC9.2",
+      "control_name": "Vendor and business partner risk",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Vendor assessment records for third-party agents",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 4.2",
+      "control_name": "PAN is protected with strong cryptography during transmission.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "TLS configuration, protocol verification",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 8.2",
+      "control_name": "User identification and related accounts for users and administrators are strictly managed throughout an account's lifecycle.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Certificate configuration, authentication evidence",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 10.2",
+      "control_name": "Audit logs are implemented to support the detection of anomalies and suspicious activity, and the forensic analysis of events.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Inter-agent communication audit log",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "PCI DSS v4.0",
+      "control_id": "Req 6.2",
+      "control_name": "Bespoke software security",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Design documentation, code review records",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "L2",
+      "control_name": "AI System Integrity (ASI)",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "All inter-agent messages authenticated and integrity-verified — mutual authentication as AI system integrity requirement",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "L2",
+      "control_name": "Governance and Risk (GOV)",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Agent-to-agent communication policy documented — which agents may communicate with which, under what conditions, with what data",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "L2",
+      "control_name": "Monitoring and Detection (MON)",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "All agent-to-agent messages logged — anomaly detection for unexpected communication patterns",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "ENISA Multilayer Framework",
+      "control_id": "L1",
+      "control_name": "General ICT — Network",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Inter-agent communication restricted to approved channels — network segmentation enforces the agent communication policy",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "G-PC",
+      "control_name": "Governance / Policy & Compliance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Approved vendor list for all agentic stack components",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "I-SB",
+      "control_name": "Implementation / Secure Build",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "SBOM for all agentic system components including LLM APIs and tool servers",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "V-AA",
+      "control_name": "Verification / Architecture Assessment",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Architecture review validates all third-party components against policy",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "D-TA",
+      "control_name": "Design / Threat Assessment",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Model compromise scenarios for each third-party component",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-OM",
+      "control_name": "Operations / Operational Management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Track security advisories for all integrated components",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-287",
+      "control_name": "Improper Authentication",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "A2A channels without mutual authentication — agents accept messages from any sender",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-294",
+      "control_name": "Authentication Bypass by Capture-replay",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Replay attacks on A2A channels without nonce-based replay protection",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-319",
+      "control_name": "Cleartext Transmission of Sensitive Information",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "A2A messages containing sensitive context transmitted without encryption",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-346",
+      "control_name": "Origin Validation Error",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Agent does not verify that A2A messages originate from the claimed sender",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "CWE/CVE",
+      "control_id": "CWE-924",
+      "control_name": "Improper Enforcement of Message Integrity During Transmission",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "A2A message integrity not cryptographically verified",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "ACT",
+      "control_name": "Access Control",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Attempt unauthenticated and weakly authenticated A2A message delivery",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Capture and replay a valid A2A message; verify replay is rejected",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Verify all A2A messages are logged with sender identity and content hash",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MAESTRO",
+      "control_id": "L7",
+      "control_name": "Agent Ecosystem",
+      "tier": "Hardening",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MAESTRO",
+      "control_id": "L6",
+      "control_name": "Security & Compliance",
+      "tier": "Hardening",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "MAESTRO",
+      "control_id": "L3",
+      "control_name": "Agent Frameworks",
+      "tier": "Hardening",
+      "scope": "Both",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "B007",
+      "control_name": "Enforce user access privileges to AI systems",
+      "tier": "Hardening",
+      "scope": "Build",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "B008",
+      "control_name": "Protect model deployment environment",
+      "tier": "Hardening",
+      "scope": "Build",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "E",
+      "control_name": "Accountability (full domain)",
+      "tier": "Hardening",
+      "scope": "Build",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Strong mutual authentication on all A2A channels — mTLS, certificate-based, short-lived",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Short-lived A2A tokens with nonce-based replay protection",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Unique identity per agent — A2A authentication bound to specific agent identity",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Establishes chaining constraints as mandatory requirements",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software to meet security requirements",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Ensures chaining risks are addressed at design time",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review the software for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Catches chaining vulnerabilities before production",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.1.1-PS",
+      "control_name": "Identify and confirm vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Enables detection of chaining attacks in production",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-6",
+      "control_name": "Least Privilege — tool chain restrictions",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Enforce least privilege across tool chains; prevent agents from combining tool invocations that individually are safe but together achieve harmful outcomes",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-7",
+      "control_name": "Least Functionality — tool combination restrictions",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Restrict permitted tool combinations; define allowed tool chains in configuration and deny undefined sequences",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — per-tool boundary enforcement",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Enforce access control at each tool invocation independently; re-evaluate authorisation at every step in a tool chain regardless of prior approvals",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — tool chain audit trail",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Log complete tool chain sequences with full context; enable detection and forensic analysis of harmful tool combination patterns",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — tool chain controls",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Implement security controls restricting tool chain composition; enforce per-tool access control and define permitted tool sequences for financial agent systems",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — tool composition governance",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include tool chaining risk in ICT risk management framework; define policies for permitted tool combinations and escalation requirements for novel tool chains",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — tool chain testing",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include lateral tool chaining in resilience testing; test whether agents can combine permitted tools to achieve unauthorised outcomes",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — tool chain anomaly detection",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Monitor agent tool invocation sequences for anomalous patterns; alert on novel tool combinations or sequences that cross security boundaries",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "10.3.1",
+      "control_name": "Verify that authenticated, encrypted streamable HTTP is used for MCP transport for remote services.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C10-MCP-Security.md#c103-secure-transport",
+      "notes": "Level 1. Authenticated, encrypted streamable HTTP required for remote MCP transport",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.4.1",
+      "control_name": "Verify that each agent instance has a unique cryptographic identity and authenticates as a first-class principal to downstream systems.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c94-agent-and-orchestrator-identity",
+      "notes": "Level 2. Each agent instance has a unique cryptographic identity and authenticates as a first-class principal, the anti-spoofing base control",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.4.2",
+      "control_name": "Verify that agent-initiated actions are cryptographically bound to each step of the execution chain for non-repudiation.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c94-agent-and-orchestrator-identity",
+      "notes": "Level 2. Agent-initiated actions cryptographically bound to each step of the execution chain for non-repudiation",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "10.3.3",
+      "control_name": "Verify that MCP servers validate both the Origin header and the Host header independently on all HTTP-based transports to prevent DNS rebinding att...",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C10-MCP-Security.md#c103-secure-transport",
+      "notes": "Level 2. Origin and Host headers validated independently on all HTTP-based transports to prevent DNS rebinding",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "10.3.4",
+      "control_name": "Verify that MCP clients enforce a minimum acceptable protocol version and reject initialize responses that propose a version below that minimum.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C10-MCP-Security.md#c103-secure-transport",
+      "notes": "Level 2. Clients enforce a minimum acceptable protocol version and reject initialize responses below it, blocking downgrade",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "10.4.6",
+      "control_name": "Verify that MCP servers sign tool responses with a unique nonce and timestamp so MCP clients can detect replay attempts.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C10-MCP-Security.md#c104-schema-message-and-input-validation",
+      "notes": "Level 2. Tool responses signed with a unique nonce and timestamp so clients can detect replay",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "9.5.5",
+      "control_name": "Verify that inter-agent task delegation is restricted by an explicit authorization policy.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md#c95-agent-authorization-delegation-and-continuous-enforcement",
+      "notes": "Level 2. Inter-agent task delegation restricted by an explicit authorization policy",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    },
+    {
+      "framework": "OWASP AISVS 1.0",
+      "control_id": "10.3.5",
+      "control_name": "Verify that access tokens between the MCP client and server are sender-constrained using mTLS or DPoP.",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C10-MCP-Security.md#c103-secure-transport",
+      "notes": "Level 3. Access tokens between client and server sender-constrained using mTLS or DPoP, defeating agent-in-the-middle token replay",
+      "confidence": "unreviewed",
+      "reviewed_by": []
+    }
+  ],
+  "tools": [
+    {
+      "name": "SPIFFE / SPIRE",
+      "type": "open-source",
+      "url": "https://spiffe.io"
+    },
+    {
+      "name": "Linkerd",
+      "type": "open-source",
+      "url": "https://linkerd.io"
+    },
+    {
+      "name": "cert-manager",
+      "type": "open-source",
+      "url": "https://cert-manager.io"
+    },
+    {
+      "name": "SPIFFE/SPIRE",
+      "type": "open-source",
+      "url": "https://github.com/spiffe/spire"
+    },
+    {
+      "name": "mTLS (cert-manager)",
+      "type": "open-source",
+      "url": "https://cert-manager.io"
+    },
+    {
+      "name": "Garak",
+      "type": "open-source",
+      "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "LangSmith",
+      "type": "commercial",
+      "url": "https://smith.langchain.com"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "NeMo Guardrails",
+      "type": "open-source",
+      "url": "https://github.com/NVIDIA/NeMo-Guardrails"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "Guardrails AI",
+      "type": "open-source",
+      "url": "https://github.com/guardrails-ai/guardrails"
+    },
+    {
+      "name": "AgentOps",
+      "url": "https://github.com/AgentOps-AI/agentops",
+      "type": "open-source"
+    },
+    {
+      "name": "Agentic Security",
+      "url": "https://github.com/msoedov/agentic_security",
+      "type": "open-source"
+    }
+  ],
+  "incidents": [
+    {
+      "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-020"
+    },
+    {
+      "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-023"
+    },
+    {
+      "name": "Multi-agent financial trading system flash crash — cascading autonomous failures",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-041"
+    },
+    {
+      "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-090"
+    },
+    {
+      "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-105"
+    },
+    {
+      "name": "WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-111"
+    },
+    {
+      "name": "AI agents under a cyber-capability evaluation escape their sandbox and compromise Hugging Face production infrastructure",
+      "url": "https://github.com/GenAI-Security-Project/crosswalk/blob/main/data/incidents.json",
+      "year": 2026,
+      "incident_id": "INC-137"
+    }
+  ],
+  "crossrefs": {
+    "dsgai_2026": [
+      "DSGAI02",
+      "DSGAI16",
+      "DSGAI17",
+      "DSGAI06"
+    ],
+    "llm_top10": [
+      "LLM04",
+      "LLM03",
+      "LLM01"
+    ]
+  },
+  "changelog": [
+    {
+      "date": "2026-03-27",
+      "version": "1.0.0",
+      "change": "Initial entry — generated from OWASP GenAI Crosswalk v1.5.1 mapping files",
+      "author": "OWASP GenAI Data Security Initiative"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+__pycache__/
+.claude
+.venv/
+# scratch copies made by eval runs
+evals/iteration-*/*/with_skill/work/
+evals/iteration-*/*/without_skill/work/

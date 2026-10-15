@@ -1,0 +1,532 @@
+<!-- Hand transcription of NIST SP 800-218A Table 1 (July 2024), inherited from systema-cure.
+     Normative text is verbatim English; gen_218a.py checks every task and R/C/N item against
+     the official PDF before rendering references/standards/nist-800-218a.md. -->
+
+## Prepare the Organization (PO)
+
+### PO.1 — Define Security Requirements for Software Development
+
+> Ensure that security requirements for software development are known at all times so that they can be taken into account throughout the software development life cycle (SDLC) and duplication of effort can be minimized because the requirements information can be collected once and shared. This includes requirements from internal sources (e.g., the organization's policies, business objectives, and risk management strategy) and external sources (e.g., applicable laws and regulations).
+
+#### PO.1.1 · priority **High**
+
+> Identify and document all security requirements for the organization's software development infrastructures and processes, and maintain the requirements over time.
+
+- **R1:** Include AI model development in the security requirements for software development infrastructure and processes.
+- **R2:** Identify and select appropriate AI model architectures and training techniques in accordance with recommended practices for cybersecurity, privacy, and reproducibility.
+
+**Informative references:** AI RMF: Map 1.3, 1.5, 1.6
+
+#### PO.1.2 · priority **High**
+
+> Identify and document all security requirements for organization-developed software to meet, and maintain the requirements over time.
+
+- **R1:** Organizational policies should support all current requirements specific to AI model development security for organization-developed software. These requirements should include the areas of AI model development, AI model operations, and data science. Requirements may come from many sources, including laws, regulations, contracts, and standards.
+- **C1:** Consider reusing or expanding the organization's existing data classification policy and processes.
+- **N1:** Possible forms of AI model documentation include data, model, and system cards.
+
+**Informative references:** AI RMF: Govern 1.1, 1.2, 3.2, 4.1, 5.1, 6.1; Map 1.1
+
+#### PO.1.3 · priority **Medium** · [Modified from SSDF 1.1]
+
+> Communicate requirements to all third parties who will provide commercial software components to the organization for use by the organization's own software.
+
+- **R1:** Include AI model development security in the requirements being communicated for third-party software components.
+
+**Informative references:** AI RMF: Map 4.1, 4.2 · OWASP: LLM05-1
+
+### PO.2 — Implement Roles and Responsibilities
+
+> Ensure that everyone inside and outside of the organization involved in the SDLC is prepared to perform their SDLC-related roles and responsibilities throughout the SDLC.
+
+#### PO.2.1 · priority **High**
+
+> Create new roles and alter responsibilities for existing roles as needed to encompass all parts of the SDLC. Periodically review and maintain the defined roles and responsibilities, updating them as needed.
+
+- **R1:** Include AI model development security in SDLC-related roles and responsibilities throughout the SDLC. The roles and responsibilities should include, but are not limited to, AI model development, AI model operations, and data science.
+- **N1:** Roles and responsibilities involving AI system producers, AI model producers, and other third-party providers can be documented in agreements.
+
+**Informative references:** AI RMF: Govern 2.1
+
+#### PO.2.2 · priority **High**
+
+> Provide role-based training for all personnel with responsibilities that contribute to secure development. Periodically review personnel proficiency and role-based training, and update the training as needed.
+
+- **R1:** Role-based training should include understanding cybersecurity vulnerabilities and threats to AI models and their possible mitigations.
+
+**Informative references:** AI RMF: Govern 2.2 · OWASP: LLM04-7
+
+#### PO.2.3 · priority **Medium**
+
+> Obtain upper management or authorizing official commitment to secure development, and convey that commitment to all with development-related roles and responsibilities.
+
+- **R1:** Leadership should commit to secure development practices involving AI models.
+
+**Informative references:** AI RMF: Govern 2.3
+
+### PO.3 — Implement Supporting Toolchains
+
+> Use automation to reduce human effort and improve the accuracy, reproducibility, usability, and comprehensiveness of security practices throughout the SDLC, as well as provide a way to document and demonstrate the use of these practices. Toolchains and tools may be used at different levels of the organization, such as organization-wide or project-specific, and may address a particular part of the SDLC, like a build pipeline.
+
+#### PO.3.1 · priority **High**
+
+> Specify which tools or tool types must or should be included in each toolchain to mitigate identified risks, as well as how the toolchain components are to be integrated with each other.
+
+- **R1:** Plan to develop and implement automated toolchains that secure AI model development and reduce human effort, especially at the scale often used by AI models.
+- **N1:** Ideally, automated toolchains will perform the vast majority of the work related to securing AI model development.
+- **N2:** See PO.4, PO.5, PS, and PW for information on tool types.
+
+**Informative references:** AI RMF: Measure 2.1 · OWASP: LLM08
+
+#### PO.3.2 · priority **High**
+
+> Follow recommended security practices to deploy, operate, and maintain tools and toolchains.
+
+- **R1:** Execute the plan to develop and implement automated toolchains that secure AI model development and reduce human effort, especially at the scale often used by AI models.
+- **R2:** Verify the security of toolchains at a frequency commensurate with risk.
+
+**Informative references:** AI RMF: Measure 2.1 · OWASP: LLM05-3, LLM05-9, LLM08, LLM09
+
+#### PO.3.3 · priority **Medium**
+
+> Configure tools to generate artifacts of their support of secure software development practices as defined by the organization.
+
+- **N1:** An artifact is "a piece of evidence". Evidence is "grounds for belief or disbelief; data on which to base proof or to establish truth or falsehood". Artifacts provide records of secure software development practices. Examples of artifacts specific to AI model development include attestations of the integrity and provenance of training datasets.
+
+**Informative references:** AI RMF: Measure 2.1
+
+### PO.4 — Define and Use Criteria for Software Security Checks
+
+> Help ensure that the software resulting from the SDLC meets the organization's expectations by defining and using criteria for checking the software's security during development.
+
+#### PO.4.1 · priority **Medium**
+
+> Define criteria for software security checks and track throughout the SDLC.
+
+- **R1:** Implement guardrails and other controls throughout the AI development life cycle, extending beyond the traditional SDLC.
+- **C1:** Consider requiring review and approval from a human-in-the-loop for software security checks beyond risk-based thresholds.
+
+**Informative references:** AI RMF: Measure 2.3, 2.7; Manage 1.1 · OWASP: LLM01-2
+
+#### PO.4.2 · priority **Low**
+
+> Implement processes, mechanisms, etc. to gather and safeguard the necessary information in support of the criteria.
+
+- No additions to SSDF 1.1
+
+**Informative references:** AI RMF: Measure 2.3, 2.7; Manage 1.1 · OWASP: LLM01-2
+
+### PO.5 — Implement and Maintain Secure Environments for Software Development · [Modified from SSDF 1.1]
+
+> Ensure that all components of the environments for software development are strongly protected from internal and external threats to prevent compromises of the environments or the software being developed or maintained within them. Examples of environments for software development include development, AI model training, build, test, and distribution environments.
+
+#### PO.5.1 · priority **High**
+
+> Separate and protect each environment involved in software development.
+
+- **C1:** Consider separating execution environments from each other to the extent feasible, such as through isolation, segmentation, containment, access via APIs, or other means.
+- **R1:** Monitor, track, and limit resource usage and rates for AI model users during model development.
+- **R2:** Only store sensitive data used during AI model development, including production data, within organization-approved environments and locations within those environments.
+- **R3:** Protect all training pipelines, model registries, and other components within the environments according to the principle of least privilege.
+- **R4:** Continuously monitor training-related activity in pipelines and model modifications in the model registry.
+- **R5:** Follow recommended practices for securely configuring each environment.
+- **R6:** Continuously monitor each environment for plaintext secrets.
+
+**Informative references:** OWASP: LLM01-1, LLM01-4, LLM04, LLM08, LLM10
+
+#### PO.5.2 · priority **Medium**
+
+> Secure and harden development endpoints (endpoints for software designers, developers, testers, builders, etc.) to perform development tasks using a risk-based approach.
+
+- No additions to SSDF 1.1
+
+**Informative references:** OWASP: LLM01-1, LLM05-3, LLM05-9, LLM08
+
+#### PO.5.3 · priority **High** · [Not part of SSDF 1.1]
+
+> Continuously monitor software execution performance and behavior in software development environments to identify potential suspicious activity and other issues.
+
+- **R1:** Perform continuous security monitoring for all development environment components that host an AI model or related resources (e.g., model APIs, weights, configuration parameters, training datasets).
+- **R2:** Continuous monitoring and analysis tools should generate alerts when detected activity involving an AI model passes a risk threshold or otherwise merits additional investigation.
+
+**Informative references:** AI RMF: Measure 2.4 · OWASP: LLM03-7, LLM04, LLM05-8, LLM09, LLM10
+
+## Protect Software (PS)
+
+### PS.1 — Protect All Forms of Code and Data from Unauthorized Access and Tampering · [Modified from SSDF 1.1]
+
+> Help prevent unauthorized changes to code and data, both inadvertent and intentional, which could circumvent or negate the intended security characteristics of the software. For code and data that are not intended to be publicly accessible, this helps prevent theft of the software and may make it more difficult or time-consuming for attackers to find vulnerabilities in the software.
+
+#### PS.1.1 · priority **High**
+
+> Store all forms of code — including source code, executable code, and configuration-as-code — based on the principle of least privilege so that only authorized personnel, tools, services, etc. have access.
+
+- **R1:** Secure code storage should include AI models, model weights, pipelines, reward models, and any other AI model elements that need their confidentiality, integrity, and/or availability protected. These elements do not all have to be stored in the same place or through the same type of mechanism.
+- **R2:** Follow the principle of least privilege to minimize direct access to AI models and model elements regardless of where they are stored or executed.
+- **R3:** Store reward models separately from AI models and data.
+- **R4:** Permit indirect access only to model weights.
+- **C1:** Consider preventing all human access to model weights.
+- **C2:** Consider requiring all AI model development to be performed within organization-approved environments only.
+
+**Informative references:** OWASP: LLM10
+
+#### PS.1.2 · priority **High** · [Not part of SSDF 1.1]
+
+> Protect all training, testing, fine-tuning, and aligning data from unauthorized access and modification.
+
+- **R1:** Continuously monitor the confidentiality (for non-public data only) and integrity of training, testing, fine-tuning, and aligning data.
+- **C1:** Consider securely storing training, testing, fine-tuning, and aligning data for future use and reference if feasible.
+
+**Informative references:** OWASP: LLM03, LLM06, LLM10
+
+#### PS.1.3 · priority **High** · [Not part of SSDF 1.1]
+
+> Protect all model weights and configuration parameter data from unauthorized access and modification.
+
+- **R1:** Keep model weights and configuration parameters separate from training, testing, fine-tuning, and aligning data.
+- **R2:** Continuously monitor the confidentiality (for closed models only) and integrity of model weights and configuration parameters.
+- **R3:** Follow the principle of least privilege to restrict access to AI model weights, configuration parameters, and services during development.
+- **R4:** Specify and implement additional risk-proportionate cybersecurity practices around model weights, such as encryption, cryptographic hashes, digital signatures, multi-party authorization, and air-gapped environments.
+
+**Informative references:** OWASP: LLM10
+
+### PS.2 — Provide a Mechanism for Verifying Software Release Integrity
+
+> Help software acquirers ensure that the software they acquire is legitimate and has not been tampered with.
+
+#### PS.2.1 · priority **Medium**
+
+> Make software integrity verification information available to software acquirers.
+
+- **R1:** Generate and provide cryptographic hashes or digital signatures for an AI model and its components, artifacts, and documentation.
+- **R2:** Provide digital signatures for AI model changes.
+
+**Informative references:** OWASP: LLM05-6
+
+### PS.3 — Archive and Protect Each Software Release
+
+> Preserve software releases in order to help identify, analyze, and eliminate vulnerabilities discovered in the software after release.
+
+#### PS.3.1 · priority **Low**
+
+> Securely archive the necessary files and supporting data (e.g., integrity verification information, provenance data) to be retained for each software release.
+
+- **R1:** Perform versioning and tracking for infrastructure tools (e.g., pre-processing, transforms, collection) that support dataset creation and model training.
+- **R2:** Include documentation of the justification for AI model selection in the retained information.
+- **R3:** Include documentation of the entire training process, such as data preprocessing and model architecture.
+- **N1:** AI models and their components may need to be added at this time to an organization's asset inventories.
+
+**Informative references:** OWASP: LLM10
+
+#### PS.3.2 · priority **Medium** · [Modified from SSDF 1.1]
+
+> Collect, safeguard, maintain, and share provenance data for all components of each software release (e.g., in a software bill of materials [SBOM], through Supply-chain Levels for Software Artifacts [SLSA]).
+
+- **R1:** Track the provenance of an AI model and its components and derivatives, including the training libraries, frameworks, and pipelines used to build the model.
+- **R2:** Track AI models that were trained on sensitive data (e.g., payment card data, protected health information, other types of personally identifiable information), and determine if access to the models should be restricted to individuals who already have access to the sensitive data used for training.
+- **C1:** Consider disclosing the provenance of the training, testing, fine-tuning, and aligning data used for an AI model.
+
+**Informative references:** OWASP: LLM03-1, LLM05-4, LLM05-5, LLM10
+
+## Produce Well-Secured Software (PW)
+
+### PW.1 — Design Software to Meet Security Requirements and Mitigate Security Risks
+
+> Identify and evaluate the security requirements for the software; determine what security risks the software is likely to face during operation and how the software's design and architecture should mitigate those risks; and justify any cases where risk-based analysis indicates that security requirements should be relaxed or waived. Addressing security requirements and risks during software design (secure by design) is key for improving software security and also helps improve development efficiency.
+
+#### PW.1.1 · priority **High**
+
+> Use forms of risk modeling — such as threat modeling, attack modeling, or attack surface mapping — to help assess the security risk for the software.
+
+- **R1:** Incorporate relevant AI model-specific vulnerability and threat types in risk modeling. Examples of these vulnerability and threat types include poisoning of training data, malicious code or other unwanted content in inputs and outputs, denial-of-service conditions arising from adversarial prompts, supply chain attacks, unauthorized information disclosure, theft of AI model weights, and misconfiguration of data pipelines.
+- **C1:** Consider periodic risk modeling updates for future AI model versions and derivatives after AI model release.
+- **C2:** During risk modeling, consider checking that the AI model is not in a critical path to make significant security decisions without a human in the loop.
+
+**Informative references:** AI RMF: Govern 4.1, 4.2; Map 5.1; Measure 1.1; Manage 1.2, 1.3 · OWASP: LLM01-LLM10
+
+#### PW.1.2 · priority **Medium**
+
+> Track and maintain the software's security requirements, risks, and design decisions.
+
+- No additions to SSDF 1.1
+
+**Informative references:** AI RMF: Govern 4.1, 4.2; Map 2.1, 2.2, 2.3, 3.2, 3.3, 4.1, 4.2, 5.2; Manage 1.2, 1.3, 1.4
+
+#### PW.1.3 · priority **Medium**
+
+> Where appropriate, build in support for using standardized security features and services (e.g., enabling software to integrate with existing log management, identity management, access control, and vulnerability management systems) instead of creating proprietary implementations of security features and services.
+
+- No additions to SSDF 1.1
+
+**Informative references:** Table 1 adds no specific informative reference for this task.
+
+### PW.2 — Review the Software Design to Verify Compliance with Security Requirements and Risk Information
+
+> Help ensure that the software will meet the security requirements and satisfactorily address the identified risk information.
+
+#### PW.2.1 · priority **High** · [Modified from SSDF 1.1]
+
+> Have 1) a qualified person (or people) who were not involved with the design and 2) automated processes instantiated in the toolchain review the software design to confirm and enforce that it meets all of the security requirements and satisfactorily addresses the identified risk information.
+
+- No additions to SSDF 1.1
+
+**Informative references:** AI RMF: Measure 2.7; Manage 1.1
+
+### PW.3 — Confirm the Integrity of Training, Testing, Fine-Tuning, and Aligning Data Before Use · [Not part of SSDF 1.1]
+
+> Prevent data that is likely to negatively impact the cybersecurity of the AI model from being consumed as part of AI model training, testing, fine-tuning, and aligning.
+
+#### PW.3.1 · priority **High** · [Not part of SSDF 1.1]
+
+> Analyze data for signs of data poisoning, bias, homogeneity, and tampering before using it for AI model training, testing, fine-tuning, or aligning purposes, and mitigate the risks as necessary.
+
+- **R1:** Verify the provenance (when known) and integrity of training, testing, fine-tuning, and aligning data before use.
+- **R2:** Select and apply appropriate methods for analyzing and altering the training, testing, fine-tuning, and aligning data for an AI model. Examples of methods include anomaly detection, bias detection, data cleaning, data curation, data filtering, data sanitization, fact-checking, and noise reduction.
+- **C1:** Consider using a human-in-the-loop to examine data, such as with exploratory data analysis techniques.
+
+**Informative references:** AI RMF: Measure 2.1; Manage 1.2, 1.3 · OWASP: LLM03, LLM06
+
+#### PW.3.2 · priority **Medium** · [Not part of SSDF 1.1]
+
+> Track the provenance, when known, of all training, testing, fine-tuning, and aligning data used for an AI model, and document which data do not have known provenance.
+
+- **N1:** Provenance verification is not possible in all cases because provenance is not always known. However, it is still beneficial for security purposes to track and verify provenance whenever possible, and to track when provenance is unknown.
+
+**Informative references:** AI RMF: Measure 2.1 · OWASP: LLM03-1 · Adv ML
+
+#### PW.3.3 · priority **Medium** · [Not part of SSDF 1.1]
+
+> Include adversarial samples in the training and testing data to improve attack prevention.
+
+- **R1:** Use a process and corresponding controls to test the adversarial samples and put appropriate guardrails on training and testing use.
+
+**Informative references:** OWASP: LLM03-6, LLM05-7 · Adv ML
+
+### PW.4 — Reuse Existing, Well-Secured Software When Feasible Instead of Duplicating Functionality
+
+> Lower the costs of software development, expedite software development, and decrease the likelihood of introducing additional security vulnerabilities into the software by reusing software modules and services that have already had their security posture checked. This is particularly important for software that implements security functionality, such as cryptographic modules and protocols.
+
+> **Note:** Table 1 of 800-218A has no rows for PW.4.3 or PW.4.5; SSDF 1.1 records those tasks as moved.
+
+#### PW.4.1 · priority **Medium**
+
+> Acquire and maintain well-secured software components (e.g., software libraries, modules, middleware, frameworks) from commercial, open-source, and other third-party developers for use by the organization's software.
+
+- **C1:** Consider using an existing AI model instead of creating a new one.
+
+**Informative references:** OWASP: LLM05
+
+#### PW.4.2 · priority **Low**
+
+> Create and maintain well-secured software components in-house following SDLC processes to meet common internal software development needs that cannot be better met by third-party software components.
+
+- No additions to SSDF 1.1
+
+**Informative references:** Table 1 adds no specific informative reference for this task.
+
+#### PW.4.4 · priority **High**
+
+> Verify that acquired commercial, open-source, and all other third-party software components comply with the requirements, as defined by the organization, throughout their life cycles.
+
+- **R1:** Verify the integrity, provenance, and security of an existing AI model or any other acquired AI components — including training, testing, fine-tuning, and aligning datasets; reward models; adaptation layers; and configuration parameters — before using them.
+- **R2:** Scan and thoroughly test acquired AI models and their components for vulnerabilities and malicious content before use.
+
+**Informative references:** OWASP: LLM05-2, LLM05-6 · Adv ML
+
+### PW.5 — Create Source Code by Adhering to Secure Coding Practices
+
+> Decrease the number of security vulnerabilities in the software, and reduce costs by minimizing vulnerabilities introduced during source code creation that meet or exceed organization-defined vulnerability severity criteria.
+
+#### PW.5.1 · priority **High**
+
+> Follow all secure coding practices that are appropriate to the development languages and environment to meet the organization's requirements.
+
+- **R1:** Expand secure coding practices to include AI technology-specific considerations.
+- **R2:** Code the handling of inputs (including prompts and user data) and outputs carefully. All inputs and outputs should be logged, analyzed, and validated within the context of the AI model, and those with issues should be sanitized or dropped.
+- **R3:** Encode inputs and outputs to prevent the execution of unauthorized code.
+
+**Informative references:** AI RMF: Manage 1.2, 1.3, 1.4 · OWASP: LLM01, LLM02, LLM04-1, LLM06, LLM07, LLM09-9, LLM10
+
+### PW.6 — Configure the Compilation, Interpreter, and Build Processes to Improve Executable Security
+
+> Decrease the number of security vulnerabilities in the software and reduce costs by eliminating vulnerabilities before testing occurs.
+
+#### PW.6.1 · priority **Low**
+
+> Use compiler, interpreter, and build tools that offer features to improve executable security.
+
+- **C1:** Consider using secure model serialization mechanisms that reduce or eliminate vectors for the introduction of malicious content.
+
+**Informative references:** Table 1 adds no specific informative reference for this task.
+
+#### PW.6.2 · priority **Low**
+
+> Determine which compiler, interpreter, and build tool features should be used and how each should be configured, then implement and use the approved configurations.
+
+- **C1:** Consider capturing compiler, interpreter, and build tool versions and features as part of the provenance tracking.
+
+**Informative references:** Table 1 adds no specific informative reference for this task.
+
+### PW.7 — Review and/or Analyze Human-Readable Code to Identify Vulnerabilities and Verify Compliance with Security Requirements
+
+> Help identify vulnerabilities so that they can be corrected before the software is released to prevent exploitation. Using automated methods lowers the effort and resources needed to detect vulnerabilities. Human-readable code includes source code, scripts, and any other form of code that an organization deems human-readable.
+
+#### PW.7.1 · priority **Medium**
+
+> Determine whether code review (a person looks directly at the code to find issues) and/or code analysis (tools are used to find issues in code, either in a fully automated way or in conjunction with a person) should be used, as defined by the organization.
+
+- **R1:** Code review and analysis policies or guidelines should include code for AI models and other related components.
+- **C1:** Consider performing scans of AI model code in addition to testing the AI models.
+
+**Informative references:** Table 1 adds no specific informative reference for this task.
+
+#### PW.7.2 · priority **High**
+
+> Perform the code review and/or code analysis based on the organization's secure coding standards, and record and triage all discovered issues and recommended remediations in the development team's workflow or issue tracking system.
+
+- **R1:** Scan all AI models for malware, vulnerabilities, backdoors, and other security issues in accordance with the organization's code review and analysis policies or guidelines.
+
+**Informative references:** AI RMF: Measure 2.3, 2.7; Manage 1.1, 1.2, 1.3, 1.4 · OWASP: LLM03-7d, LLM07-4
+
+### PW.8 — Test Executable Code to Identify Vulnerabilities and Verify Compliance with Security Requirements
+
+> Help identify vulnerabilities so that they can be corrected before the software is released in order to prevent exploitation. Using automated methods lowers the effort and resources needed to detect vulnerabilities and improves traceability and repeatability. Executable code includes binaries, directly executed bytecode and source code, and any other form of code that an organization deems executable.
+
+#### PW.8.1 · priority **High**
+
+> Determine whether executable code testing should be performed to find vulnerabilities not identified by previous reviews, analysis, or testing and, if so, which types of testing should be used.
+
+- **R1:** Include AI models in code testing policies and guidelines. Several forms of code testing can be used for AI models, including unit testing, integration testing, penetration testing, red teaming, use case testing, and adversarial testing.
+- **C1:** Consider automating tests within a development pipeline as part of regression testing where possible.
+
+**Informative references:** Table 1 adds no specific informative reference for this task.
+
+#### PW.8.2 · priority **High**
+
+> Scope the testing, design the tests, perform the testing, and document the results, including recording and triaging all discovered issues and recommended remediations in the development team's workflow or issue tracking system.
+
+- **R1:** Test all AI models for vulnerabilities in accordance with the organization's code testing policies or guidelines.
+- **R2:** Retest AI models when they are retrained or new data sources are added.
+
+**Informative references:** AI RMF: Measure 2.2, 2.3, 2.7; Manage 1.1, 1.2, 1.3, 1.4 · OWASP: LLM03-7d, LLM05-7, LLM07-4
+
+### PW.9 — Configure Software to Have Secure Settings by Default
+
+> Help improve the security of the software at the time of installation to reduce the likelihood of the software being deployed with weak security settings, putting it at greater risk of compromise.
+
+#### PW.9.1 · priority **Medium**
+
+> Define a secure baseline by determining how to configure each setting that has an effect on security or a security-related setting so that the default settings are secure and do not weaken the security functions provided by the platform, network infrastructure, or services.
+
+- No additions to SSDF 1.1
+
+**Informative references:** AI RMF: Measure 2.7
+
+#### PW.9.2 · priority **Medium**
+
+> Implement the default settings (or groups of default settings, if applicable), and document each setting for software administrators.
+
+- **N1:** Documenting settings can be performed earlier in the process, such as when defining a secure baseline (see PW.9.1).
+
+**Informative references:** AI RMF: Measure 2.7; Manage 1.2, 1.3, 1.4
+
+## Respond to Vulnerabilities (RV)
+
+### RV.1 — Identify and Confirm Vulnerabilities on an Ongoing Basis
+
+> Help ensure that vulnerabilities are identified more quickly so that they can be remediated more quickly in accordance with risk, reducing the window of opportunity for attackers.
+
+#### RV.1.1 · priority **High**
+
+> Gather information from software acquirers, users, and public sources on potential vulnerabilities in the software and third-party components that the software uses, and investigate all credible reports.
+
+- **R1:** Log, monitor, and analyze all inputs and outputs for AI models to detect possible security and performance issues (see PO.5.3).
+- **R2:** Make the users of AI models aware of mechanisms for reporting potential security and performance issues.
+- **N1:** In this context, "users" refers to AI system producers and acquirers who are using an AI model.
+- **R3:** Monitor vulnerability and incident databases for information on AI-related concerns, including the machine learning frameworks and libraries used to build AI models.
+
+**Informative references:** AI RMF: Govern 4.3, 5.1, 6.1, 6.2; Measure 1.2, 2.4, 2.5, 2.7, 3.1, 3.2, 3.3; Manage 4.1 · OWASP: LLM03-7a, LLM09, LLM10
+
+#### RV.1.2 · priority **Medium**
+
+> Review, analyze, and/or test the software's code to identify or confirm the presence of previously undetected vulnerabilities.
+
+- **R1:** Scan and test AI models frequently to identify previously undetected vulnerabilities.
+- **R2:** Rely mainly on automation for ongoing scanning and testing, and involve a human-in-the-loop as needed.
+- **R3:** Conduct periodic audits of AI models.
+
+**Informative references:** AI RMF: Govern 4.3; Measure 1.3, 2.4, 2.7, 3.1; Manage 4.1 · OWASP: LLM03-7b, LLM03-7d
+
+#### RV.1.3 · priority **Medium**
+
+> Have a policy that addresses vulnerability disclosure and remediation, and implement the roles, responsibilities, and processes needed to support that policy.
+
+- **R1:** Include AI model vulnerabilities in organization vulnerability disclosure and remediation policies.
+- **R2:** Make users of AI models aware of their inherent limitations and how to report any cybersecurity problems that they encounter.
+
+**Informative references:** AI RMF: Govern 4.3, 5.1, 6.1; Measure 3.1, 3.3; Manage 4.3
+
+### RV.2 — Assess, Prioritize, and Remediate Vulnerabilities
+
+> Help ensure that vulnerabilities are remediated in accordance with risk to reduce the window of opportunity for attackers.
+
+#### RV.2.1 · priority **Medium**
+
+> Analyze each vulnerability to gather sufficient information about risk to plan its remediation or other risk response.
+
+- **N1:** This may include deep analysis of generative AI and dual-use foundation model input and output to detect deviations from normal behavior.
+
+**Informative references:** AI RMF: Govern 4.3, 5.1, 6.1; Measure 2.7, 3.1; Manage 1.2, 2.3, 4.1 · Adv ML
+
+#### RV.2.2 · priority **High**
+
+> Plan and implement risk responses for vulnerabilities.
+
+- **R1:** Risk responses for AI models should consider the time and expenses that may be associated with rebuilding them.
+- **R2:** Establish and implement criteria and processes for when to stop using an AI model and when to roll back to a previous version and its components.
+- **C1:** Consider being prepared to stop using an AI model at any time and to continue operations through other means until the AI model's risks are sufficiently addressed.
+
+**Informative references:** AI RMF: Govern 5.1, 5.2, 6.1; Measure 3.3; Manage 1.3, 2.1, 2.3, 2.4, 4.1
+
+### RV.3 — Analyze Vulnerabilities to Identify Their Root Causes
+
+> Help reduce the frequency of vulnerabilities in the future.
+
+#### RV.3.1 · priority **Medium**
+
+> Analyze identified vulnerabilities to determine their root causes.
+
+- **N1:** The ability to review training, testing, fine-tuning, and aligning data after the fact can help identify some root causes.
+
+**Informative references:** AI RMF: Govern 5.1, 6.1; Measure 2.7, 3.1; Manage 2.3, 4.1
+
+#### RV.3.2 · priority **Medium**
+
+> Analyze the root causes over time to identify patterns, such as a particular secure coding practice not being followed consistently.
+
+- No additions to SSDF 1.1
+
+**Informative references:** AI RMF: Govern 5.1, 6.1; Measure 2.7, 3.1; Manage 4.1, 4.3
+
+#### RV.3.3 · priority **Medium**
+
+> Review the software for similar vulnerabilities to eradicate a class of vulnerabilities, and proactively fix them rather than waiting for external reports.
+
+- No additions to SSDF 1.1
+
+**Informative references:** AI RMF: Govern 5.1, 5.2, 6.1; Measure 2.7, 3.1; Manage 4.1, 4.2, 4.3
+
+#### RV.3.4 · priority **Medium**
+
+> Review the SDLC process, and update it if appropriate to prevent (or reduce the likelihood of) the root cause recurring in updates to the software or in new software that is created.
+
+- No additions to SSDF 1.1
+
+**Informative references:** AI RMF: Govern 5.2, 6.1; Measure 2.7, 3.1; Manage 4.2, 4.3
+
+## Bibliographic references cited inside Table 1
+
+- **[3]** Vassilev A, Oprea A, Fordyce A, Anderson H (2024), *Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations*, NIST AI 100-2e2023. https://doi.org/10.6028/NIST.AI.100-2e2023
+- **[16]** Waltermire DA, Scarfone KA, Casipe M (2011), *Specification for the Open Checklist Interactive Language (OCIL) Version 2.0*, NIST IR 7692. https://doi.org/10.6028/NIST.IR.7692
+- **[17]** Ross RS, McEvilley M, Winstead M (2022), *Engineering Trustworthy Secure Systems*, NIST SP 800-160v1r1. https://doi.org/10.6028/NIST.SP.800-160v1r1
+- **[18]** NIST/SEMATECH (2012), *What is EDA?*, Engineering Statistics Handbook, Section 1.1.1. https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm

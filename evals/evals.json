@@ -1,0 +1,72 @@
+{
+  "skill_name": "cybersec-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're building an internal agent for our engineering org: it reads Jira tickets through an MCP server and can open pull requests on our GitHub with a bot token, so it fixes simple bugs on its own. Before we roll it out to everyone, which security controls apply? Be concrete about what we must do and why.",
+      "expected_output": "Consultation answer: lethal trifecta / Rule of Two analysis, least-privilege bot token enforced at GitHub, complete mediation outside the model, MCP server as supply chain, human approval for irreversible actions; every control cites standard, version, ID and file; no invented IDs.",
+      "files": [],
+      "expectations": [
+        "Identifies the lethal trifecta (untrusted ticket content + private code/data + outbound action) and requires removing a leg or human approval",
+        "Treats indirect prompt injection through ticket content as a primary threat",
+        "Requires a least-privilege GitHub token enforced by GitHub itself (fine-grained / repo-scoped, no merge, branch protection)",
+        "Treats the MCP server and its tool descriptions as supply chain (pin, verify, review descriptions)",
+        "Authorisation of the agent's actions is decided outside the model (deterministic policy / target system)",
+        "Cites at least 8 distinct standard identifiers that exist in the current version of their standard",
+        "Cites no identifier that is invented, retired or from a superseded edition"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Haz una auditoría de seguridad del código de evals/fixtures/invoice-app y quiero el informe en HTML. No modifiques el repo.",
+      "expected_output": "Mode 2 run: findings.json that passes validate_findings.py with the IDOR on GET /invoices/<id> (CWE-639, ASVS v5.0.0-8.2.2) and the SQL injection on /search (CWE-89, ASVS v5.0.0-1.2.4) confirmed; security-report.html in Spanish with the mitigation prompt panel; no false positives on the parameterised queries or the PBKDF2 hashing; target untouched.",
+      "files": [
+        "evals/fixtures/invoice-app"
+      ],
+      "expectations": [
+        "findings.json exists and passes the skill's findings validator",
+        "Reports the missing ownership check on GET /invoices/<id> (IDOR / BOLA)",
+        "Reports the SQL injection in GET /search",
+        "Each confirmed finding is justified by a tier-A requirement and a CWE (sources)",
+        "An HTML report in Spanish is produced",
+        "The HTML report has a mitigation prompt panel with per-finding checkboxes and a copy action",
+        "No false positive on the PBKDF2 password hashing or the parameterised queries",
+        "The target repository was not modified"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Pentest finding to classify: on our REST API, GET /api/v1/orders/{id} returns any customer's order (name, address, items) to any logged-in customer who changes the id. Nothing else is exposed and orders can't be modified this way. Give me the CWE, the CVSS 4.0 vector and score, the severity, and exactly which requirements it breaks in which standards.",
+      "expected_output": "CWE-639; CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N = 7.1 computed (VC:L = 5.3 acceptable if argued); severity high; ASVS v5.0.0-8.2.2, API1:2023, A01:2025 with versions and files.",
+      "files": [],
+      "expectations": [
+        "Names CWE-639 (Authorization Bypass Through User-Controlled Key) as the weakness",
+        "Gives a CVSS 4.0 base vector matching the facts (AV:N/AC:L/AT:N/PR:L/UI:N, VC:H or L, no integrity, availability or subsequent impact)",
+        "The stated CVSS score is the one FIRST's algorithm gives for the stated vector",
+        "Severity is High (consistent with the cross-customer read)",
+        "Cites the ASVS 5.0.0 object-level authorisation requirement (8.2.2)",
+        "Cites OWASP API Security Top 10 2023 API1 (BOLA)",
+        "Cites OWASP Top 10:2025 A01, not only the 2021 edition",
+        "Cites no identifier that is invented, retired or from a superseded edition"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Can you audit the dependencies of evals/fixtures/shop-frontend? I want to know if anything is vulnerable or looks malicious, and I'd like a report I can share.",
+      "expected_output": "Mode 3 run: CycloneDX SBOM; lodash 4.17.15 advisories from OSV; colour-utilz postinstall flagged needs_validation (dead eval of an encoded string); expresss flagged as a typosquat of express; nothing installed or executed; validated findings and an HTML report stating static analysis cannot prove packages clean.",
+      "files": [
+        "evals/fixtures/shop-frontend"
+      ],
+      "expectations": [
+        "A CycloneDX SBOM is produced",
+        "Reports known vulnerabilities of lodash 4.17.15 with advisory identifiers",
+        "Flags the colour-utilz postinstall hook with encoded eval as suspicious",
+        "Does not call colour-utilz confirmed malware: it is a lead needing validation (the eval is dead code)",
+        "Flags expresss as a likely typosquat of express",
+        "Produces a shareable report file",
+        "States that static analysis cannot prove the packages are clean",
+        "Nothing in the target was installed, built or modified"
+      ]
+    }
+  ]
+}

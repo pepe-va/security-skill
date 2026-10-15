@@ -1,0 +1,447 @@
+[
+  {
+    "coverage_id": "app.py%23GET%20%2Finvoices%2F%3Cid%3E::app.py%23current_user%20gate%20%28no%20owner%20binding%29::invoice-app::ATTACK-CLASSES.md%23Access%20control",
+    "canonical_refs": {
+      "surface": "app.py#GET /invoices/<id>",
+      "boundary": "app.py#current_user gate (no owner binding)",
+      "subsystem": "invoice-app",
+      "attack_class": "ATTACK-CLASSES.md#Access control"
+    },
+    "surface": "app.py#GET /invoices/<id>",
+    "boundary": "app.py#current_user gate (no owner binding)",
+    "subsystem": "invoice-app",
+    "attack_class": "ATTACK-CLASSES.md#Access control",
+    "starting_paths": [
+      "app.py",
+      "seed.py"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "h1",
+    "reviewed_paths": [
+      "app.py",
+      "auth.py",
+      "seed.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "app.py",
+          "seed.py"
+        ],
+        "invariant": "Object read bound to owner_id of the authenticated user",
+        "method": "source",
+        "result": "SELECT at app.py:41 filters only by id; no owner_id predicate, unlike GET /invoices at app.py:48.",
+        "artifact": null
+      },
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "app.py",
+          "auth.py",
+          "seed.py"
+        ],
+        "invariant": "A non-owner cannot read another user's invoice",
+        "method": "local",
+        "result": "In sandbox, bob (id 2) read alice's (id 1) invoice including the IBAN via GET /invoices/1. See evidence.txt.",
+        "artifact": "agents/h1/artifacts/evidence.txt"
+      }
+    ],
+    "result_fingerprints": [
+      "invoice-app/app.py:invoices-id-missing-owner-check"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "app.py%23GET%20%2Finvoices::app.py%23owner_id%20scoping::invoice-app::DATA-ISOLATION-AND-LIFECYCLE.md%23Missing%20tenant%20or%20owner%20enforcement",
+    "canonical_refs": {
+      "surface": "app.py#GET /invoices",
+      "boundary": "app.py#owner_id scoping",
+      "subsystem": "invoice-app",
+      "attack_class": "DATA-ISOLATION-AND-LIFECYCLE.md#Missing tenant or owner enforcement"
+    },
+    "surface": "app.py#GET /invoices",
+    "boundary": "app.py#owner_id scoping",
+    "subsystem": "invoice-app",
+    "attack_class": "DATA-ISOLATION-AND-LIFECYCLE.md#Missing tenant or owner enforcement",
+    "starting_paths": [
+      "app.py"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "DATA-ISOLATION-AND-LIFECYCLE.md#Missing tenant or owner enforcement",
+      "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+      "DATA-ISOLATION-AND-LIFECYCLE.md#Universal moves",
+      "DATA-ISOLATION-AND-LIFECYCLE.md#Validation rules"
+    ],
+    "excluded_blocks": [],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "h1",
+    "reviewed_paths": [
+      "app.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "app.py"
+        ],
+        "invariant": "List endpoint returns only the caller's rows",
+        "method": "source",
+        "result": "app.py:48 filters WHERE owner_id = ? with (user['id'],); baseline test showed bob received only his own invoice. Control present here (contrast with /invoices/<id>).",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "app.py%23GET%20%2Fsearch%3Fq%3D::app.py%23parameterization%20at%20db%28%29.execute::invoice-app::ATTACK-CLASSES.md%23Injection",
+    "canonical_refs": {
+      "surface": "app.py#GET /search?q=",
+      "boundary": "app.py#parameterization at db().execute",
+      "subsystem": "invoice-app",
+      "attack_class": "ATTACK-CLASSES.md#Injection"
+    },
+    "surface": "app.py#GET /search?q=",
+    "boundary": "app.py#parameterization at db().execute",
+    "subsystem": "invoice-app",
+    "attack_class": "ATTACK-CLASSES.md#Injection",
+    "starting_paths": [
+      "app.py",
+      "seed.py"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Injection",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "No path/SSRF/deserialization sink; the only untrusted sink on this route is the SQL string."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "h1",
+    "reviewed_paths": [
+      "app.py",
+      "auth.py",
+      "seed.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "app.py"
+        ],
+        "invariant": "User input q reaches SQL only through parameter binding",
+        "method": "source",
+        "result": "q is interpolated via f-string into the SQL at app.py:53 and executed unparameterized at app.py:55.",
+        "artifact": null
+      },
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "app.py",
+          "auth.py",
+          "seed.py"
+        ],
+        "invariant": "q cannot alter query structure or the owner_id predicate",
+        "method": "local",
+        "result": "In sandbox, boolean payload bypassed owner_id and UNION payload dumped the users table (PBKDF2 hashes). See evidence.txt.",
+        "artifact": "agents/h1/artifacts/evidence.txt"
+      }
+    ],
+    "result_fingerprints": [
+      "invoice-app/app.py:search-sql-injection"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "app.py%23POST%20%2Flogin::app.py%23pre-auth%20work%20before%20size%2Frate%20gate::invoice-app::RESOURCE-EXHAUSTION-AND-AVAILABILITY.md%23Pre-authentication%20work%20imbalance",
+    "canonical_refs": {
+      "surface": "app.py#POST /login",
+      "boundary": "app.py#pre-auth work before size/rate gate",
+      "subsystem": "invoice-app",
+      "attack_class": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Pre-authentication work imbalance"
+    },
+    "surface": "app.py#POST /login",
+    "boundary": "app.py#pre-auth work before size/rate gate",
+    "subsystem": "invoice-app",
+    "attack_class": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Pre-authentication work imbalance",
+    "starting_paths": [
+      "app.py",
+      "auth.py"
+    ],
+    "ordinary_attack_class_block": null,
+    "selected_companion_blocks": [
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Pre-authentication work imbalance",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Universal moves",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Validation rules"
+    ],
+    "excluded_blocks": [],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "h1",
+    "reviewed_paths": [
+      "app.py",
+      "auth.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "app.py",
+          "auth.py"
+        ],
+        "invariant": "Unauthenticated cost is bounded and does not stop a shared service",
+        "method": "source",
+        "result": "PBKDF2 (600k iters) runs on /login only when the username exists (auth.py:18 short-circuits for unknown users). Cost is one hash (~sub-second) per request against a known username. wsgiref.simple_server is single-threaded with no body/rate limits. Recorded as hardening: no rate limiting and a non-production reference server; no crash/fatal path demonstrated, so not a confirmed availability finding.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "app.py%23POST%20%2Flogin::auth.py%23login%20password%20verification::invoice-app::ATTACK-CLASSES.md%23Cryptography%20and%20secrets",
+    "canonical_refs": {
+      "surface": "app.py#POST /login",
+      "boundary": "auth.py#login password verification",
+      "subsystem": "invoice-app",
+      "attack_class": "ATTACK-CLASSES.md#Cryptography and secrets"
+    },
+    "surface": "app.py#POST /login",
+    "boundary": "auth.py#login password verification",
+    "subsystem": "invoice-app",
+    "attack_class": "ATTACK-CLASSES.md#Cryptography and secrets",
+    "starting_paths": [
+      "app.py",
+      "auth.py"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Cryptography and secrets",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "h1",
+    "reviewed_paths": [
+      "app.py",
+      "auth.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "app.py",
+          "auth.py"
+        ],
+        "invariant": "Password verification uses a strong KDF and constant-time compare; username lookup is parameterized",
+        "method": "source",
+        "result": "auth.py:11-12 PBKDF2-HMAC-SHA512 600k iters with 16-byte random salt; auth.py:18 hmac.compare_digest; auth.py:17 parameterized SELECT; token secrets.token_urlsafe(32) at auth.py:20. Primitive use is sound. Hardening: no brute-force/rate-limit control (ASVS 6.3.1) and the hash is skipped for unknown users, enabling a timing oracle (ASVS 6.3.8, L3).",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "app.py%23__main__%20make_server::app.py%23transport%20security::invoice-app::WEB-PROTOCOL-AND-AUTH.md%23Cookie%20scope%20and%20transport",
+    "canonical_refs": {
+      "surface": "app.py#__main__ make_server",
+      "boundary": "app.py#transport security",
+      "subsystem": "invoice-app",
+      "attack_class": "WEB-PROTOCOL-AND-AUTH.md#Cookie scope and transport"
+    },
+    "surface": "app.py#__main__ make_server",
+    "boundary": "app.py#transport security",
+    "subsystem": "invoice-app",
+    "attack_class": "WEB-PROTOCOL-AND-AUTH.md#Cookie scope and transport",
+    "starting_paths": [
+      "app.py",
+      "README.md"
+    ],
+    "ordinary_attack_class_block": null,
+    "selected_companion_blocks": [
+      "WEB-PROTOCOL-AND-AUTH.md#Cookie scope and transport",
+      "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+      "WEB-PROTOCOL-AND-AUTH.md#Universal moves",
+      "WEB-PROTOCOL-AND-AUTH.md#Validation rules"
+    ],
+    "excluded_blocks": [],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "h1",
+    "reviewed_paths": [
+      "README.md",
+      "app.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "app.py",
+          "README.md"
+        ],
+        "invariant": "Credentials and tokens travel over an encrypted channel",
+        "method": "source",
+        "result": "make_server at app.py:62 serves plain HTTP bound to 127.0.0.1; no TLS or HTTPS redirect in source and no deployment config. Whether a TLS-terminating proxy fronts it in production is not source-visible.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "invoice-app/app.py:no-tls-transport"
+    ],
+    "unresolved": [
+      "Deployment exposure beyond loopback and presence of a TLS terminator are not in the repository."
+    ]
+  },
+  {
+    "coverage_id": "app.py%23respond%20%2F%20no%20route::app.py%23error%20and%20routing%20responses::invoice-app::ATTACK-CLASSES.md%23Obvious%20things",
+    "canonical_refs": {
+      "surface": "app.py#respond / no route",
+      "boundary": "app.py#error and routing responses",
+      "subsystem": "invoice-app",
+      "attack_class": "ATTACK-CLASSES.md#Obvious things"
+    },
+    "surface": "app.py#respond / no route",
+    "boundary": "app.py#error and routing responses",
+    "subsystem": "invoice-app",
+    "attack_class": "ATTACK-CLASSES.md#Obvious things",
+    "starting_paths": [
+      "app.py"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Obvious things",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "h1",
+    "reviewed_paths": [
+      "app.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "app.py"
+        ],
+        "invariant": "No debug mode, stack traces, open redirects, hardcoded secrets or unprotected admin/debug endpoints",
+        "method": "source",
+        "result": "Responses are JSON with fixed error strings (app.py:18-20, 58); no traceback leakage, no redirect sink, no eval/exec, no debug flag, no admin/debug/metrics route, no secrets in source. 404 returned uniformly for unknown routes.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "auth.py%23current_user%20%2F%20SESSIONS::auth.py%23session%20lifecycle::invoice-app::WEB-PROTOCOL-AND-AUTH.md%23Session%20fixation%20and%20invalidation",
+    "canonical_refs": {
+      "surface": "auth.py#current_user / SESSIONS",
+      "boundary": "auth.py#session lifecycle",
+      "subsystem": "invoice-app",
+      "attack_class": "WEB-PROTOCOL-AND-AUTH.md#Session fixation and invalidation"
+    },
+    "surface": "auth.py#current_user / SESSIONS",
+    "boundary": "auth.py#session lifecycle",
+    "subsystem": "invoice-app",
+    "attack_class": "WEB-PROTOCOL-AND-AUTH.md#Session fixation and invalidation",
+    "starting_paths": [
+      "auth.py",
+      "app.py"
+    ],
+    "ordinary_attack_class_block": null,
+    "selected_companion_blocks": [
+      "WEB-PROTOCOL-AND-AUTH.md#Session fixation and invalidation",
+      "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+      "WEB-PROTOCOL-AND-AUTH.md#Universal moves",
+      "WEB-PROTOCOL-AND-AUTH.md#Validation rules"
+    ],
+    "excluded_blocks": [],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "h1",
+    "reviewed_paths": [
+      "app.py",
+      "auth.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "auth.py",
+          "app.py"
+        ],
+        "invariant": "Sessions can be terminated and tokens are unguessable",
+        "method": "source",
+        "result": "Tokens are 256-bit secrets.token_urlsafe (auth.py:20), stored in an in-memory dict (auth.py:8). There is NO logout route and no inactivity/absolute timeout (no expiry anywhere), so a token is valid until process restart. Recorded as hardening: insufficient session expiration (CWE-613, ASVS 7.4.1); no demonstrated attacker gain without an out-of-scope token-capture precondition.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "seed.py%23module%20seed::seed.py%23demo%20credentials::invoice-app::ATTACK-CLASSES.md%23Obvious%20things",
+    "canonical_refs": {
+      "surface": "seed.py#module seed",
+      "boundary": "seed.py#demo credentials",
+      "subsystem": "invoice-app",
+      "attack_class": "ATTACK-CLASSES.md#Obvious things"
+    },
+    "surface": "seed.py#module seed",
+    "boundary": "seed.py#demo credentials",
+    "subsystem": "invoice-app",
+    "attack_class": "ATTACK-CLASSES.md#Obvious things",
+    "starting_paths": [
+      "seed.py"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Obvious things",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "h1",
+    "reviewed_paths": [
+      "seed.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "h1",
+        "reviewed_paths": [
+          "seed.py"
+        ],
+        "invariant": "No real/default credentials that would work in production",
+        "method": "source",
+        "result": "seed.py:15 creates alice and bob with the same hardcoded password 'demo-password'. File header states 'dummy data only'. Recorded as hardening (CWE-798): shared demo credentials must never seed a real deployment; no production deployment in scope.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": []
+  }
+]

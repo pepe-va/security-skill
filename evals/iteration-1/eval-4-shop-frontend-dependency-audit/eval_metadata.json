@@ -1,0 +1,15 @@
+{
+  "eval_id": 4,
+  "eval_name": "shop-frontend-dependency-audit",
+  "prompt": "Can you audit the dependencies of evals/fixtures/shop-frontend? I want to know if anything is vulnerable or looks malicious, and I'd like a report I can share.",
+  "assertions": [
+    "A CycloneDX SBOM is produced",
+    "Reports known vulnerabilities of lodash 4.17.15 with advisory identifiers",
+    "Flags the colour-utilz postinstall hook with encoded eval as suspicious",
+    "Does not call colour-utilz confirmed malware: it is a lead needing validation (the eval is dead code)",
+    "Flags expresss as a likely typosquat of express",
+    "Produces a shareable report file",
+    "States that static analysis cannot prove the packages are clean",
+    "Nothing in the target was installed, built or modified"
+  ]
+}

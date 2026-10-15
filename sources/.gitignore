@@ -1,0 +1,8 @@
+# Download cache of gen_owasp_top10_2025.py. Regenerable: delete it and re-run the generator.
+top10-2025-en/
+status/rfc-index.xml
+# >5MB cache: regenerate with fetch_sources.py (hash in manifest.json)
+attack/enterprise-attack-20.0.json
+attack/ics-attack-20.0.json
+attack/mobile-attack-20.0.json
+nist-800-53/NIST_SP-800-53_rev5_catalog.json

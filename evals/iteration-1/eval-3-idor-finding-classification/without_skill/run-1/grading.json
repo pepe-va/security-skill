@@ -1,0 +1,55 @@
+{
+  "expectations": [
+    {
+      "text": "Names CWE-639 (Authorization Bypass Through User-Controlled Key) as the weakness",
+      "passed": true,
+      "evidence": "CWE-639 present"
+    },
+    {
+      "text": "Gives a CVSS 4.0 base vector matching the facts (AV:N/AC:L/AT:N/PR:L/UI:N, VC:H or L, no integrity, availability or subsequent impact)",
+      "passed": true,
+      "evidence": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
+    },
+    {
+      "text": "The stated CVSS score is the one FIRST's algorithm gives for the stated vector",
+      "passed": true,
+      "evidence": "vector CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N computes to 7.1; stated in the answer"
+    },
+    {
+      "text": "Severity is High (consistent with the cross-customer read)",
+      "passed": true,
+      "evidence": "high severity stated"
+    },
+    {
+      "text": "Cites the ASVS 5.0.0 object-level authorisation requirement (8.2.2)",
+      "passed": true,
+      "evidence": "8.2.2 cited"
+    },
+    {
+      "text": "Cites OWASP API Security Top 10 2023 API1 (BOLA)",
+      "passed": true,
+      "evidence": "API1 cited"
+    },
+    {
+      "text": "Cites OWASP Top 10:2025 A01, not only the 2021 edition",
+      "passed": true,
+      "evidence": "A01:2025 cited"
+    },
+    {
+      "text": "Cites no identifier that is invented, retired or from a superseded edition",
+      "passed": false,
+      "evidence": "A01:2021 (not an OWASP Top 10:2025 category)"
+    }
+  ],
+  "summary": {
+    "passed": 7,
+    "failed": 1,
+    "total": 8,
+    "pass_rate": 0.88
+  },
+  "timing": {
+    "total_tokens": 82622,
+    "duration_ms": 923923,
+    "total_duration_seconds": 923.9
+  }
+}

@@ -1,0 +1,536 @@
+{
+  "metadata": {
+    "skill_name": "cybersec-skill",
+    "skill_path": "skills/security/cybersec-skill",
+    "executor_model": "claude-opus-5-5",
+    "analyzer_model": "claude-opus-5-5",
+    "timestamp": "2026-10-15T13:21:09Z",
+    "evals_run": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "eval_name": "mcp-agent-controls",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 1325.2,
+        "tokens": 213024,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Identifies the lethal trifecta (untrusted ticket content + private code/data + outbound action) and requires removing a leg or human approval",
+          "passed": true,
+          "evidence": "mentions trifecta/Rule of Two and approval"
+        },
+        {
+          "text": "Treats indirect prompt injection through ticket content as a primary threat",
+          "passed": true,
+          "evidence": "prompt injection + tickets discussed"
+        },
+        {
+          "text": "Requires a least-privilege GitHub token enforced by GitHub itself (fine-grained / repo-scoped, no merge, branch protection)",
+          "passed": true,
+          "evidence": "least privilege + branch protection / no merge"
+        },
+        {
+          "text": "Treats the MCP server and its tool descriptions as supply chain (pin, verify, review descriptions)",
+          "passed": true,
+          "evidence": "MCP as supply chain"
+        },
+        {
+          "text": "Authorisation of the agent's actions is decided outside the model (deterministic policy / target system)",
+          "passed": true,
+          "evidence": "decision outside the model"
+        },
+        {
+          "text": "Cites at least 8 distinct standard identifiers that exist in the current version of their standard",
+          "passed": true,
+          "evidence": "81 verified identifiers: A03:2025, AML.M0027, AML.M0028, AML.M0029, AML.M0030, AML.M0032, AML.T0010.005, AML.T0051.001, AML.T0053, AML.T0086, AML.T0093, AML.T0099, AML.T0109, AML.T0110.000, API6:2023"
+        },
+        {
+          "text": "Cites no identifier that is invented, retired or from a superseded edition",
+          "passed": true,
+          "evidence": "none"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "mcp-agent-controls",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.86,
+        "passed": 6,
+        "failed": 1,
+        "total": 7,
+        "time_seconds": 415.2,
+        "tokens": 67124,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Identifies the lethal trifecta (untrusted ticket content + private code/data + outbound action) and requires removing a leg or human approval",
+          "passed": true,
+          "evidence": "mentions trifecta/Rule of Two and approval"
+        },
+        {
+          "text": "Treats indirect prompt injection through ticket content as a primary threat",
+          "passed": true,
+          "evidence": "prompt injection + tickets discussed"
+        },
+        {
+          "text": "Requires a least-privilege GitHub token enforced by GitHub itself (fine-grained / repo-scoped, no merge, branch protection)",
+          "passed": true,
+          "evidence": "least privilege + branch protection / no merge"
+        },
+        {
+          "text": "Treats the MCP server and its tool descriptions as supply chain (pin, verify, review descriptions)",
+          "passed": true,
+          "evidence": "MCP as supply chain"
+        },
+        {
+          "text": "Authorisation of the agent's actions is decided outside the model (deterministic policy / target system)",
+          "passed": true,
+          "evidence": "decision outside the model"
+        },
+        {
+          "text": "Cites at least 8 distinct standard identifiers that exist in the current version of their standard",
+          "passed": true,
+          "evidence": "44 verified identifiers: AC-3, AC-5, AC-6, AML.T0051.001, ASI01, ASI02, ASI03, ASI04, ASI05, ASI06, ASI08, ASI09, ASI10, AU-10, AU-12"
+        },
+        {
+          "text": "Cites no identifier that is invented, retired or from a superseded edition",
+          "passed": false,
+          "evidence": "LLM01:2025 (not an LLM Top 10 2026 risk); LLM02:2025 (not an LLM Top 10 2026 risk); LLM05:2025 (not an LLM Top 10 2026 risk); LLM06:2025 (not an LLM Top 10 2026 risk); LLM07:2025 (not an LLM Top 10 2026 risk); LLM09:2025 (not an LLM Top 10 2026 risk); LLM10:2025 (not an LLM Top 10 2026 risk)"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "invoice-app-code-audit-es",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 1916.4,
+        "tokens": 212588,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "findings.json exists and passes the skill's findings validator",
+          "passed": true,
+          "evidence": "PASS: 3 findings valid"
+        },
+        {
+          "text": "Reports the missing ownership check on GET /invoices/<id> (IDOR / BOLA)",
+          "passed": true,
+          "evidence": "found in outputs"
+        },
+        {
+          "text": "Reports the SQL injection in GET /search",
+          "passed": true,
+          "evidence": "found in outputs"
+        },
+        {
+          "text": "Each confirmed finding is justified by a tier-A requirement and a CWE (sources)",
+          "passed": true,
+          "evidence": "2 confirmed findings; sources e.g. ['v5.0.0-8.2.2', 'CWE-639', 'A01:2025', 'API1:2023', 'CVSS:4.0']"
+        },
+        {
+          "text": "An HTML report in Spanish is produced",
+          "passed": true,
+          "evidence": "['security-report.html'] lang es=True"
+        },
+        {
+          "text": "The HTML report has a mitigation prompt panel with per-finding checkboxes and a copy action",
+          "passed": true,
+          "evidence": "panel present"
+        },
+        {
+          "text": "No false positive on the PBKDF2 password hashing or the parameterised queries",
+          "passed": true,
+          "evidence": "no confirmed finding on the hashing or the parameterised queries"
+        },
+        {
+          "text": "The target repository was not modified",
+          "passed": true,
+          "evidence": "sha256 of every fixture file unchanged"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "invoice-app-code-audit-es",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.62,
+        "passed": 5,
+        "failed": 3,
+        "total": 8,
+        "time_seconds": 505.8,
+        "tokens": 71272,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "findings.json exists and passes the skill's findings validator",
+          "passed": false,
+          "evidence": "no findings.json"
+        },
+        {
+          "text": "Reports the missing ownership check on GET /invoices/<id> (IDOR / BOLA)",
+          "passed": true,
+          "evidence": "found in outputs"
+        },
+        {
+          "text": "Reports the SQL injection in GET /search",
+          "passed": true,
+          "evidence": "found in outputs"
+        },
+        {
+          "text": "Each confirmed finding is justified by a tier-A requirement and a CWE (sources)",
+          "passed": false,
+          "evidence": "0 confirmed findings"
+        },
+        {
+          "text": "An HTML report in Spanish is produced",
+          "passed": true,
+          "evidence": "['informe-auditoria-invoice-app.html'] lang es=True"
+        },
+        {
+          "text": "The HTML report has a mitigation prompt panel with per-finding checkboxes and a copy action",
+          "passed": false,
+          "evidence": "no prompt panel"
+        },
+        {
+          "text": "No false positive on the PBKDF2 password hashing or the parameterised queries",
+          "passed": true,
+          "evidence": "no confirmed finding on the hashing or the parameterised queries"
+        },
+        {
+          "text": "The target repository was not modified",
+          "passed": true,
+          "evidence": "sha256 of every fixture file unchanged"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "idor-finding-classification",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 862.7,
+        "tokens": 116993,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Names CWE-639 (Authorization Bypass Through User-Controlled Key) as the weakness",
+          "passed": true,
+          "evidence": "CWE-639 present"
+        },
+        {
+          "text": "Gives a CVSS 4.0 base vector matching the facts (AV:N/AC:L/AT:N/PR:L/UI:N, VC:H or L, no integrity, availability or subsequent impact)",
+          "passed": true,
+          "evidence": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
+        },
+        {
+          "text": "The stated CVSS score is the one FIRST's algorithm gives for the stated vector",
+          "passed": true,
+          "evidence": "vector CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N computes to 7.1; stated in the answer"
+        },
+        {
+          "text": "Severity is High (consistent with the cross-customer read)",
+          "passed": true,
+          "evidence": "high severity stated"
+        },
+        {
+          "text": "Cites the ASVS 5.0.0 object-level authorisation requirement (8.2.2)",
+          "passed": true,
+          "evidence": "8.2.2 cited"
+        },
+        {
+          "text": "Cites OWASP API Security Top 10 2023 API1 (BOLA)",
+          "passed": true,
+          "evidence": "API1 cited"
+        },
+        {
+          "text": "Cites OWASP Top 10:2025 A01, not only the 2021 edition",
+          "passed": true,
+          "evidence": "A01:2025 cited"
+        },
+        {
+          "text": "Cites no identifier that is invented, retired or from a superseded edition",
+          "passed": true,
+          "evidence": "none"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "idor-finding-classification",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.88,
+        "passed": 7,
+        "failed": 1,
+        "total": 8,
+        "time_seconds": 923.9,
+        "tokens": 82622,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Names CWE-639 (Authorization Bypass Through User-Controlled Key) as the weakness",
+          "passed": true,
+          "evidence": "CWE-639 present"
+        },
+        {
+          "text": "Gives a CVSS 4.0 base vector matching the facts (AV:N/AC:L/AT:N/PR:L/UI:N, VC:H or L, no integrity, availability or subsequent impact)",
+          "passed": true,
+          "evidence": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
+        },
+        {
+          "text": "The stated CVSS score is the one FIRST's algorithm gives for the stated vector",
+          "passed": true,
+          "evidence": "vector CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N computes to 7.1; stated in the answer"
+        },
+        {
+          "text": "Severity is High (consistent with the cross-customer read)",
+          "passed": true,
+          "evidence": "high severity stated"
+        },
+        {
+          "text": "Cites the ASVS 5.0.0 object-level authorisation requirement (8.2.2)",
+          "passed": true,
+          "evidence": "8.2.2 cited"
+        },
+        {
+          "text": "Cites OWASP API Security Top 10 2023 API1 (BOLA)",
+          "passed": true,
+          "evidence": "API1 cited"
+        },
+        {
+          "text": "Cites OWASP Top 10:2025 A01, not only the 2021 edition",
+          "passed": true,
+          "evidence": "A01:2025 cited"
+        },
+        {
+          "text": "Cites no identifier that is invented, retired or from a superseded edition",
+          "passed": false,
+          "evidence": "A01:2021 (not an OWASP Top 10:2025 category)"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "shop-frontend-dependency-audit",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 1399.0,
+        "tokens": 212171,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "A CycloneDX SBOM is produced",
+          "passed": true,
+          "evidence": "['sbom.cdx.json']"
+        },
+        {
+          "text": "Reports known vulnerabilities of lodash 4.17.15 with advisory identifiers",
+          "passed": true,
+          "evidence": "lodash advisories cited"
+        },
+        {
+          "text": "Flags the colour-utilz postinstall hook with encoded eval as suspicious",
+          "passed": true,
+          "evidence": "flagged"
+        },
+        {
+          "text": "Does not call colour-utilz confirmed malware: it is a lead needing validation (the eval is dead code)",
+          "passed": true,
+          "evidence": "treated as unconfirmed lead"
+        },
+        {
+          "text": "Flags expresss as a likely typosquat of express",
+          "passed": true,
+          "evidence": "typosquat flagged"
+        },
+        {
+          "text": "Produces a shareable report file",
+          "passed": true,
+          "evidence": "['REPORT.md', 'security-report.html', 'FINDINGS-DETAIL.md', 'NEEDS-VALIDATION.md', 'architecture.md']"
+        },
+        {
+          "text": "States that static analysis cannot prove the packages are clean",
+          "passed": true,
+          "evidence": "limitation stated"
+        },
+        {
+          "text": "Nothing in the target was installed, built or modified",
+          "passed": true,
+          "evidence": "sha256 of every fixture file unchanged"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "shop-frontend-dependency-audit",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 6,
+        "failed": 2,
+        "total": 8,
+        "time_seconds": 1120.9,
+        "tokens": 108571,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "A CycloneDX SBOM is produced",
+          "passed": false,
+          "evidence": "[]"
+        },
+        {
+          "text": "Reports known vulnerabilities of lodash 4.17.15 with advisory identifiers",
+          "passed": true,
+          "evidence": "lodash advisories cited"
+        },
+        {
+          "text": "Flags the colour-utilz postinstall hook with encoded eval as suspicious",
+          "passed": true,
+          "evidence": "flagged"
+        },
+        {
+          "text": "Does not call colour-utilz confirmed malware: it is a lead needing validation (the eval is dead code)",
+          "passed": true,
+          "evidence": "treated as unconfirmed lead"
+        },
+        {
+          "text": "Flags expresss as a likely typosquat of express",
+          "passed": true,
+          "evidence": "typosquat flagged"
+        },
+        {
+          "text": "Produces a shareable report file",
+          "passed": true,
+          "evidence": "['report.html']"
+        },
+        {
+          "text": "States that static analysis cannot prove the packages are clean",
+          "passed": false,
+          "evidence": "no statement that a clean result is not proof"
+        },
+        {
+          "text": "Nothing in the target was installed, built or modified",
+          "passed": true,
+          "evidence": "sha256 of every fixture file unchanged"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 1375.825,
+        "stddev": 431.5162,
+        "min": 862.7,
+        "max": 1916.4
+      },
+      "tokens": {
+        "mean": 188694.0,
+        "stddev": 47801.9353,
+        "min": 116993,
+        "max": 213024
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.7775,
+        "stddev": 0.1195,
+        "min": 0.62,
+        "max": 0.88
+      },
+      "time_seconds": {
+        "mean": 741.45,
+        "stddev": 336.2738,
+        "min": 415.2,
+        "max": 1120.9
+      },
+      "tokens": {
+        "mean": 82397.25,
+        "stddev": 18638.3033,
+        "min": 67124,
+        "max": 108571
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.22",
+      "time_seconds": "+634.4",
+      "tokens": "+106297"
+    }
+  },
+  "notes": [
+    "With the skill 31/31 assertions (100%); without 24/30 (80% pooled, 78% as the mean of the per-eval rates). One run per configuration, so there is no variance estimate: treat the deltas as indicative.",
+    "Non-discriminating: finding the IDOR and the SQL injection, the lethal-trifecta analysis, lodash advisories, colour-utilz and expresss all pass in both configurations. A capable model finds these bugs without the skill.",
+    "What the skill adds: a validated findings.json, sources for every finding, the mitigation prompt panel, a CycloneDX SBOM, the 'cannot prove clean' limit, and only current editions (the baseline cited LLM Top 10 2025 numbering and A01:2021).",
+    "Cost: with the skill about 2.3x the tokens (mean 189k vs 82k) and 1.9x the time (mean 23 min vs 12 min). The audit modes pay for validators, the coverage ledger and sandboxed evidence; the consultation cited and checked 149 identifiers.",
+    "Eval 2 with the skill demonstrated both bugs in a bwrap sandbox (no network, read-only source); the baseline did a static review only.",
+    "Defects these runs exposed, now fixed: finding text stayed English inside the Spanish report (SKILL.md and audit/README.md now say to write finding text in the conversation's language); with no critical finding the prompt panel started empty (the most severe level present is now preselected); audit_deps.py took a fixed version from lodash-es, put guessed CVEs in titles and emitted no lockfile hardening notes.",
+    "The eval 3 baseline downloaded reference pages and installed a Python CVSS library into the session scratchpad; the skill's bundled cvss4.py avoids that."
+  ]
+}

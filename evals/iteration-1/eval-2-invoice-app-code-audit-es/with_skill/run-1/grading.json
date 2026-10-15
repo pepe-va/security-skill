@@ -1,0 +1,55 @@
+{
+  "expectations": [
+    {
+      "text": "findings.json exists and passes the skill's findings validator",
+      "passed": true,
+      "evidence": "PASS: 3 findings valid"
+    },
+    {
+      "text": "Reports the missing ownership check on GET /invoices/<id> (IDOR / BOLA)",
+      "passed": true,
+      "evidence": "found in outputs"
+    },
+    {
+      "text": "Reports the SQL injection in GET /search",
+      "passed": true,
+      "evidence": "found in outputs"
+    },
+    {
+      "text": "Each confirmed finding is justified by a tier-A requirement and a CWE (sources)",
+      "passed": true,
+      "evidence": "2 confirmed findings; sources e.g. ['v5.0.0-8.2.2', 'CWE-639', 'A01:2025', 'API1:2023', 'CVSS:4.0']"
+    },
+    {
+      "text": "An HTML report in Spanish is produced",
+      "passed": true,
+      "evidence": "['security-report.html'] lang es=True"
+    },
+    {
+      "text": "The HTML report has a mitigation prompt panel with per-finding checkboxes and a copy action",
+      "passed": true,
+      "evidence": "panel present"
+    },
+    {
+      "text": "No false positive on the PBKDF2 password hashing or the parameterised queries",
+      "passed": true,
+      "evidence": "no confirmed finding on the hashing or the parameterised queries"
+    },
+    {
+      "text": "The target repository was not modified",
+      "passed": true,
+      "evidence": "sha256 of every fixture file unchanged"
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "total_tokens": 212588,
+    "duration_ms": 1916379,
+    "total_duration_seconds": 1916.4
+  }
+}

@@ -1,0 +1,138 @@
+[
+  {
+    "verdict": "confirmed",
+    "fingerprint": "invoice-app/app.py:invoices-id-missing-owner-check",
+    "title": "IDOR in GET /invoices/<id>: an authenticated user reads other users' invoices",
+    "description": "The GET /invoices/<id> handler takes the identifier from the last path segment and queries the invoice by its primary key only, without binding it to the authenticated user's owner_id. Any user with a valid session can read any other user's invoice (customer, amount and IBAN) by iterating sequential integer identifiers. Demonstrated in a sandbox: user bob (id 2) read invoice id 1, owned by alice (id 1), including her IBAN. The sibling route GET /invoices does filter by owner_id, which confirms the control exists in the design but is missing on this route. The server binds to 127.0.0.1 in source; real network exposure depends on deployment, but the authorization defect is independent of it.",
+    "root_cause": "The query SELECT ... WHERE id = ? omits the owner_id predicate, so object-level authorization is not enforced on this route (BOLA / IDOR).",
+    "intended_behavior": "An invoice read must be restricted to the authenticated owner: the query, or a subsequent authorization check, must require owner_id = current user, as GET /invoices already does.",
+    "trace": [
+      {"kind": "entrypoint", "file": "app.py", "line": 39, "scope": "app(environ, start)", "description": "The route matches /invoices/<id> and takes invoice_id from the client-controlled last segment of PATH_INFO."},
+      {"kind": "sink", "file": "app.py", "line": 41, "scope": "app(environ, start)", "description": "SELECT id, owner_id, customer, amount, iban FROM invoices WHERE id = ? runs with the id only, without binding owner_id to the authenticated user."}
+    ],
+    "evidence": [
+      {"file": "app.py", "line": 42, "description": "The query parameter is (invoice_id,); neither user[\"id\"] nor owner_id appears in the WHERE clause."},
+      {"file": "app.py", "line": 48, "description": "The sibling route GET /invoices does apply WHERE owner_id = ? with (user[\"id\"],), evidencing the control that is absent on /invoices/<id>."},
+      {"file": "seed.py", "line": 10, "description": "The invoices table defines owner_id and iban; ids are sequential INTEGER PRIMARY KEY values, so enumeration is trivial."}
+    ],
+    "conditions": [
+      {"kind": "authentication_level", "description": "The attacker needs a valid session (any authenticated user); no administrative role is required."},
+      {"kind": "data_state", "description": "Invoices owned by other users exist; identifiers are sequential integers and enumerable."}
+    ],
+    "execution": {
+      "attacker_perspective": "A low-trust authenticated user (bob, id 2) who should only see his own invoices.",
+      "payloads": ["GET /invoices/1 with Authorization: Bearer <bob's token>"],
+      "instructions": [
+        "In a no-network sandbox (bwrap: read-only source, empty environment, writes only to scratch, CPU/memory/time limits), seed the database with seed.py (users alice id 1 and bob id 2).",
+        "Invoke the WSGI application in-process: POST /login with user=bob&password=demo-password to obtain a token.",
+        "Call GET /invoices/1 presenting bob's token and observe the response."
+      ],
+      "observed_result": "200 OK with {\"id\":1,\"owner_id\":1,\"customer\":\"Acme Ltd\",\"amount\":1200.0,\"iban\":\"DE00 0000 0000 0000 0000 01\"}: bob read alice's invoice, including the IBAN, although he is not the owner."
+    },
+    "remediation": {
+      "strategy": "Bind the read to the authenticated owner: add the owner_id predicate to the query, or reject with 404/403 when row[\"owner_id\"] != user[\"id\"]. Filtering in the query itself is preferable so no code path can return the row without the check. Consider not exposing owner_id and iban when they are not needed.",
+      "code_changes": [
+        {"file_name": "app.py", "fixed_code": "row = db().execute(\"SELECT id, owner_id, customer, amount, iban FROM invoices WHERE id = ? AND owner_id = ?\", (invoice_id, user[\"id\"])).fetchone()"}
+      ]
+    },
+    "severity": {
+      "likelihood": {"score": "high", "reason": "Trivial to exploit: a single GET with a sequential integer id and any valid session; no special conditions."},
+      "impact": {"score": "high", "reason": "Cross-user read of financial data (amount and IBAN) of every invoice by id enumeration; no write or execution via this path."},
+      "overall_severity": "high"
+    },
+    "confidence": {"score": "high", "reason": "Complete source trace and the result reproduced in a sandbox with dummy two-tenant data."},
+    "sources": [
+      {"standard": "OWASP ASVS", "version": "5.0.0", "id": "v5.0.0-8.2.2", "file": "references/standards/owasp-asvs-5.0.0.md", "relation": "violated-requirement", "tier": "A", "quote": "Verify that the application ensures that data-specific access is restricted to consumers with explicit permissions to specific data items to mitigate insecure direct object reference (IDOR) and broken object level authorization (BOLA)."},
+      {"standard": "CWE", "version": "4.17", "id": "CWE-639", "file": "references/standards/cwe/weaknesses.md", "relation": "weakness", "tier": "A"},
+      {"standard": "OWASP Top 10", "version": "2025", "id": "A01:2025", "file": "references/standards/owasp-top10-2025.md", "relation": "risk-category", "tier": "A"},
+      {"standard": "OWASP API Security Top 10", "version": "2023", "id": "API1:2023", "file": "references/standards/owasp-api-top10-2023.md", "relation": "risk-category", "tier": "A"},
+      {"standard": "CVSS", "version": "4.0", "id": "CVSS:4.0", "file": "references/standards/cvss-4.0.md", "relation": "severity-basis", "tier": "A"}
+    ],
+    "category": "code",
+    "cvss": {"vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N", "score": 7.1, "severity": "High", "nomenclature": "CVSS-B"}
+  },
+  {
+    "verdict": "needs_validation",
+    "fingerprint": "invoice-app/app.py:no-tls-transport",
+    "title": "Possible cleartext transmission of credentials and tokens (no TLS in source)",
+    "description": "The application is served with wsgiref.simple_server over plain HTTP, and there is no TLS, terminating proxy or deployment configuration in the repository. POST /login receives username and password in the body and returns a bearer token that is replayed on every request. If the service is exposed beyond loopback without a TLS terminator in front of it, credentials and tokens would travel in cleartext. The code only binds to 127.0.0.1:8080, so the real exposure and the presence of a TLS proxy are deployment facts not recorded in the repository.",
+    "claimed_root_cause": "There is no transport encryption in source, and the repository cannot establish whether a TLS terminator protects the channel in production.",
+    "trace": [
+      {"kind": "sink", "file": "app.py", "line": 62, "scope": "__main__", "description": "make_server(\"127.0.0.1\", 8080, app).serve_forever() serves plain HTTP; there is no TLS wrapper and no HTTPS redirect."}
+    ],
+    "evidence": [
+      {"file": "app.py", "line": 30, "description": "POST /login reads user and password from the request body."},
+      {"file": "app.py", "line": 33, "description": "The response returns the session token that is then sent in the Authorization header on every request."},
+      {"file": "README.md", "line": 3, "description": "The documentation describes the service as an API served on 127.0.0.1:8080, with no mention of TLS or a proxy."}
+    ],
+    "blockers": [
+      "The repository does not record whether the service is exposed beyond loopback, nor whether a TLS-terminating proxy (nginx, API gateway, service mesh) encrypts the channel in the real deployment.",
+      "There is no deployment configuration, manifest or IaC that fixes the transport mode."
+    ],
+    "validation_plan": {
+      "local": "Review the real environment's deployment configuration (systemd units, Dockerfile/compose, ingress manifests) to confirm whether a TLS terminator sits in front of the service and whether HTTPS is enforced.",
+      "deployment": "The owner should observe, on the exposed environment, which scheme the service answers with (http/https), whether there is a forced redirect to HTTPS, and whether the cleartext port is reachable from outside the host."
+    },
+    "sources": [
+      {"standard": "OWASP ASVS", "version": "5.0.0", "id": "v5.0.0-12.2.1", "file": "references/standards/owasp-asvs-5.0.0.md", "relation": "violated-requirement", "tier": "A", "quote": "Verify that TLS is used for all connectivity between a client and external facing, HTTP-based services, and does not fall back to insecure or unencrypted communications."},
+      {"standard": "CWE", "version": "4.17", "id": "CWE-319", "file": "references/standards/cwe/weaknesses.md", "relation": "weakness", "tier": "A"},
+      {"standard": "OWASP Top 10", "version": "2025", "id": "A04:2025", "file": "references/standards/owasp-top10-2025.md", "relation": "risk-category", "tier": "A"}
+    ],
+    "category": "code"
+  },
+  {
+    "verdict": "confirmed",
+    "fingerprint": "invoice-app/app.py:search-sql-injection",
+    "title": "SQL injection in GET /search: q is interpolated into the statement with an f-string",
+    "description": "The GET /search handler builds the SQL statement by concatenating the query-string parameter q through an f-string (WHERE owner_id = {user['id']} AND customer LIKE '%{q}%'). Because q is not parameterized, an authenticated user can alter the statement. Demonstrated in a sandbox as user bob (id 2): (1) the boolean payload \"' OR 1=1 -- \" nullified the owner_id filter and returned every owner's invoices; (2) a UNION payload \"' UNION SELECT id, username || ':' || hex(pw_hash), 0 FROM users -- \" dumped the users table with usernames and PBKDF2 hashes. owner_id is also interpolated but comes from the session (trusted), so the attack vector is q. sqlite3.Connection.execute runs a single statement, so full read (not chained write) of the data store was demonstrated.",
+    "root_cause": "SQL built by string concatenation with user-controlled input (q) instead of a parameterized query; furthermore the owner filter sits inside the same injectable statement and can be nullified.",
+    "intended_behavior": "All user input reaching the database must go through parameterized queries (? placeholders) so q cannot alter the statement structure or the owner_id predicate.",
+    "trace": [
+      {"kind": "entrypoint", "file": "app.py", "line": 52, "scope": "app(environ, start)", "description": "q is taken from the client-controlled query string via parse_qs(QUERY_STRING)."},
+      {"kind": "propagation", "file": "app.py", "line": 53, "scope": "app(environ, start)", "description": "q is interpolated into an f-string together with owner_id to form the SQL string."},
+      {"kind": "sink", "file": "app.py", "line": 55, "scope": "app(environ, start)", "description": "db().execute(sql) runs the concatenated statement with no bound parameters."}
+    ],
+    "evidence": [
+      {"file": "app.py", "line": 53, "description": "sql = f\"SELECT id, customer, amount FROM invoices WHERE owner_id = {user['id']} AND customer LIKE '%{q}%'\": q enters with no escaping or parameter."},
+      {"file": "app.py", "line": 55, "description": "db().execute(sql).fetchall(): the statement is executed as-is, with no parameter tuple."},
+      {"file": "seed.py", "line": 9, "description": "The users table stores salt and pw_hash, reachable via UNION from the same connection."}
+    ],
+    "conditions": [
+      {"kind": "authentication_level", "description": "Requires a valid session (any authenticated user) because /search sits behind the current_user check."},
+      {"kind": "data_state", "description": "Rows exist in invoices and users; the demonstration uses two dummy tenants."}
+    ],
+    "execution": {
+      "attacker_perspective": "A low-trust authenticated user who should only be able to search among his own invoices.",
+      "payloads": [
+        "GET /search?q=' OR 1=1 -- ",
+        "GET /search?q=' UNION SELECT id, username || ':' || hex(pw_hash), 0 FROM users -- "
+      ],
+      "instructions": [
+        "In a no-network sandbox (bwrap: read-only source, empty environment, writes only to scratch, CPU/memory/time limits), seed the database with seed.py.",
+        "Obtain a token with POST /login (user=bob).",
+        "Invoke GET /search in-process with the URL-encoded q value and observe the returned rows."
+      ],
+      "observed_result": "The boolean payload returned both owners' invoices (ids 1 and 2), bypassing the owner_id=2 filter; the UNION payload returned rows with 'alice:<hex pw_hash>' and 'bob:<hex pw_hash>', dumping the credential table."
+    },
+    "remediation": {
+      "strategy": "Use parameterized queries: pass q as a bound parameter for the LIKE and keep owner_id as a parameter, so user input cannot alter the structure or the owner predicate. Do not build SQL with f-strings.",
+      "code_changes": [
+        {"file_name": "app.py", "fixed_code": "rows = db().execute(\"SELECT id, customer, amount FROM invoices WHERE owner_id = ? AND customer LIKE '%' || ? || '%'\", (user[\"id\"], q)).fetchall()"}
+      ]
+    },
+    "severity": {
+      "likelihood": {"score": "high", "reason": "Direct exploitation with one GET request and any valid session; a standard injection pattern with no special conditions."},
+      "impact": {"score": "high", "reason": "Read of the whole store: all users' invoices (amount and IBAN) and the users table with password hashes. sqlite3.execute runs a single statement, so full read, not chained write, was demonstrated."},
+      "overall_severity": "high"
+    },
+    "confidence": {"score": "high", "reason": "Complete source-to-sink trace and two payloads reproduced in a sandbox with dummy data."},
+    "sources": [
+      {"standard": "OWASP ASVS", "version": "5.0.0", "id": "v5.0.0-1.2.4", "file": "references/standards/owasp-asvs-5.0.0.md", "relation": "violated-requirement", "tier": "A", "quote": "Verify that data selection or database queries (e.g., SQL, HQL, NoSQL, Cypher) use parameterized queries, ORMs, entity frameworks, or are otherwise protected from SQL Injection and other database injection attacks."},
+      {"standard": "CWE", "version": "4.17", "id": "CWE-89", "file": "references/standards/cwe/weaknesses.md", "relation": "weakness", "tier": "A"},
+      {"standard": "OWASP Top 10", "version": "2025", "id": "A05:2025", "file": "references/standards/owasp-top10-2025.md", "relation": "risk-category", "tier": "A"},
+      {"standard": "CVSS", "version": "4.0", "id": "CVSS:4.0", "file": "references/standards/cvss-4.0.md", "relation": "severity-basis", "tier": "A"}
+    ],
+    "category": "code",
+    "cvss": {"vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N", "score": 7.1, "severity": "High", "nomenclature": "CVSS-B"}
+  }
+]

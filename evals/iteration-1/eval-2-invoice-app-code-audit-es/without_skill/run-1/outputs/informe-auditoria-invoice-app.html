@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditoría invoice-app</title>
+<meta name="description" content="Informe de auditoría de seguridad del código de invoice-app (revisión estática, 14-10-2026).">
+<style>
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --surface-2: #f0efeb;
+  --text: #1d1d1b;
+  --muted: #5d5c57;
+  --border: #dddcd6;
+  --accent: #2f5d8a;
+  --code-bg: #f3f2ee;
+  --high: #b3261e;   --high-bg: #fbe9e7;
+  --med: #a35a00;    --med-bg: #fdf0dc;
+  --low: #2f5d8a;    --low-bg: #e6eef7;
+  --info: #55524b;   --info-bg: #ecebe6;
+  --ok: #2e6b3a;     --ok-bg: #e5f2e7;
+  --mark: #fff1a8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161615;
+    --surface: #1f1f1d;
+    --surface-2: #272724;
+    --text: #ecebe6;
+    --muted: #a8a69e;
+    --border: #3a3936;
+    --accent: #8db6e0;
+    --code-bg: #262624;
+    --high: #f2a49c;   --high-bg: #3d1f1c;
+    --med: #f0bf74;    --med-bg: #3a2c15;
+    --low: #9cc1e8;    --low-bg: #1d2b3a;
+    --info: #c9c6bd;   --info-bg: #2d2c29;
+    --ok: #9bd3a5;     --ok-bg: #1c3020;
+    --mark: #5a4d10;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161615;
+  --surface: #1f1f1d;
+  --surface-2: #272724;
+  --text: #ecebe6;
+  --muted: #a8a69e;
+  --border: #3a3936;
+  --accent: #8db6e0;
+  --code-bg: #262624;
+  --high: #f2a49c;   --high-bg: #3d1f1c;
+  --med: #f0bf74;    --med-bg: #3a2c15;
+  --low: #9cc1e8;    --low-bg: #1d2b3a;
+  --info: #c9c6bd;   --info-bg: #2d2c29;
+  --ok: #9bd3a5;     --ok-bg: #1c3020;
+  --mark: #5a4d10;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-size: 1.35rem; margin: 48px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1.1rem; margin: 0; line-height: 1.35; }
+h4 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 18px 0 6px; }
+p { margin: 0 0 12px; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: .86em; }
+:not(pre) > code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; overflow-x: auto; margin: 0 0 12px; line-height: 1.5; }
+pre mark { background: var(--mark); color: inherit; border-radius: 2px; }
+.meta { color: var(--muted); font-size: .95rem; }
+.meta dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 14px; margin: 16px 0 0; }
+.meta dt { font-weight: 600; color: var(--text); }
+.meta dd { margin: 0; overflow-wrap: anywhere; }
+.verdict { background: var(--high-bg); border-left: 4px solid var(--high); padding: 14px 16px; border-radius: 6px; margin: 16px 0; }
+.verdict strong { color: var(--high); }
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 16px 0; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+.tile .n { font-size: 1.8rem; font-weight: 700; line-height: 1.1; }
+.tile .l { color: var(--muted); font-size: .9rem; }
+.tile.high .n { color: var(--high); } .tile.med .n { color: var(--med); }
+.tile.low .n { color: var(--low); }   .tile.info .n { color: var(--info); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: .93rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: var(--surface-2); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.sev { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .03em; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.sev.high { color: var(--high); background: var(--high-bg); }
+.sev.med  { color: var(--med);  background: var(--med-bg); }
+.sev.low  { color: var(--low);  background: var(--low-bg); }
+.sev.info { color: var(--info); background: var(--info-bg); }
+.finding { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; margin: 16px 0; }
+.finding header { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: baseline; }
+.finding .id { font-family: ui-monospace, Menlo, Consolas, monospace; color: var(--muted); font-size: .9rem; }
+.finding .loc { color: var(--muted); font-size: .9rem; margin-top: 4px; overflow-wrap: anywhere; }
+.refs { margin: 0; padding-left: 18px; font-size: .92rem; }
+.refs li { margin: 2px 0; }
+ul.plain { padding-left: 20px; margin: 0 0 12px; }
+ul.plain li { margin: 4px 0; }
+.ok-list li::marker { color: var(--ok); }
+.phase { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin: 10px 0; }
+.phase h3 { margin-bottom: 6px; }
+footer { margin-top: 48px; color: var(--muted); font-size: .85rem; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.5rem; }
+  .tiles { grid-template-columns: repeat(2, 1fr); }
+  .meta dl { grid-template-columns: 1fr; }
+  .meta dt { margin-top: 6px; }
+}
+@media print {
+  body { background: #fff; }
+  .finding, .phase, .tile { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Auditoría de seguridad del código · invoice-app</h1>
+<div class="meta">
+  <p>API de facturación de demostración en Python (WSGI de la biblioteca estándar + SQLite).</p>
+  <dl>
+    <dt>Fecha</dt><dd>14 de octubre de 2026</dd>
+    <dt>Alcance</dt><dd><code>cybersec-skill-workspace/fixtures/invoice-app/</code>: <code>app.py</code>, <code>auth.py</code>, <code>seed.py</code>, <code>README.md</code> (115 líneas)</dd>
+    <dt>Tipo</dt><dd>Revisión manual estática del código fuente (sin ejecución ni pruebas dinámicas)</dd>
+    <dt>Estándares</dt><dd>MITRE CWE · OWASP Top 10:2021 · OWASP API Security Top 10:2023 · OWASP ASVS 4.0.3 · OWASP WSTG v4.2</dd>
+  </dl>
+</div>
+
+<h2 id="resumen">Resumen ejecutivo</h2>
+<p>La base criptográfica es correcta: las contraseñas se derivan con PBKDF2-HMAC-SHA512 (600&nbsp;000 iteraciones, sal aleatoria por usuario), se comparan en tiempo constante y los tokens de sesión salen de un generador criptográfico. El problema está en el <strong>control de acceso a los datos</strong>: dos rutas permiten a cualquier usuario autenticado leer información de otros clientes.</p>
+<ul class="plain">
+  <li><strong>H-01</strong>: el parámetro <code>q</code> de <code>/search</code> se concatena en la sentencia SQL. Un usuario autenticado puede alterar la consulta y leer datos de cualquier tabla, incluidos los hashes de contraseña.</li>
+  <li><strong>H-02</strong>: <code>GET /invoices/&lt;id&gt;</code> no comprueba el propietario. Basta con cambiar el identificador numérico para leer cualquier factura, IBAN incluido.</li>
+</ul>
+<p>Las dos se corrigen con cambios de una o dos líneas. Les siguen debilidades de sesión, autenticación y despliegue (H-03 a H-07) que conviene resolver antes de cualquier uso real.</p>
+
+<div class="verdict"><strong>Veredicto:</strong> no apta para exponerse a usuarios reales hasta corregir H-01 y H-02. H-03 a H-05 deben resolverse antes de pasar a producción.</div>
+
+<div class="tiles" role="list" aria-label="Recuento por severidad">
+  <div class="tile high" role="listitem"><div class="n">2</div><div class="l">Alta</div></div>
+  <div class="tile med" role="listitem"><div class="n">3</div><div class="l">Media</div></div>
+  <div class="tile low" role="listitem"><div class="n">5</div><div class="l">Baja</div></div>
+  <div class="tile info" role="listitem"><div class="n">3</div><div class="l">Informativa</div></div>
+</div>
+
+<h2 id="tabla">Hallazgos</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>ID</th><th>Severidad</th><th>Hallazgo</th><th>Ubicación</th><th>CWE</th></tr></thead>
+  <tbody>
+    <tr><td><a href="#h01">H-01</a></td><td><span class="sev high">ALTA</span></td><td>Inyección SQL en <code>/search</code></td><td><code>app.py:51-56</code></td><td>CWE-89</td></tr>
+    <tr><td><a href="#h02">H-02</a></td><td><span class="sev high">ALTA</span></td><td>Acceso a facturas ajenas (IDOR/BOLA) en <code>/invoices/&lt;id&gt;</code></td><td><code>app.py:39-45</code></td><td>CWE-639</td></tr>
+    <tr><td><a href="#h03">H-03</a></td><td><span class="sev med">MEDIA</span></td><td>Tokens de sesión sin caducidad ni revocación</td><td><code>auth.py:8, 20-29</code></td><td>CWE-613</td></tr>
+    <tr><td><a href="#h04">H-04</a></td><td><span class="sev med">MEDIA</span></td><td>Login sin limitación de intentos ni de coste</td><td><code>app.py:27-33</code>, <code>auth.py:15-22</code></td><td>CWE-307, CWE-770</td></tr>
+    <tr><td><a href="#h05">H-05</a></td><td><span class="sev med">MEDIA</span></td><td>Servidor de desarrollo <code>wsgiref</code>: sin TLS, monohilo, sin timeouts</td><td><code>app.py:5, 61-62</code></td><td>CWE-319, CWE-400</td></tr>
+    <tr><td><a href="#h06">H-06</a></td><td><span class="sev low">BAJA</span></td><td>Lectura del cuerpo de <code>/login</code> sin límite ni validación</td><td><code>app.py:28-29</code></td><td>CWE-20, CWE-770</td></tr>
+    <tr><td><a href="#h07">H-07</a></td><td><span class="sev low">BAJA</span></td><td>Enumeración de usuarios por tiempo de respuesta</td><td><code>auth.py:17-19</code></td><td>CWE-208</td></tr>
+    <tr><td><a href="#h08">H-08</a></td><td><span class="sev low">BAJA</span></td><td>Exposición excesiva de datos (IBAN completo, <code>owner_id</code>)</td><td><code>app.py:41, 45</code></td><td>CWE-200</td></tr>
+    <tr><td><a href="#h09">H-09</a></td><td><span class="sev low">BAJA</span></td><td>IBAN y hashes en SQLite sin cifrar y con permisos por defecto</td><td><code>app.py:9</code>, <code>auth.py:7</code>, <code>seed.py:6, 10</code></td><td>CWE-312</td></tr>
+    <tr><td><a href="#h10">H-10</a></td><td><span class="sev low">BAJA</span></td><td>Contraseña fija y compartida en el script de carga</td><td><code>seed.py:8, 15</code></td><td>CWE-259</td></tr>
+    <tr><td><a href="#h11">H-11</a></td><td><span class="sev info">INFO</span></td><td>Sin registro de eventos de seguridad</td><td>toda la aplicación</td><td>CWE-778</td></tr>
+    <tr><td><a href="#h12">H-12</a></td><td><span class="sev info">INFO</span></td><td>Cabeceras de seguridad ausentes y métodos HTTP sin restringir</td><td><code>app.py:18-20, 39-56</code></td><td>CWE-525</td></tr>
+    <tr><td><a href="#h13">H-13</a></td><td><span class="sev info">INFO</span></td><td>Conexiones SQLite que nunca se cierran</td><td><code>app.py:12-15</code>, <code>auth.py:16</code></td><td>CWE-772</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="detalle">Detalle de los hallazgos</h2>
+
+<!-- H-01 -->
+<article class="finding" id="h01">
+  <header><span class="id">H-01</span><span class="sev high">ALTA</span><h3>Inyección SQL en <code>/search</code></h3></header>
+  <div class="loc"><code>app.py</code>, líneas 51-56</div>
+  <h4>Evidencia</h4>
+<pre><code>if path == "/search":
+    q = parse_qs(environ.get("QUERY_STRING", "")).get("q", [""])[0]
+<mark>    sql = (f"SELECT id, customer, amount FROM invoices "
+           f"WHERE owner_id = {user['id']} AND customer LIKE '%{q}%'")</mark>
+    rows = db().execute(sql).fetchall()</code></pre>
+  <h4>Descripción</h4>
+  <p><code>q</code> llega de la query string sin validar y se interpola en la sentencia con un f-string. Un valor manipulado puede cerrar el literal y cambiar la estructura de la consulta: anular el filtro <code>owner_id</code> o leer otras tablas. Es la única consulta del proyecto que no está parametrizada; las demás usan <code>?</code> correctamente.</p>
+  <h4>Impacto</h4>
+  <p>Cualquier usuario autenticado puede leer las facturas de todos los clientes y la tabla <code>users</code> (sal y <code>pw_hash</code>), lo que abre la puerta a ataques de diccionario offline. <code>sqlite3.Cursor.execute()</code> no admite varias sentencias, lo que acota el impacto a lectura y consultas costosas, pero no lo elimina.</p>
+  <h4>Recomendación</h4>
+  <p>Parametrizar la consulta y escapar los comodines de <code>LIKE</code> para que <code>%</code> y <code>_</code> se traten como texto. Conviene limitar también la longitud de <code>q</code> (por ejemplo, 100 caracteres).</p>
+<pre><code>def like_escape(s):
+    return s.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+
+rows = db().execute(
+    "SELECT id, customer, amount FROM invoices "
+    "WHERE owner_id = ? AND customer LIKE ? ESCAPE '\\'",
+    (user["id"], f"%{like_escape(q)}%"),
+).fetchall()</code></pre>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-89: Improper Neutralization of Special Elements used in an SQL Command</li>
+    <li>OWASP Top 10:2021, A03 Injection</li>
+    <li>OWASP ASVS 4.0.3, V5.3.4 (consultas parametrizadas)</li>
+    <li>OWASP Cheat Sheet Series, SQL Injection Prevention Cheat Sheet</li>
+  </ul>
+</article>
+
+<!-- H-02 -->
+<article class="finding" id="h02">
+  <header><span class="id">H-02</span><span class="sev high">ALTA</span><h3>Acceso a facturas ajenas (IDOR/BOLA) en <code>GET /invoices/&lt;id&gt;</code></h3></header>
+  <div class="loc"><code>app.py</code>, líneas 39-45</div>
+  <h4>Evidencia</h4>
+<pre><code>if path.startswith("/invoices/"):
+    invoice_id = path.rsplit("/", 1)[-1]
+<mark>    row = db().execute("SELECT id, owner_id, customer, amount, iban FROM invoices WHERE id = ?",
+                       (invoice_id,)).fetchone()</mark>
+    ...
+    return respond(start, "200 OK", dict(row))</code></pre>
+  <h4>Descripción</h4>
+  <p>La consulta filtra solo por <code>id</code>; nunca compara <code>owner_id</code> con el usuario de la sesión. El listado <code>/invoices</code> (línea 48) sí filtra por propietario, así que el control es incoherente entre rutas. Como los identificadores son enteros secuenciales, recorrerlos es trivial.</p>
+  <h4>Impacto</h4>
+  <p>Cualquier usuario autenticado puede leer cualquier factura de cualquier cliente: nombre, importe e IBAN. Es una fuga entre clientes de datos financieros que, si los titulares son personas físicas, también son datos personales.</p>
+  <h4>Recomendación</h4>
+  <p>Filtrar por propietario en la propia consulta y responder <code>404</code> (no <code>403</code>) a las facturas ajenas, para no revelar que existen. Añadir una prueba de regresión: el usuario B recibe 404 al pedir una factura del usuario A.</p>
+<pre><code>row = db().execute(
+    "SELECT id, customer, amount, iban FROM invoices WHERE id = ? AND owner_id = ?",
+    (invoice_id, user["id"]),
+).fetchone()
+if row is None:
+    return respond(start, "404 Not Found", {"error": "not found"})</code></pre>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-639: Authorization Bypass Through User-Controlled Key</li>
+    <li>OWASP API Security Top 10:2023, API1 Broken Object Level Authorization</li>
+    <li>OWASP Top 10:2021, A01 Broken Access Control</li>
+    <li>OWASP ASVS 4.0.3, V4.2.1 (protección frente a IDOR)</li>
+  </ul>
+</article>
+
+<!-- H-03 -->
+<article class="finding" id="h03">
+  <header><span class="id">H-03</span><span class="sev med">MEDIA</span><h3>Tokens de sesión sin caducidad ni revocación</h3></header>
+  <div class="loc"><code>auth.py</code>, líneas 8, 20-22 y 25-29</div>
+  <h4>Evidencia</h4>
+<pre><code><mark>SESSIONS = {}  # token -&gt; user id (in memory)</mark>
+...
+    token = secrets.token_urlsafe(32)
+    SESSIONS[token] = row[0]
+...
+    uid = SESSIONS.get(header[7:])
+    return {"id": uid} if uid is not None else None</code></pre>
+  <h4>Descripción</h4>
+  <p>Los tokens viven en un diccionario de módulo sin marca de tiempo: no caducan por inactividad ni por tiempo absoluto, no existe ruta de logout y no se invalidan al cambiar la contraseña. Además, todas las sesiones se pierden al reiniciar el proceso y no se comparten si se despliegan varios workers.</p>
+  <h4>Impacto</h4>
+  <p>Un token filtrado (registros de un proxy, un dispositivo comprometido, un historial) sigue siendo válido indefinidamente hasta el siguiente reinicio del servicio.</p>
+  <h4>Recomendación</h4>
+  <ul class="plain">
+    <li>Guardar por token el usuario, la fecha de creación y el último uso. Aplicar una caducidad por inactividad (por ejemplo, 30 minutos) y otra absoluta (por ejemplo, 8-12 horas).</li>
+    <li>Añadir <code>POST /logout</code> que elimine el token, e invalidar todas las sesiones del usuario al cambiar la contraseña.</li>
+    <li>Si hay varios procesos, persistir las sesiones en la base de datos guardando solo el SHA-256 del token, no el token en claro.</li>
+  </ul>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-613: Insufficient Session Expiration</li>
+    <li>OWASP Top 10:2021, A07 Identification and Authentication Failures</li>
+    <li>OWASP ASVS 4.0.3, V3.3.1 (logout y expiración invalidan el token) y V3.3.2 (reautenticación periódica)</li>
+  </ul>
+</article>
+
+<!-- H-04 -->
+<article class="finding" id="h04">
+  <header><span class="id">H-04</span><span class="sev med">MEDIA</span><h3>Login sin limitación de intentos ni de coste</h3></header>
+  <div class="loc"><code>app.py</code>, líneas 27-33; <code>auth.py</code>, líneas 11-22</div>
+  <h4>Evidencia</h4>
+<pre><code>def _hash(password, salt):
+<mark>    return hashlib.pbkdf2_hmac("sha512", password.encode(), salt, 600_000)</mark>
+
+def login(username, password):
+    ...  # sin contador de intentos, retardo ni bloqueo</code></pre>
+  <h4>Descripción</h4>
+  <p><code>/login</code> no limita los intentos por cuenta ni por origen. Eso permite adivinar contraseñas en línea, algo especialmente grave porque las cuentas de ejemplo comparten una contraseña conocida (<a href="#h10">H-10</a>). Además, cada intento contra un usuario existente calcula PBKDF2 con 600&nbsp;000 iteraciones, un coste de CPU elevado a propósito. Combinado con el servidor monohilo (<a href="#h05">H-05</a>), un volumen modesto de peticiones sin autenticar puede dejar el servicio sin capacidad para los usuarios legítimos.</p>
+  <h4>Recomendación</h4>
+  <ul class="plain">
+    <li>Limitar los intentos por cuenta y por IP con retardo exponencial o un bloqueo temporal, diseñado para que no se convierta a su vez en un bloqueo de cuentas ajenas. Puede hacerse en la aplicación o en el proxy inverso.</li>
+    <li>Acotar la concurrencia de cálculos de hash (cola o semáforo) para que el login no acapare la CPU.</li>
+    <li>Pedir un desafío adicional (CAPTCHA o segundo factor) tras N fallos.</li>
+  </ul>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-307: Improper Restriction of Excessive Authentication Attempts</li>
+    <li>MITRE CWE-770: Allocation of Resources Without Limits or Throttling</li>
+    <li>OWASP API Security Top 10:2023, API4 Unrestricted Resource Consumption</li>
+    <li>OWASP ASVS 4.0.3, V2.2.1 (controles anti-automatización)</li>
+  </ul>
+</article>
+
+<!-- H-05 -->
+<article class="finding" id="h05">
+  <header><span class="id">H-05</span><span class="sev med">MEDIA</span><h3>Servidor de desarrollo <code>wsgiref</code>: sin TLS, monohilo y sin timeouts</h3></header>
+  <div class="loc"><code>app.py</code>, líneas 5 y 61-62</div>
+  <h4>Evidencia</h4>
+<pre><code>from wsgiref.simple_server import make_server
+...
+<mark>    make_server("127.0.0.1", 8080, app).serve_forever()</mark></code></pre>
+  <h4>Descripción</h4>
+  <p><code>wsgiref.simple_server</code> se apoya en <code>http.server</code>, que la documentación de Python desaconseja en producción porque solo implementa comprobaciones de seguridad básicas. Sirve HTTP en claro, atiende una petición cada vez y no fija timeouts: un único cliente lento bloquea a todos los demás. El enlace a <code>127.0.0.1</code> reduce la exposición, pero en cuanto se publique (directamente o tras un proxy sin TLS) los tokens Bearer y los IBAN viajarán en claro.</p>
+  <h4>Recomendación</h4>
+  <p>Servir la aplicación con un servidor WSGI de producción (gunicorn, uWSGI o waitress) detrás de un proxy inverso con TLS 1.2 o superior, HSTS, timeouts de lectura y escritura y un tamaño máximo de cuerpo.</p>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-319: Cleartext Transmission of Sensitive Information</li>
+    <li>MITRE CWE-400: Uncontrolled Resource Consumption</li>
+    <li>OWASP ASVS 4.0.3, V9.1.1 (TLS en todas las conexiones de cliente)</li>
+    <li>Documentación de Python 3, <code>http.server</code>, sección «Security considerations»</li>
+  </ul>
+</article>
+
+<!-- H-06 -->
+<article class="finding" id="h06">
+  <header><span class="id">H-06</span><span class="sev low">BAJA</span><h3>Lectura del cuerpo de <code>/login</code> sin límite ni validación</h3></header>
+  <div class="loc"><code>app.py</code>, líneas 28-29</div>
+  <h4>Evidencia</h4>
+<pre><code><mark>size = int(environ.get("CONTENT_LENGTH") or 0)
+form = parse_qs(environ["wsgi.input"].read(size).decode())</mark></code></pre>
+  <h4>Descripción</h4>
+  <p>Se lee en memoria tantos bytes como declare el cliente, sin tope. Un <code>Content-Length</code> no numérico provoca <code>ValueError</code> y un cuerpo que no sea UTF-8 provoca <code>UnicodeDecodeError</code>; ambos acaban en un 500 en lugar de un 400. <code>wsgiref</code> devuelve una página 500 genérica, así que no se filtra la traza al cliente: el efecto es de robustez y disponibilidad.</p>
+  <h4>Recomendación</h4>
+<pre><code>try:
+    size = int(environ.get("CONTENT_LENGTH") or 0)
+except ValueError:
+    return respond(start, "400 Bad Request", {"error": "bad request"})
+if not 0 &lt;= size &lt;= 4096:
+    return respond(start, "413 Payload Too Large", {"error": "body too large"})
+body = environ["wsgi.input"].read(size).decode("utf-8", errors="replace")</code></pre>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-20: Improper Input Validation</li>
+    <li>MITRE CWE-770: Allocation of Resources Without Limits or Throttling</li>
+    <li>OWASP API Security Top 10:2023, API4 Unrestricted Resource Consumption</li>
+  </ul>
+</article>
+
+<!-- H-07 -->
+<article class="finding" id="h07">
+  <header><span class="id">H-07</span><span class="sev low">BAJA</span><h3>Enumeración de usuarios por tiempo de respuesta</h3></header>
+  <div class="loc"><code>auth.py</code>, líneas 17-19</div>
+  <h4>Evidencia</h4>
+<pre><code>row = con.execute("SELECT id, salt, pw_hash FROM users WHERE username = ?", (username,)).fetchone()
+<mark>if row is None or not hmac.compare_digest(_hash(password, row[1]), row[2]):</mark>
+    return None</code></pre>
+  <h4>Descripción</h4>
+  <p>Si el usuario no existe, la evaluación en cortocircuito evita calcular el hash y la respuesta es inmediata. Si existe, se calculan 600&nbsp;000 iteraciones de PBKDF2. Aunque el mensaje de error es el mismo en los dos casos (bien hecho), la diferencia de tiempo, del orden de cientos de milisegundos, revela qué nombres de usuario son válidos.</p>
+  <h4>Recomendación</h4>
+  <p>Calcular siempre el hash, contra una sal y un hash ficticios cuando el usuario no exista:</p>
+<pre><code>_DUMMY_SALT = secrets.token_bytes(16)
+_DUMMY_HASH = _hash(secrets.token_urlsafe(16), _DUMMY_SALT)
+
+salt, stored = (row[1], row[2]) if row else (_DUMMY_SALT, _DUMMY_HASH)
+ok = hmac.compare_digest(_hash(password, salt), stored)
+if row is None or not ok:
+    return None</code></pre>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-208: Observable Timing Discrepancy</li>
+    <li>OWASP WSTG v4.2, WSTG-IDNT-04 Testing for Account Enumeration and Guessable User Account</li>
+  </ul>
+</article>
+
+<!-- H-08 -->
+<article class="finding" id="h08">
+  <header><span class="id">H-08</span><span class="sev low">BAJA</span><h3>Exposición excesiva de datos en el detalle de factura</h3></header>
+  <div class="loc"><code>app.py</code>, líneas 41 y 45</div>
+  <h4>Descripción</h4>
+  <p>El detalle devuelve <code>dict(row)</code> completo, con el IBAN entero y el <code>owner_id</code> interno. Aunque se corrija <a href="#h02">H-02</a>, el cliente no necesita el identificador interno del propietario y probablemente tampoco el IBAN completo.</p>
+  <h4>Recomendación</h4>
+  <p>Devolver una lista explícita de campos, quitar <code>owner_id</code> y enmascarar el IBAN (por ejemplo, solo los cuatro últimos caracteres) salvo en las operaciones que de verdad lo necesiten.</p>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-200: Exposure of Sensitive Information to an Unauthorized Actor</li>
+    <li>OWASP API Security Top 10:2023, API3 Broken Object Property Level Authorization</li>
+  </ul>
+</article>
+
+<!-- H-09 -->
+<article class="finding" id="h09">
+  <header><span class="id">H-09</span><span class="sev low">BAJA</span><h3>IBAN y hashes en SQLite sin cifrar y con permisos por defecto</h3></header>
+  <div class="loc"><code>app.py</code>, línea 9; <code>auth.py</code>, línea 7; <code>seed.py</code>, líneas 6 y 10</div>
+  <h4>Descripción</h4>
+  <p><code>invoices.db</code> guarda IBAN en claro y los hashes de contraseña. SQLite crea el fichero con permisos 0644 (sujetos a la umask), es decir, legible por otros usuarios locales. La ruta es relativa (<code>"invoices.db"</code>), así que el fichero acaba en el directorio desde el que se lance el proceso y puede terminar en un directorio servido o en una copia de seguridad sin control.</p>
+  <h4>Recomendación</h4>
+  <p>Usar una ruta absoluta configurable fuera de cualquier directorio publicado y permisos 0600. Valorar el cifrado del IBAN a nivel de campo o un volumen cifrado, y aplicar a las copias de seguridad la misma protección.</p>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-312: Cleartext Storage of Sensitive Information</li>
+    <li>OWASP ASVS 4.0.3, V6.1.3 (datos financieros regulados cifrados en reposo)</li>
+  </ul>
+</article>
+
+<!-- H-10 -->
+<article class="finding" id="h10">
+  <header><span class="id">H-10</span><span class="sev low">BAJA</span><h3>Contraseña fija y compartida en el script de carga</h3></header>
+  <div class="loc"><code>seed.py</code>, líneas 8 y 15</div>
+  <h4>Evidencia</h4>
+<pre><code>DROP TABLE IF EXISTS users; DROP TABLE IF EXISTS invoices;
+...
+<mark>(uid, name, salt, hashlib.pbkdf2_hmac("sha512", b"demo-password", salt, 600_000))</mark></code></pre>
+  <h4>Descripción</h4>
+  <p>Todos los usuarios de ejemplo reciben la misma contraseña, escrita en el código. Es aceptable en una demo, pero si este script se usa para crear un entorno compartido, cualquiera que lea el repositorio puede entrar en todas las cuentas. Además, el script borra las tablas sin preguntar: lanzado por error contra una base real, destruye los datos.</p>
+  <h4>Recomendación</h4>
+  <p>Generar una contraseña aleatoria por usuario (<code>secrets.token_urlsafe</code>) y mostrarla una sola vez, o leerla de una variable de entorno o de <code>getpass</code>. Impedir que el script se ejecute fuera de desarrollo, por ejemplo exigiendo un indicador explícito.</p>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-259: Use of Hard-coded Password (CWE-798, Use of Hard-coded Credentials)</li>
+    <li>OWASP ASVS 4.0.3, V2.10.4 (secretos fuera del código fuente)</li>
+    <li>OWASP Top 10:2021, A07 Identification and Authentication Failures</li>
+  </ul>
+</article>
+
+<!-- H-11 -->
+<article class="finding" id="h11">
+  <header><span class="id">H-11</span><span class="sev info">INFO</span><h3>Sin registro de eventos de seguridad</h3></header>
+  <div class="loc">Toda la aplicación (<code>app.py</code>, <code>auth.py</code>)</div>
+  <h4>Descripción</h4>
+  <p>No se registran los inicios de sesión fallidos o correctos, los accesos denegados ni los errores. Sin esos datos, ni los ataques de <a href="#h04">H-04</a> ni un abuso de <a href="#h01">H-01</a> o <a href="#h02">H-02</a> dejarían rastro.</p>
+  <h4>Recomendación</h4>
+  <p>Generar registros estructurados (usuario, IP, ruta, resultado, marca de tiempo) sin incluir nunca tokens ni contraseñas, y enviarlos a un sistema con alertas.</p>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-778: Insufficient Logging</li>
+    <li>OWASP Top 10:2021, A09 Security Logging and Monitoring Failures</li>
+    <li>OWASP ASVS 4.0.3, V7.1.3 (registro de eventos relevantes de seguridad)</li>
+  </ul>
+</article>
+
+<!-- H-12 -->
+<article class="finding" id="h12">
+  <header><span class="id">H-12</span><span class="sev info">INFO</span><h3>Cabeceras de seguridad ausentes y métodos HTTP sin restringir</h3></header>
+  <div class="loc"><code>app.py</code>, líneas 18-20 y 39-56</div>
+  <h4>Descripción</h4>
+  <p><code>respond()</code> solo envía <code>Content-Type</code>. Las respuestas con datos financieros no llevan <code>Cache-Control: no-store</code> ni <code>X-Content-Type-Options: nosniff</code>. Las rutas de lectura (<code>/invoices</code>, <code>/invoices/&lt;id&gt;</code>, <code>/search</code>) aceptan cualquier método HTTP.</p>
+  <h4>Recomendación</h4>
+  <p>Añadir esas dos cabeceras en <code>respond()</code> y devolver <code>405 Method Not Allowed</code> a los métodos no previstos.</p>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-525: Use of Web Browser Cache Containing Sensitive Information</li>
+    <li>OWASP ASVS 4.0.3, V8.2.1 (cabeceras anti-caché), V14.4.4 (<code>nosniff</code>) y V14.5.1 (solo los métodos HTTP en uso)</li>
+  </ul>
+</article>
+
+<!-- H-13 -->
+<article class="finding" id="h13">
+  <header><span class="id">H-13</span><span class="sev info">INFO</span><h3>Conexiones SQLite que nunca se cierran</h3></header>
+  <div class="loc"><code>app.py</code>, líneas 12-15, 41, 48 y 55; <code>auth.py</code>, línea 16</div>
+  <h4>Descripción</h4>
+  <p>Cada petición abre una conexión nueva que nunca se cierra explícitamente y depende del recolector de basura. Con carga sostenida puede agotar descriptores de fichero. Ojo: usar la conexión como gestor de contexto (<code>with sqlite3.connect(...)</code>) solo confirma o revierte la transacción, no la cierra.</p>
+  <h4>Recomendación</h4>
+<pre><code>from contextlib import closing
+
+with closing(db()) as con:
+    rows = con.execute(...).fetchall()</code></pre>
+  <h4>Referencias</h4>
+  <ul class="refs">
+    <li>MITRE CWE-772: Missing Release of Resource after Effective Lifetime</li>
+  </ul>
+</article>
+
+<h2 id="positivos">Aspectos positivos</h2>
+<ul class="plain ok-list">
+  <li>Contraseñas derivadas con PBKDF2-HMAC-SHA512, 600&nbsp;000 iteraciones y sal aleatoria de 16 bytes por usuario (<code>auth.py:12</code>, <code>seed.py:13-15</code>), por encima de las 210&nbsp;000 que recomienda el OWASP Password Storage Cheat Sheet para esa variante.</li>
+  <li>Comparación del hash en tiempo constante con <code>hmac.compare_digest</code> (<code>auth.py:18</code>).</li>
+  <li>Tokens de sesión de 256 bits generados con <code>secrets.token_urlsafe(32)</code> (<code>auth.py:20</code>).</li>
+  <li>Consultas parametrizadas en el login, el detalle, el listado y el script de carga. Solo <code>/search</code> se sale de la norma.</li>
+  <li>El mismo mensaje de error tanto si el usuario no existe como si la contraseña es incorrecta (<code>app.py:32</code>).</li>
+  <li>Token en la cabecera <code>Authorization</code> y no en cookies: no hay superficie CSRF.</li>
+  <li>Respuestas JSON con <code>Content-Type: application/json</code>; no se refleja HTML.</li>
+  <li>El servidor se enlaza a <code>127.0.0.1</code> por defecto.</li>
+  <li>Solo usa la biblioteca estándar: no hay dependencias de terceros que vigilar.</li>
+</ul>
+
+<h2 id="plan">Plan de remediación</h2>
+<div class="phase">
+  <h3>1. Inmediato</h3>
+  <p><a href="#h02">H-02</a> (filtrar por <code>owner_id</code>) y <a href="#h01">H-01</a> (parametrizar <code>/search</code>), con pruebas de regresión que comprueben el aislamiento entre usuarios. Son cambios pequeños y cierran las dos vías de acceso a datos ajenos.</p>
+</div>
+<div class="phase">
+  <h3>2. Antes de producción</h3>
+  <p><a href="#h03">H-03</a> (caducidad y logout), <a href="#h04">H-04</a> (limitación de intentos), <a href="#h05">H-05</a> (servidor de producción con TLS), <a href="#h06">H-06</a> (límite del cuerpo) y <a href="#h07">H-07</a> (hash constante).</p>
+</div>
+<div class="phase">
+  <h3>3. Endurecimiento</h3>
+  <p><a href="#h08">H-08</a> a <a href="#h13">H-13</a>: minimizar la respuesta, proteger la base de datos en reposo, sustituir la contraseña fija del script de carga, añadir registros, cabeceras y cierre de conexiones.</p>
+</div>
+
+<h2 id="metodologia">Metodología y supuestos</h2>
+<ul class="plain">
+  <li><strong>Método:</strong> revisión manual línea a línea de los cuatro ficheros del alcance, siguiendo el flujo de cada ruta desde la entrada (<code>PATH_INFO</code>, query string, cuerpo y cabecera <code>Authorization</code>) hasta la base de datos y la respuesta.</li>
+  <li><strong>Sin pruebas dinámicas:</strong> la aplicación no se ejecutó. Los hallazgos se confirmaron leyendo el código; como es breve y los fallos no dependen de configuración, la confianza es alta.</li>
+  <li><strong>Dependencias:</strong> no hay manifiesto (<code>requirements.txt</code> o similar) y el código solo importa la biblioteca estándar, así que no se hizo análisis de composición de software. La versión de Python no consta; se supone Python 3 con soporte vigente.</li>
+  <li><strong>Supuesto de despliegue:</strong> la severidad se valoró pensando en un uso multiusuario real, que es lo que sugiere el modelo de datos con <code>owner_id</code>. Como demo local en <code>127.0.0.1</code>, el riesgo práctico es menor.</li>
+  <li><strong>Escala de severidad:</strong> <em>Alta</em>: cualquier usuario autenticado accede a datos de otros sin condiciones especiales. <em>Media</em>: debilita controles de autenticación, sesión o disponibilidad, o requiere condiciones adicionales. <em>Baja</em>: impacto acotado o que requiere acceso local o privilegiado. <em>Informativa</em>: defensa en profundidad.</li>
+  <li><strong>Versiones de los estándares:</strong> OWASP Top 10:2021, OWASP API Security Top 10:2023, OWASP ASVS 4.0.3 (la numeración de ASVS 5.0 es distinta), OWASP WSTG v4.2, e identificadores CWE del catálogo de MITRE.</li>
+  <li><strong>Integridad del objetivo:</strong> el repositorio no se modificó (sus ficheros son de solo lectura). Huellas SHA-256 de lo revisado:
+    <ul class="plain">
+      <li><code>app.py</code>: <code>7ad48b2981c8deb3fafb3b6f00f4a0fc8660f30d92ddea8053706061e57f3f9e</code></li>
+      <li><code>auth.py</code>: <code>08d1b0f339db1730142965c0adab9614a684b9bb6e25a19fb4140a4724d72b4c</code></li>
+      <li><code>seed.py</code>: <code>4af1e4ae0d83ffc3c7777cd28c3aa3eb4f939cfacb0381e2839f0c78bf226a7c</code></li>
+      <li><code>README.md</code>: <code>ad98fcb4e94d848bc8e16e1cb462b38f65ec7350775c497f52ad7a29a9dbaba0</code></li>
+    </ul>
+  </li>
+</ul>
+
+<footer>Informe generado el 14-10-2026 a partir de una revisión estática del código. No sustituye a una prueba de penetración sobre un despliegue real.</footer>
+</main>
+</body>
+</html>

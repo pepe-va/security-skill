@@ -1,0 +1,9 @@
+[
+  "With the skill 31/31 assertions (100%); without 24/30 (80% pooled, 78% as the mean of the per-eval rates). One run per configuration, so there is no variance estimate: treat the deltas as indicative.",
+  "Non-discriminating: finding the IDOR and the SQL injection, the lethal-trifecta analysis, lodash advisories, colour-utilz and expresss all pass in both configurations. A capable model finds these bugs without the skill.",
+  "What the skill adds: a validated findings.json, sources for every finding, the mitigation prompt panel, a CycloneDX SBOM, the 'cannot prove clean' limit, and only current editions (the baseline cited LLM Top 10 2025 numbering and A01:2021).",
+  "Cost: with the skill about 2.3x the tokens (mean 189k vs 82k) and 1.9x the time (mean 23 min vs 12 min). The audit modes pay for validators, the coverage ledger and sandboxed evidence; the consultation cited and checked 149 identifiers.",
+  "Eval 2 with the skill demonstrated both bugs in a bwrap sandbox (no network, read-only source); the baseline did a static review only.",
+  "Defects these runs exposed, now fixed: finding text stayed English inside the Spanish report (SKILL.md and audit/README.md now say to write finding text in the conversation's language); with no critical finding the prompt panel started empty (the most severe level present is now preselected); audit_deps.py took a fixed version from lodash-es, put guessed CVEs in titles and emitted no lockfile hardening notes.",
+  "The eval 3 baseline downloaded reference pages and installed a Python CVSS library into the session scratchpad; the skill's bundled cvss4.py avoids that."
+]

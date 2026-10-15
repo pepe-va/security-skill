@@ -1,0 +1,58 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-14T19:12:46+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "cybersec-skill audit_deps.py"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "shop-frontend"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "colour-utilz",
+      "version": "1.0.0",
+      "purl": "pkg:npm/colour-utilz@1.0.0",
+      "properties": [
+        {
+          "name": "cybersec-skill:manifest",
+          "value": "package-lock.json:6"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "expresss",
+      "version": "4.18.2",
+      "purl": "pkg:npm/expresss@4.18.2",
+      "properties": [
+        {
+          "name": "cybersec-skill:manifest",
+          "value": "package-lock.json:5"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lodash",
+      "version": "4.17.15",
+      "purl": "pkg:npm/lodash@4.17.15",
+      "properties": [
+        {
+          "name": "cybersec-skill:manifest",
+          "value": "package-lock.json:4"
+        }
+      ]
+    }
+  ]
+}
